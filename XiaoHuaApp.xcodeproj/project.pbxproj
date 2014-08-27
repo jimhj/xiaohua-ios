@@ -19,6 +19,8 @@
 		1B3C9F5319ADD1A700C79552 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3C9F3B19ADD1A700C79552 /* UIKit.framework */; };
 		1B3C9F5B19ADD1A700C79552 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C9F5919ADD1A700C79552 /* InfoPlist.strings */; };
 		1B3C9F5D19ADD1A700C79552 /* XiaoHuaAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3C9F5C19ADD1A700C79552 /* XiaoHuaAppTests.m */; };
+		1B3C9F6D19ADDB3C00C79552 /* XHJokesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3C9F6B19ADDB3C00C79552 /* XHJokesViewController.m */; };
+		1B3C9F6E19ADDB3C00C79552 /* XHJokesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C9F6C19ADDB3C00C79552 /* XHJokesViewController.xib */; };
 		FB4F044A9300474D8C22AB53 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7077413D4E2E4A87AE475A48 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,9 @@
 		1B3C9F5819ADD1A700C79552 /* XiaoHuaAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XiaoHuaAppTests-Info.plist"; sourceTree = "<group>"; };
 		1B3C9F5A19ADD1A700C79552 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1B3C9F5C19ADD1A700C79552 /* XiaoHuaAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XiaoHuaAppTests.m; sourceTree = "<group>"; };
+		1B3C9F6A19ADDB3C00C79552 /* XHJokesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHJokesViewController.h; sourceTree = "<group>"; };
+		1B3C9F6B19ADDB3C00C79552 /* XHJokesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHJokesViewController.m; sourceTree = "<group>"; };
+		1B3C9F6C19ADDB3C00C79552 /* XHJokesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHJokesViewController.xib; sourceTree = "<group>"; };
 		333BAACA3F9A4FECA9DD53C3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		7077413D4E2E4A87AE475A48 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -164,6 +169,9 @@
 		1B3C9F6719ADDA3400C79552 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1B3C9F6A19ADDB3C00C79552 /* XHJokesViewController.h */,
+				1B3C9F6B19ADDB3C00C79552 /* XHJokesViewController.m */,
+				1B3C9F6C19ADDB3C00C79552 /* XHJokesViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -261,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B3C9F4219ADD1A700C79552 /* InfoPlist.strings in Resources */,
+				1B3C9F6E19ADDB3C00C79552 /* XHJokesViewController.xib in Resources */,
 				1B3C9F4A19ADD1A700C79552 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +324,7 @@
 			files = (
 				1B3C9F4819ADD1A700C79552 /* XHAppDelegate.m in Sources */,
 				1B3C9F4419ADD1A700C79552 /* main.m in Sources */,
+				1B3C9F6D19ADDB3C00C79552 /* XHJokesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
