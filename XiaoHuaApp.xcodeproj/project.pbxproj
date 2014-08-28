@@ -19,6 +19,12 @@
 		1B3C9F5319ADD1A700C79552 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B3C9F3B19ADD1A700C79552 /* UIKit.framework */; };
 		1B3C9F5B19ADD1A700C79552 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C9F5919ADD1A700C79552 /* InfoPlist.strings */; };
 		1B3C9F5D19ADD1A700C79552 /* XiaoHuaAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3C9F5C19ADD1A700C79552 /* XiaoHuaAppTests.m */; };
+		1B55FB1B19AECB3000C8A44E /* XHJokesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB1A19AECB3000C8A44E /* XHJokesController.m */; };
+		1B55FB1D19AED51F00C8A44E /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B55FB1C19AED51F00C8A44E /* refresh@2x.png */; };
+		1B55FB1F19AED53E00C8A44E /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B55FB1E19AED53E00C8A44E /* user@2x.png */; };
+		1B55FB2119AED59100C8A44E /* message@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B55FB2019AED59100C8A44E /* message@2x.png */; };
+		1B55FB2419AED71300C8A44E /* XHMessagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB2319AED71300C8A44E /* XHMessagesController.m */; };
+		1B55FB2A19AED97400C8A44E /* XHUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB2919AED97400C8A44E /* XHUserController.m */; };
 		FB4F044A9300474D8C22AB53 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7077413D4E2E4A87AE475A48 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +55,15 @@
 		1B3C9F5819ADD1A700C79552 /* XiaoHuaAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "XiaoHuaAppTests-Info.plist"; sourceTree = "<group>"; };
 		1B3C9F5A19ADD1A700C79552 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1B3C9F5C19ADD1A700C79552 /* XiaoHuaAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XiaoHuaAppTests.m; sourceTree = "<group>"; };
+		1B55FB1919AECB3000C8A44E /* XHJokesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHJokesController.h; sourceTree = SOURCE_ROOT; };
+		1B55FB1A19AECB3000C8A44E /* XHJokesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHJokesController.m; sourceTree = SOURCE_ROOT; };
+		1B55FB1C19AED51F00C8A44E /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
+		1B55FB1E19AED53E00C8A44E /* user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@2x.png"; sourceTree = "<group>"; };
+		1B55FB2019AED59100C8A44E /* message@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "message@2x.png"; sourceTree = "<group>"; };
+		1B55FB2219AED71300C8A44E /* XHMessagesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHMessagesController.h; sourceTree = SOURCE_ROOT; };
+		1B55FB2319AED71300C8A44E /* XHMessagesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHMessagesController.m; sourceTree = SOURCE_ROOT; };
+		1B55FB2819AED97400C8A44E /* XHUserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHUserController.h; sourceTree = SOURCE_ROOT; };
+		1B55FB2919AED97400C8A44E /* XHUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHUserController.m; sourceTree = SOURCE_ROOT; };
 		333BAACA3F9A4FECA9DD53C3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		7077413D4E2E4A87AE475A48 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -164,6 +179,12 @@
 		1B3C9F6719ADDA3400C79552 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1B55FB1919AECB3000C8A44E /* XHJokesController.h */,
+				1B55FB1A19AECB3000C8A44E /* XHJokesController.m */,
+				1B55FB2219AED71300C8A44E /* XHMessagesController.h */,
+				1B55FB2319AED71300C8A44E /* XHMessagesController.m */,
+				1B55FB2819AED97400C8A44E /* XHUserController.h */,
+				1B55FB2919AED97400C8A44E /* XHUserController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -178,6 +199,9 @@
 		1B3C9F6919ADDA3400C79552 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1B55FB2019AED59100C8A44E /* message@2x.png */,
+				1B55FB1E19AED53E00C8A44E /* user@2x.png */,
+				1B55FB1C19AED51F00C8A44E /* refresh@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -261,7 +285,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B3C9F4219ADD1A700C79552 /* InfoPlist.strings in Resources */,
+				1B55FB1D19AED51F00C8A44E /* refresh@2x.png in Resources */,
+				1B55FB1F19AED53E00C8A44E /* user@2x.png in Resources */,
 				1B3C9F4A19ADD1A700C79552 /* Images.xcassets in Resources */,
+				1B55FB2119AED59100C8A44E /* message@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +341,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B3C9F4819ADD1A700C79552 /* XHAppDelegate.m in Sources */,
+				1B55FB2419AED71300C8A44E /* XHMessagesController.m in Sources */,
+				1B55FB2A19AED97400C8A44E /* XHUserController.m in Sources */,
 				1B3C9F4419ADD1A700C79552 /* main.m in Sources */,
+				1B55FB1B19AECB3000C8A44E /* XHJokesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

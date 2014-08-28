@@ -7,15 +7,35 @@
 //
 
 #import "XHAppDelegate.h"
+#import "XHJokesController.h"
+#import "XHMessagesController.h"
+#import "XHUserController.h"
 
 @implementation XHAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    XHJokesController *jokesController = [[XHJokesController alloc] initWithNibName:nil bundle:nil];
+    jokesController.tabBarItem.image = [UIImage imageNamed:@"refresh.png"];
+    UINavigationController *jokesNav = [[UINavigationController alloc] initWithRootViewController:jokesController];
+    
+    XHMessagesController *msgController = [[XHMessagesController alloc] initWithNibName:nil bundle:nil];
+    msgController.tabBarItem.image = [UIImage imageNamed:@"message.png"];
+    UINavigationController *msgNav = [[UINavigationController alloc] initWithRootViewController:msgController];
+    
+    XHUserController *userController = [[XHUserController alloc] initWithNibName:nil bundle:nil];
+    userController.tabBarItem.image = [UIImage imageNamed:@"user.png"];
+    UINavigationController *userNav = [[UINavigationController alloc] initWithRootViewController:userController];
+    
+    self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController.viewControllers = @[jokesNav, msgNav, userNav];
+    self.window.rootViewController = self.tabBarController;
+    
     return YES;
 }
 
