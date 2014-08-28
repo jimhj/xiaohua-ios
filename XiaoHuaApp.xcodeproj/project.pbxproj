@@ -25,6 +25,9 @@
 		1B55FB2119AED59100C8A44E /* message@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B55FB2019AED59100C8A44E /* message@2x.png */; };
 		1B55FB2419AED71300C8A44E /* XHMessagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB2319AED71300C8A44E /* XHMessagesController.m */; };
 		1B55FB2A19AED97400C8A44E /* XHUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB2919AED97400C8A44E /* XHUserController.m */; };
+		1B55FB2F19AEDE9C00C8A44E /* XHJoke.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB2E19AEDE9C00C8A44E /* XHJoke.m */; };
+		1B55FB3219AEDFF800C8A44E /* XHJokeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB3119AEDFF800C8A44E /* XHJokeCell.m */; };
+		1B55FB3619AF1F3C00C8A44E /* NSString+IsEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB3519AF1F3C00C8A44E /* NSString+IsEmpty.m */; };
 		FB4F044A9300474D8C22AB53 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7077413D4E2E4A87AE475A48 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +67,12 @@
 		1B55FB2319AED71300C8A44E /* XHMessagesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHMessagesController.m; sourceTree = SOURCE_ROOT; };
 		1B55FB2819AED97400C8A44E /* XHUserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHUserController.h; sourceTree = SOURCE_ROOT; };
 		1B55FB2919AED97400C8A44E /* XHUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHUserController.m; sourceTree = SOURCE_ROOT; };
+		1B55FB2D19AEDE9C00C8A44E /* XHJoke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XHJoke.h; path = XiaoHuaApp/Resources/XHJoke.h; sourceTree = SOURCE_ROOT; };
+		1B55FB2E19AEDE9C00C8A44E /* XHJoke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XHJoke.m; path = XiaoHuaApp/Resources/XHJoke.m; sourceTree = SOURCE_ROOT; };
+		1B55FB3019AEDFF800C8A44E /* XHJokeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHJokeCell.h; sourceTree = SOURCE_ROOT; };
+		1B55FB3119AEDFF800C8A44E /* XHJokeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHJokeCell.m; sourceTree = SOURCE_ROOT; };
+		1B55FB3419AF1F3C00C8A44E /* NSString+IsEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IsEmpty.h"; sourceTree = "<group>"; };
+		1B55FB3519AF1F3C00C8A44E /* NSString+IsEmpty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IsEmpty.m"; sourceTree = "<group>"; };
 		333BAACA3F9A4FECA9DD53C3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		7077413D4E2E4A87AE475A48 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -172,6 +181,8 @@
 		1B3C9F6619ADDA3400C79552 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				1B55FB3419AF1F3C00C8A44E /* NSString+IsEmpty.h */,
+				1B55FB3519AF1F3C00C8A44E /* NSString+IsEmpty.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -185,6 +196,8 @@
 				1B55FB2319AED71300C8A44E /* XHMessagesController.m */,
 				1B55FB2819AED97400C8A44E /* XHUserController.h */,
 				1B55FB2919AED97400C8A44E /* XHUserController.m */,
+				1B55FB3019AEDFF800C8A44E /* XHJokeCell.h */,
+				1B55FB3119AEDFF800C8A44E /* XHJokeCell.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -192,6 +205,8 @@
 		1B3C9F6819ADDA3400C79552 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1B55FB2D19AEDE9C00C8A44E /* XHJoke.h */,
+				1B55FB2E19AEDE9C00C8A44E /* XHJoke.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -341,7 +356,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B3C9F4819ADD1A700C79552 /* XHAppDelegate.m in Sources */,
+				1B55FB3219AEDFF800C8A44E /* XHJokeCell.m in Sources */,
 				1B55FB2419AED71300C8A44E /* XHMessagesController.m in Sources */,
+				1B55FB3619AF1F3C00C8A44E /* NSString+IsEmpty.m in Sources */,
+				1B55FB2F19AEDE9C00C8A44E /* XHJoke.m in Sources */,
 				1B55FB2A19AED97400C8A44E /* XHUserController.m in Sources */,
 				1B3C9F4419ADD1A700C79552 /* main.m in Sources */,
 				1B55FB1B19AECB3000C8A44E /* XHJokesController.m in Sources */,

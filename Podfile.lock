@@ -29,7 +29,7 @@ PODS:
   - SDWebImage/Core (3.7.1)
 
 DEPENDENCIES:
-  - AFNetworking
+  - AFNetworking (~> 2.0)
   - MBProgressHUD
   - NUI
   - SDWebImage

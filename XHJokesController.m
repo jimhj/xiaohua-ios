@@ -7,6 +7,10 @@
 //
 
 #import "XHJokesController.h"
+#import "XHJokeCell.h"
+#import "XHJoke.h"
+#import "AFNetworking.h"
+#import "MBProgressHUD.h"
 
 @interface XHJokesController ()
 
@@ -32,16 +36,40 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.jokes = [[NSMutableArray alloc] init];
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeAnnularDeterminate;
+    hud.labelText = @"Loading";
+    
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
     label.backgroundColor = [UIColor clearColor];
     label.font = [UIFont boldSystemFontOfSize:16.0];
     label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = [UIColor grayColor]; // change this color
+    label.textColor = [UIColor grayColor];
     self.navigationItem.titleView = label;
     label.text = @"笑话博览";
     [label sizeToFit];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(performAdd:)];
     self.navigationItem.rightBarButtonItem.tintColor = [UIColor colorWithHue:0.4 saturation:0.83 brightness:0.6 alpha:1];
+
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"http://www.xiaohuabolan.com/api/jokes.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        for (NSDictionary *dict in responseObject) {
+//            NSLog(@"dic: %@", dict);
+            XHJoke *joke = [XHJoke initWithDictionary:dict];
+            [self.jokes addObject:joke];
+        }
+        [self.tableView reloadData];
+        [hud hide:YES];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"笑话博览" message:@"网络不给力" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+    }];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -61,26 +89,36 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    NSLog(@"Load: %lu jokes.", (unsigned long)[self.jokes count]);
+    return [self.jokes count];
 }
 
-/*
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    XHJoke * joke = [self.jokes objectAtIndex:indexPath.row];
+    return [joke calcCellHeight];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+    XHJokeCell *jokeCell = [tableView dequeueReusableCellWithIdentifier:@"XHJokeCell"];
+    if (jokeCell == nil) {
+        jokeCell = [[XHJokeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"XHJokeCell"];
+    }
+    return jokeCell;
 }
-*/
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    XHJoke *joke = [self.jokes objectAtIndex:indexPath.row];
+    [(XHJokeCell *)cell setUpCell:joke];
+    
+}
+
 
 /*
 // Override to support conditional editing of the table view.

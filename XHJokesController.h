@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XHJokesController : UITableViewController
+@interface XHJokesController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, copy, readwrite)  NSMutableArray *jokes;
+@property (nonatomic, copy)  NSNumber *currentPage;
 
 @end
