@@ -33,7 +33,7 @@
         [self addSubview:self.contentLabel];
         
         self.jokePicture = [[UIImageView alloc] init];
-        self.jokePicture.contentMode = UIViewContentModeScaleAspectFit;
+        self.jokePicture.contentMode = UIViewContentModeScaleToFill;
         [self addSubview:self.jokePicture];
     }
     return self;
@@ -50,7 +50,10 @@
     
     if (![joke.picture_url isEmpty]) {
         
-        self.jokePicture.frame = CGRectMake(CELL_MARGIN, CELL_MARGIN + contentTextHeight, [joke.picture_width floatValue], [joke.picture_height floatValue]);
+        float picWidth = CELL_WIDTH - (CELL_MARGIN * 2);
+        float picHeight = picWidth * [joke.picture_height floatValue] / [joke.picture_width floatValue];
+        
+        self.jokePicture.frame = CGRectMake(CELL_MARGIN, CELL_MARGIN + contentTextHeight, picWidth, picHeight);
         
         [self.jokePicture sd_setImageWithURL:[NSURL URLWithString:joke.picture_url] placeholderImage:[UIImage imageNamed:@"placeholder.gif"]];
     }

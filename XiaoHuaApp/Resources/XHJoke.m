@@ -19,15 +19,21 @@
 + (XHJoke *) initWithDictionary:(NSDictionary *)dict
 {
     XHJoke *joke = [[XHJoke alloc] init];
+    NSString *contentText = [[NSString alloc] init];
     
     joke.title = [dict objectForKey:@"title"];
     joke.content = [dict objectForKey:@"content"];
     
     if ([joke.content isEmpty]) {
-        joke.contentText = joke.title;
+        contentText = joke.title;
     } else {
-        joke.contentText = joke.content;
+        contentText = joke.content;
     }
+    NSLog(@"%@", contentText);
+    
+    [contentText stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    [contentText stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    joke.contentText = contentText;
     
     joke.picture_url = [dict objectForKey:@"picture_url"];
     joke.picture_width = [[dict objectForKey:@"dimensions"]objectForKey:@"width"];
@@ -60,11 +66,13 @@
     
     CGFloat height = 0.0f;
     height = MAX(size.height, DEFAULT_HEIGHT);
-    height = height + (CELL_MARGIN * 2);
+    height = height + CELL_MARGIN;
     
     if (![self.picture_url isEmpty]) {
-        height = height + [self.picture_height floatValue];
-        height = height + (CELL_MARGIN * 2);
+        float picWidth = CELL_WIDTH - (CELL_MARGIN * 2);
+        float picHeight = picWidth * [self.picture_height floatValue] / [self.picture_width floatValue];
+        height = height + picHeight;
+        height = height + CELL_MARGIN;
     }
     
     NSLog(@"%f", height);
