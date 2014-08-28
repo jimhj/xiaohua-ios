@@ -23,7 +23,7 @@
 
 
 + (XHJoke *) initWithDictionary:(NSDictionary *)dict;
-- (CGSize)calcCellSize;
+- (CGSize)calcContentTextSize;
 - (CGFloat)calcCellHeight;
 
 @end

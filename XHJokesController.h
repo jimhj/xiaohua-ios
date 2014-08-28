@@ -10,7 +10,7 @@
 
 @interface XHJokesController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, copy, readwrite)  NSMutableArray *jokes;
-@property (nonatomic, copy)  NSNumber *currentPage;
+@property (nonatomic, strong) NSMutableArray *jokes;
+@property (nonatomic, copy) NSNumber *currentPage;
 
 @end

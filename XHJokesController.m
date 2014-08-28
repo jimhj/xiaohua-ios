@@ -36,10 +36,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+        
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.jokes = [[NSMutableArray alloc] init];
+    self.tableView.separatorInset = UIEdgeInsetsZero;
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeAnnularDeterminate;
@@ -119,6 +120,15 @@
     
 }
 
+- (BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 0;
+}
 
 /*
 // Override to support conditional editing of the table view.

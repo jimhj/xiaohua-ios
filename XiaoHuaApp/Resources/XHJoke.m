@@ -11,7 +11,7 @@
 
 #define CELL_WIDTH 320.0f
 #define CELL_MARGIN 10.0f
-#define FONT_SIZE 18.0f
+#define FONT_SIZE 14.0f
 #define DEFAULT_HEIGHT 44.0f
 
 @implementation XHJoke
@@ -38,7 +38,7 @@
     return joke;
 }
 
-- (CGSize)calcCellSize
+- (CGSize)calcContentTextSize
 {
     CGSize constraint = CGSizeMake(CELL_WIDTH - (CELL_MARGIN * 2), 20000.0f);
     
@@ -56,10 +56,17 @@
 
 - (CGFloat)calcCellHeight
 {
+    CGSize size = [self calcContentTextSize];
+    
     CGFloat height = 0.0f;
-    CGSize size = [self calcCellSize];
     height = MAX(size.height, DEFAULT_HEIGHT);
     height = height + (CELL_MARGIN * 2);
+    
+    if (![self.picture_url isEmpty]) {
+        height = height + [self.picture_height floatValue];
+        height = height + (CELL_MARGIN * 2);
+    }
+    
     NSLog(@"%f", height);
     return height;
 }
