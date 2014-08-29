@@ -11,6 +11,8 @@
 #import "XHJoke.h"
 #import "AFNetworking.h"
 #import "MBProgressHUD.h"
+#import "UIScrollView+SVPullToRefresh.h"
+#import "UIScrollView+SVInfiniteScrolling.h"
 
 @interface XHJokesController ()
 
@@ -18,9 +20,30 @@
 
 @implementation XHJokesController
 
-- (void) performAdd:(id)sender
+- (void)performAdd:(id)sender
 {
     NSLog(@"Add button pressed!");
+}
+
+
+- (void)fetchJokesWithPage:(NSNumber *)page
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"page": page};
+    
+    [manager GET:@"http://www.xiaohuabolan.com/api/jokes.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        for (NSDictionary *dict in responseObject) {
+            XHJoke *joke = [XHJoke initWithDictionary:dict];
+            [self.jokes addObject:joke];
+        }
+        
+        [self.tableView reloadData];
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"笑话博览" message:@"网络不给力" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+    }];
 }
 
 - (instancetype)initWithStyle:(UITableViewStyle)style
@@ -28,7 +51,6 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-
     }
     return self;
 }
@@ -36,15 +58,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.jokes = [[NSMutableArray alloc] init];
-    self.tableView.separatorInset = UIEdgeInsetsZero;
     
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDModeAnnularDeterminate;
-    hud.labelText = @"Loading";
+    self.jokes = [[NSMutableArray alloc] init];
+    
+    self.tableView.separatorInset = UIEdgeInsetsZero;
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
     label.backgroundColor = [UIColor clearColor];
@@ -54,28 +75,31 @@
     self.navigationItem.titleView = label;
     label.text = @"笑话博览";
     [label sizeToFit];
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(performAdd:)];
     self.navigationItem.rightBarButtonItem.tintColor = [UIColor colorWithHue:0.4 saturation:0.83 brightness:0.6 alpha:1];
-
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://www.xiaohuabolan.com/api/jokes.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        for (NSDictionary *dict in responseObject) {
-//            NSLog(@"dic: %@", dict);
-            XHJoke *joke = [XHJoke initWithDictionary:dict];
-            [self.jokes addObject:joke];
-        }
-        [self.tableView reloadData];
-        [hud hide:YES];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"笑话博览" message:@"网络不给力" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-        [alert show];
+    
+//    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//    hud.mode = MBProgressHUDModeDeterminate;
+//    hud.labelText = @"Loading";
+//    [hud show:YES];
+//    [self fetchJokesWithPage:[NSNumber numberWithInt:1]];
+//    [hud hide:YES];
+    
+    [self.tableView addPullToRefreshWithActionHandler:^{
+        [self fetchJokesWithPage:[NSNumber numberWithInt:1]];
+        [self.tableView.pullToRefreshView stopAnimating];
     }];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.tableView addInfiniteScrollingWithActionHandler:^{
+        [self fetchJokesWithPage:[NSNumber numberWithInt:2]];
+        [self.tableView.infiniteScrollingView startAnimating];        
+    }];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self.tableView triggerPullToRefresh];
 }
 
 - (void)didReceiveMemoryWarning

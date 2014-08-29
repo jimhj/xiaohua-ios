@@ -56,6 +56,8 @@
         self.jokePicture.frame = CGRectMake(CELL_MARGIN, CELL_MARGIN + contentTextHeight, picWidth, picHeight);
         
         [self.jokePicture sd_setImageWithURL:[NSURL URLWithString:joke.picture_url] placeholderImage:[UIImage imageNamed:@"placeholder.gif"]];
+    } else {
+        self.jokePicture.image = nil ;
     }
 }
 
