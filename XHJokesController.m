@@ -79,13 +79,6 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(performAdd:)];
     self.navigationItem.rightBarButtonItem.tintColor = [UIColor colorWithHue:0.4 saturation:0.83 brightness:0.6 alpha:1];
     
-//    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//    hud.mode = MBProgressHUDModeDeterminate;
-//    hud.labelText = @"Loading";
-//    [hud show:YES];
-//    [self fetchJokesWithPage:[NSNumber numberWithInt:1]];
-//    [hud hide:YES];
-    
     [self.tableView addPullToRefreshWithActionHandler:^{
         [self fetchJokesWithPage:[NSNumber numberWithInt:1]];
         [self.tableView.pullToRefreshView stopAnimating];
