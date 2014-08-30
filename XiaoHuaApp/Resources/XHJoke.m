@@ -29,7 +29,7 @@
     } else {
         contentText = joke.content;
     }
-    NSLog(@"%@", contentText);
+//    NSLog(@"%@", contentText);
     
     [contentText stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     [contentText stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
@@ -75,7 +75,7 @@
         height = height + CELL_MARGIN;
     }
     
-    NSLog(@"%f", height);
+//    NSLog(@"%f", height);
     return height;
 }
 

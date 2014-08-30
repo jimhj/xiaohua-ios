@@ -11,8 +11,7 @@
 #import "XHJoke.h"
 #import "AFNetworking.h"
 #import "MBProgressHUD.h"
-#import "UIScrollView+SVPullToRefresh.h"
-#import "UIScrollView+SVInfiniteScrolling.h"
+#import "MJRefresh.h"
 
 @interface XHJokesController ()
 
@@ -32,6 +31,7 @@
     NSDictionary *parameters = @{@"page": page};
     
     [manager GET:@"http://www.xiaohuabolan.com/api/jokes.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@", operation);
         for (NSDictionary *dict in responseObject) {
             XHJoke *joke = [XHJoke initWithDictionary:dict];
             [self.jokes addObject:joke];
@@ -58,11 +58,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
+    self.currentPage = [NSNumber numberWithInt:1];
     self.jokes = [[NSMutableArray alloc] init];
     
     self.tableView.separatorInset = UIEdgeInsetsZero;
@@ -78,21 +80,27 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(performAdd:)];
     self.navigationItem.rightBarButtonItem.tintColor = [UIColor colorWithHue:0.4 saturation:0.83 brightness:0.6 alpha:1];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    __weak XHJokesController *WeakSelf = self;
     
-    [self.tableView addPullToRefreshWithActionHandler:^{
-        [self fetchJokesWithPage:[NSNumber numberWithInt:1]];
-        [self.tableView.pullToRefreshView stopAnimating];
+    [self.tableView addHeaderWithCallback:^{
+        [WeakSelf fetchJokesWithPage:WeakSelf.currentPage];
+        [WeakSelf.tableView headerEndRefreshing];
     }];
     
-    [self.tableView addInfiniteScrollingWithActionHandler:^{
-        [self fetchJokesWithPage:[NSNumber numberWithInt:2]];
-        [self.tableView.infiniteScrollingView startAnimating];        
+    [self.tableView addFooterWithCallback:^{
+        WeakSelf.currentPage = [NSNumber numberWithInt:[WeakSelf.currentPage intValue] + 1];
+        [WeakSelf fetchJokesWithPage:WeakSelf.currentPage];
+        [WeakSelf.tableView footerEndRefreshing];
+        
     }];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [self.tableView triggerPullToRefresh];
+    [self.tableView headerBeginRefreshing];
 }
 
 - (void)didReceiveMemoryWarning
@@ -105,8 +113,6 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
