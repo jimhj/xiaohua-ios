@@ -19,20 +19,21 @@
 + (XHJoke *) initWithDictionary:(NSDictionary *)dict
 {
     XHJoke *joke = [[XHJoke alloc] init];
-    NSString *contentText = [[NSString alloc] init];
+    NSMutableString *contentText = [[NSMutableString alloc] init];
     
     joke.title = [dict objectForKey:@"title"];
     joke.content = [dict objectForKey:@"content"];
     
     if ([joke.content isEmpty]) {
-        contentText = joke.title;
+        [contentText setString:joke.title];
     } else {
-        contentText = joke.content;
+        [contentText setString:joke.content];
     }
-//    NSLog(@"%@", contentText);
     
     [contentText stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     [contentText stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    NSLog(@"%@", contentText);
+    
     joke.contentText = contentText;
     
     joke.picture_url = [dict objectForKey:@"picture_url"];
@@ -65,17 +66,19 @@
     CGSize size = [self calcContentTextSize];
     
     CGFloat height = 0.0f;
-    height = MAX(size.height, DEFAULT_HEIGHT);
-    height = height + CELL_MARGIN;
+//    height = MAX(size.height, DEFAULT_HEIGHT);
+    height = size.height;
+    height = height + CELL_MARGIN; // cell top padding
     
     if (![self.picture_url isEmpty]) {
         float picWidth = CELL_WIDTH - (CELL_MARGIN * 2);
         float picHeight = picWidth * [self.picture_height floatValue] / [self.picture_width floatValue];
         height = height + picHeight;
-        height = height + CELL_MARGIN;
+        height = height + CELL_MARGIN; // picture margin to text
     }
+
+    height = height + CELL_MARGIN; // cell bottom padding
     
-//    NSLog(@"%f", height);
     return height;
 }
 

@@ -44,7 +44,8 @@
     [self.contentLabel setText:joke.contentText];
     CGSize size = [joke calcContentTextSize];
     
-    float contentTextHeight = MAX(size.height, DEFAULT_HEIGHT);
+//    float contentTextHeight = MAX(size.height, DEFAULT_HEIGHT);
+    float contentTextHeight = size.height;
     
     [self.contentLabel setFrame:CGRectMake(CELL_MARGIN, CELL_MARGIN, CELL_WIDTH - (CELL_MARGIN * 2), contentTextHeight)];
     
@@ -53,7 +54,7 @@
         float picWidth = CELL_WIDTH - (CELL_MARGIN * 2);
         float picHeight = picWidth * [joke.picture_height floatValue] / [joke.picture_width floatValue];
         
-        self.jokePicture.frame = CGRectMake(CELL_MARGIN, CELL_MARGIN + contentTextHeight, picWidth, picHeight);
+        self.jokePicture.frame = CGRectMake(CELL_MARGIN, (CELL_MARGIN * 2) + contentTextHeight, picWidth, picHeight);
         
         [self.jokePicture sd_setImageWithURL:[NSURL URLWithString:joke.picture_url] placeholderImage:[UIImage imageNamed:@"placeholder.gif"]];
     } else {

@@ -32,6 +32,11 @@
     
     [manager GET:@"http://www.xiaohuabolan.com/api/jokes.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"%@", operation);
+        
+        if ([page intValue] == 1) {
+            [self.jokes removeAllObjects];
+        }
+        
         for (NSDictionary *dict in responseObject) {
             XHJoke *joke = [XHJoke initWithDictionary:dict];
             [self.jokes addObject:joke];
