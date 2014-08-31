@@ -13,6 +13,7 @@
 #define CELL_MARGIN 10.0f
 #define FONT_SIZE 14.0f
 #define DEFAULT_HEIGHT 44.0f
+#define BOTTOM_VIEW_HEIGHT 30.0f
 
 @implementation XHJoke
 
@@ -41,6 +42,7 @@
     joke.picture_height = [[dict objectForKey:@"dimensions"]objectForKey:@"height"];
     joke.up_votes_count = [NSString stringWithFormat:@"%@", [dict objectForKey:@"up_votes_count"]];
     joke.down_votes_count = [NSString stringWithFormat:@"%@", [dict objectForKey:@"down_votes_count"]];
+    joke.comments_count = [NSString stringWithFormat:@"%@", [dict objectForKey:@"comments_count"]];
     
     return joke;
 }
@@ -77,6 +79,8 @@
         height = height + CELL_MARGIN; // picture margin to text
     }
 
+    height = height + BOTTOM_VIEW_HEIGHT; // cell bottom view height;
+    
     height = height + CELL_MARGIN; // cell bottom padding
     
     return height;
