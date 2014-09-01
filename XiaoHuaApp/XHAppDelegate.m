@@ -22,14 +22,17 @@
     
     XHJokesController *jokesController = [[XHJokesController alloc] initWithNibName:nil bundle:nil];
     jokesController.tabBarItem.image = [UIImage imageNamed:@"refresh.png"];
+    jokesController.tabBarItem.title = @"笑话";
     UINavigationController *jokesNav = [[UINavigationController alloc] initWithRootViewController:jokesController];
     
     XHMessagesController *msgController = [[XHMessagesController alloc] initWithNibName:nil bundle:nil];
     msgController.tabBarItem.image = [UIImage imageNamed:@"message.png"];
+    msgController.tabBarItem.title = @"消息";
     UINavigationController *msgNav = [[UINavigationController alloc] initWithRootViewController:msgController];
     
     XHUserController *userController = [[XHUserController alloc] initWithNibName:nil bundle:nil];
     userController.tabBarItem.image = [UIImage imageNamed:@"user.png"];
+    userController.tabBarItem.title = @"我";
     UINavigationController *userNav = [[UINavigationController alloc] initWithRootViewController:userController];
     
     self.tabBarController = [[UITabBarController alloc] init];
