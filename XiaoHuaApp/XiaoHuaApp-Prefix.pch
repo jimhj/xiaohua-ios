@@ -13,4 +13,9 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #define CELL_WIDTH 320.0f
+    #define CELL_MARGIN 10.0f
+    #define CELL_FONT_SIZE 16.0f
+    #define CELL_DEFAULT_HEIGHT 44.0f
+    #define CELL_BOTTOM_VIEW_HEIGHT 22.0f
 #endif

@@ -9,12 +9,6 @@
 #import "XHJoke.h"
 #import "NSString+IsEmpty.h"
 
-#define CELL_WIDTH 320.0f
-#define CELL_MARGIN 10.0f
-#define FONT_SIZE 14.0f
-#define DEFAULT_HEIGHT 44.0f
-#define BOTTOM_VIEW_HEIGHT 40.0f
-
 @implementation XHJoke
 
 + (XHJoke *) initWithDictionary:(NSDictionary *)dict
@@ -43,6 +37,9 @@
     joke.up_votes_count = [NSString stringWithFormat:@"%@", [dict objectForKey:@"up_votes_count"]];
     joke.down_votes_count = [NSString stringWithFormat:@"%@", [dict objectForKey:@"down_votes_count"]];
     joke.comments_count = [NSString stringWithFormat:@"%@", [dict objectForKey:@"comments_count"]];
+    if ([joke.comments_count isEmpty]) {
+        joke.comments_count = @"0";
+    }
     
     return joke;
 }
@@ -53,7 +50,7 @@
     
     
     NSAttributedString *attrText =[[NSAttributedString alloc]initWithString:self.contentText
-                                                                 attributes:@{ NSFontAttributeName:[UIFont systemFontOfSize:FONT_SIZE] }];
+                                                                 attributes:@{ NSFontAttributeName:[UIFont systemFontOfSize:CELL_FONT_SIZE] }];
     
     CGRect rect = [attrText boundingRectWithSize:constraint
                                          options:NSStringDrawingUsesLineFragmentOrigin
@@ -75,7 +72,7 @@
         height = height + pictureFrameHeight;
     }
     
-    height = height + BOTTOM_VIEW_HEIGHT;
+    height = height + CELL_BOTTOM_VIEW_HEIGHT;
     height = height + CELL_MARGIN * 3;
     
     return height;
@@ -118,7 +115,7 @@
     
     offsetY = offsetY + CELL_MARGIN;
     
-    frame = CGRectMake(CELL_MARGIN, offsetY, textFrameSize.width, BOTTOM_VIEW_HEIGHT);
+    frame = CGRectMake(CELL_MARGIN, offsetY, textFrameSize.width, CELL_BOTTOM_VIEW_HEIGHT);
     return frame;
 }
 

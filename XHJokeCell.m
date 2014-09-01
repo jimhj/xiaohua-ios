@@ -11,9 +11,14 @@
 #import "NSString+IsEmpty.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
-#define FONT_SIZE 14.0f
+#define CELL_BUTTON_WIDTH 60.f
 
 @implementation XHJokeCell
+
+- (void)performUpVoteButtonPressed
+{
+    NSLog(@"Up vote Button Pressed.");
+}
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -25,7 +30,7 @@
         
         self.contentLabel = [[UILabel alloc] init];
         self.contentLabel.numberOfLines = 0;
-        [self.contentLabel setFont:[UIFont systemFontOfSize:FONT_SIZE]];
+        [self.contentLabel setFont:[UIFont systemFontOfSize:CELL_FONT_SIZE]];
         [self.contentLabel setLineBreakMode:NSLineBreakByWordWrapping];
         [self addSubview:self.contentLabel];
         
@@ -34,19 +39,51 @@
         [self addSubview:self.jokePicture];
 
         self.bottomLeftView = [[UIView alloc] init];
-        
-        self.bottomLeftView.layer.borderColor = [UIColor redColor].CGColor;
-        self.bottomLeftView.layer.borderWidth = 1.0f;
-        
         self.upButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.upButton.frame = CGRectMake(0, 0, 80.0f, 30.0f);
+        self.downButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.commentButton = [UIButton buttonWithType:UIButtonTypeCustom];
         
-        self.upButton.layer.borderColor = [UIColor blackColor].CGColor;
-        self.upButton.layer.borderWidth = 1.0f;
-//        [self.upButton setBackgroundImage: [UIImage imageNamed:@"up.png"] forState:UIControlStateNormal];
-//        [self.upButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        [self.upButton.titleLabel setFont:[UIFont systemFontOfSize:14.0f]];
+//        self.bottomLeftView.layer.borderColor = [UIColor redColor].CGColor;
+//        self.bottomLeftView.layer.borderWidth = 1.0f;
+//        self.upButton.layer.borderColor = [UIColor redColor].CGColor;
+//        self.upButton.layer.borderWidth = 1.0f;
+//        self.downButton.layer.borderColor = [UIColor greenColor].CGColor;
+//        self.downButton.layer.borderWidth = 1.0f;
         
+        self.upButton.frame = CGRectMake(0, 0, CELL_BUTTON_WIDTH, CELL_BUTTON_WIDTH);
+        self.downButton.frame = CGRectMake(CELL_BUTTON_WIDTH, 0, CELL_BUTTON_WIDTH, CELL_BUTTON_WIDTH);
+        self.commentButton.frame = CGRectMake(CELL_BUTTON_WIDTH * 2, 0, 60, CELL_BUTTON_WIDTH);
+        
+        UIImageView *_upButtonIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 16, 16)];
+        _upButtonIcon.image = [UIImage imageNamed:@"up.png"];
+        self.upButtonLabel = [[UILabel alloc] initWithFrame:CGRectMake(18, 0, 30, 16)];
+        self.upButtonLabel.font = [UIFont systemFontOfSize:14.0f];
+        self.upButtonLabel.textColor = [UIColor colorWithRed:0.53 green:0.5 blue:0.53 alpha:1];
+        [self.upButton addTarget:self action:@selector(performUpVoteButtonPressed) forControlEvents:UIControlEventTouchDown];
+        [self.upButton addSubview:_upButtonIcon];
+        [self.upButton addSubview:self.upButtonLabel];
+        
+        UIImageView *_downButtonIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 16, 16)];
+        _downButtonIcon.image = [UIImage imageNamed:@"down.png"];
+        self.downButtonLabel = [[UILabel alloc] initWithFrame:CGRectMake(18, 0, 30, 16)];
+        self.downButtonLabel.font = [UIFont systemFontOfSize:14.0f];
+        self.downButtonLabel.textColor = [UIColor colorWithRed:0.53 green:0.5 blue:0.53 alpha:1];
+        [self.downButton addSubview:_downButtonIcon];
+        [self.downButton addSubview:self.downButtonLabel];
+    
+        UIImageView *_commentButtonIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0, 21, 16)];
+        _commentButtonIcon.image = [UIImage imageNamed:@"comment.png"];
+        self.commentButtonLabel = [[UILabel alloc] initWithFrame:CGRectMake(23, 0, 40, 16)];
+        self.commentButtonLabel.font = [UIFont systemFontOfSize:14.0f];
+        self.commentButtonLabel.textColor = [UIColor colorWithRed:0.53 green:0.5 blue:0.53 alpha:1];
+        [self.commentButton addSubview:_commentButtonIcon];
+        [self.commentButton addSubview:self.commentButtonLabel];
+
+        [self.bottomLeftView addSubview:self.upButton];
+        [self.bottomLeftView addSubview:self.downButton];
+        [self.bottomLeftView addSubview:self.commentButton];
+        
+        [self addSubview:self.bottomLeftView];
     }
     
     return self;
@@ -55,8 +92,8 @@
 - (void)setUpCell:(XHJoke *)joke
 {
     
-    [self.contentLabel setText:joke.contentText];
-    [self.contentLabel setFrame:joke.textFrame];
+    self.contentLabel.text = joke.contentText;
+    self.contentLabel.frame = joke.textFrame;
     
     if (![joke.picture_url isEmpty]) {
         self.jokePicture.frame = joke.pictureFrame;
@@ -64,12 +101,11 @@
     } else {
         self.jokePicture.image = nil ;
     }
-    
-    [self.upButton setTitle:joke.up_votes_count forState:UIControlStateNormal];
 
-//    [self.bottomLeftView addSubview:self.upButton];
     self.bottomLeftView.frame = [joke bottomFrame];
-    [self addSubview:self.bottomLeftView];
+    self.upButtonLabel.text = joke.up_votes_count;
+    self.downButtonLabel.text = joke.down_votes_count;
+    self.commentButtonLabel.text = joke.comments_count;
 }
 
 
