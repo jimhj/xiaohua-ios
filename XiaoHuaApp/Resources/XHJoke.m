@@ -13,7 +13,7 @@
 #define CELL_MARGIN 10.0f
 #define FONT_SIZE 14.0f
 #define DEFAULT_HEIGHT 44.0f
-#define BOTTOM_VIEW_HEIGHT 30.0f
+#define BOTTOM_VIEW_HEIGHT 40.0f
 
 @implementation XHJoke
 
@@ -59,31 +59,67 @@
                                          options:NSStringDrawingUsesLineFragmentOrigin
                                          context:nil];
     CGSize size = rect.size;
+    size.height = size.height;
     
     return size;
 }
 
 - (CGFloat)calcCellHeight
 {
-    CGSize size = [self calcContentTextSize];
-    
-    CGFloat height = 0.0f;
-//    height = MAX(size.height, DEFAULT_HEIGHT);
-    height = size.height;
-    height = height + CELL_MARGIN; // cell top padding
+    float height = 0;
+    float textFrameHeight = [self textFrame].size.height;
+    height = height + textFrameHeight;
     
     if (![self.picture_url isEmpty]) {
-        float picWidth = CELL_WIDTH - (CELL_MARGIN * 2);
-        float picHeight = picWidth * [self.picture_height floatValue] / [self.picture_width floatValue];
-        height = height + picHeight;
-        height = height + CELL_MARGIN; // picture margin to text
+        float pictureFrameHeight = [self pictureFrame].size.height;
+        height = height + pictureFrameHeight;
     }
-
-    height = height + BOTTOM_VIEW_HEIGHT; // cell bottom view height;
     
-    height = height + CELL_MARGIN; // cell bottom padding
+    height = height + BOTTOM_VIEW_HEIGHT;
+    height = height + CELL_MARGIN * 3;
     
     return height;
+}
+
+- (CGRect)textFrame
+{
+    CGSize size = [self calcContentTextSize];
+    float frameHeight = size.height + CELL_MARGIN;
+    
+    CGRect frame = CGRectMake(CELL_MARGIN, CELL_MARGIN, CELL_WIDTH - (CELL_MARGIN * 2), frameHeight);
+    return frame;
+}
+
+- (CGRect)pictureFrame
+{
+    CGRect frame;
+    CGSize textFrameSize = [self textFrame].size;
+    
+    float offsetY = CELL_MARGIN + textFrameSize.height;
+    float picHeight = textFrameSize.width * [self.picture_height floatValue] / [self.picture_width floatValue];
+    float frameHeight = picHeight;
+        
+    frame = CGRectMake(CELL_MARGIN, offsetY, textFrameSize.width, frameHeight);
+    
+    return frame;
+}
+
+- (CGRect)bottomFrame
+{
+    CGRect frame;
+    CGSize textFrameSize = [self textFrame].size;
+    CGSize pictureFrameSize = [self pictureFrame].size;
+    
+    float offsetY = CELL_MARGIN + textFrameSize.height;
+    
+    if (![self.picture_url isEmpty]) {
+        offsetY = offsetY + pictureFrameSize.height;
+    }
+    
+    offsetY = offsetY + CELL_MARGIN;
+    
+    frame = CGRectMake(CELL_MARGIN, offsetY, textFrameSize.width, BOTTOM_VIEW_HEIGHT);
+    return frame;
 }
 
 @end

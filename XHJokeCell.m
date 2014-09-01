@@ -11,11 +11,7 @@
 #import "NSString+IsEmpty.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
-#define CELL_WIDTH 320.0f
-#define CELL_MARGIN 10.0f
 #define FONT_SIZE 14.0f
-#define DEFAULT_HEIGHT 44.0f
-#define BOTTOM_VIEW_HEIGHT 30.0f
 
 @implementation XHJokeCell
 
@@ -38,9 +34,21 @@
         [self addSubview:self.jokePicture];
 
         self.bottomLeftView = [[UIView alloc] init];
-        self.upButton = [UIButton buttonWithType:UIButtonTypeCustom];        
+        
+        self.bottomLeftView.layer.borderColor = [UIColor redColor].CGColor;
+        self.bottomLeftView.layer.borderWidth = 1.0f;
+        
+        self.upButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.upButton.frame = CGRectMake(0, 0, 80.0f, 30.0f);
+        
+        self.upButton.layer.borderColor = [UIColor blackColor].CGColor;
+        self.upButton.layer.borderWidth = 1.0f;
+//        [self.upButton setBackgroundImage: [UIImage imageNamed:@"up.png"] forState:UIControlStateNormal];
+//        [self.upButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//        [self.upButton.titleLabel setFont:[UIFont systemFontOfSize:14.0f]];
         
     }
+    
     return self;
 }
 
@@ -48,28 +56,19 @@
 {
     
     [self.contentLabel setText:joke.contentText];
-    CGSize size = [joke calcContentTextSize];
-    
-//    float contentTextHeight = MAX(size.height, DEFAULT_HEIGHT);
-    float contentTextHeight = size.height;
-    
-    [self.contentLabel setFrame:CGRectMake(CELL_MARGIN, CELL_MARGIN, CELL_WIDTH - (CELL_MARGIN * 2), contentTextHeight)];
-
-    float picWidth = CELL_WIDTH - (CELL_MARGIN * 2);
-    float picOffsetY = (CELL_MARGIN * 2) + contentTextHeight;
+    [self.contentLabel setFrame:joke.textFrame];
     
     if (![joke.picture_url isEmpty]) {
-        
-        float picHeight = picWidth * [joke.picture_height floatValue] / [joke.picture_width floatValue];
-        
-        self.jokePicture.frame = CGRectMake(CELL_MARGIN, picOffsetY, picWidth, picHeight);
-        
+        self.jokePicture.frame = joke.pictureFrame;
         [self.jokePicture sd_setImageWithURL:[NSURL URLWithString:joke.picture_url] placeholderImage:[UIImage imageNamed:@"placeholder.gif"]];
-        self.bottomLeftView.frame = CGRectMake(CELL_MARGIN, (CELL_MARGIN * 2) + picOffsetY + picHeight, picWidth, BOTTOM_VIEW_HEIGHT);
     } else {
         self.jokePicture.image = nil ;
-        self.bottomLeftView.frame = CGRectMake(CELL_MARGIN, (CELL_MARGIN * 2) + picOffsetY, picWidth, BOTTOM_VIEW_HEIGHT);
     }
+    
+    [self.upButton setTitle:joke.up_votes_count forState:UIControlStateNormal];
+
+//    [self.bottomLeftView addSubview:self.upButton];
+    self.bottomLeftView.frame = [joke bottomFrame];
     [self addSubview:self.bottomLeftView];
 }
 

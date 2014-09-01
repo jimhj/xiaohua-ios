@@ -25,5 +25,8 @@
 + (XHJoke *) initWithDictionary:(NSDictionary *)dict;
 - (CGSize)calcContentTextSize;
 - (CGFloat)calcCellHeight;
+- (CGRect)textFrame;
+- (CGRect)pictureFrame;
+- (CGRect)bottomFrame;
 
 @end
