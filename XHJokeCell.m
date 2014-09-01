@@ -58,7 +58,7 @@
         _upButtonIcon.image = [UIImage imageNamed:@"up.png"];
         self.upButtonLabel = [[UILabel alloc] initWithFrame:CGRectMake(18, 0, 30, 16)];
         self.upButtonLabel.font = [UIFont systemFontOfSize:14.0f];
-        self.upButtonLabel.textColor = [UIColor colorWithRed:0.53 green:0.5 blue:0.53 alpha:1];
+        self.upButtonLabel.textColor = PRIMARY_GRAY_COLOR;
         [self.upButton addTarget:self action:@selector(performUpVoteButtonPressed) forControlEvents:UIControlEventTouchDown];
         [self.upButton addSubview:_upButtonIcon];
         [self.upButton addSubview:self.upButtonLabel];
@@ -67,7 +67,7 @@
         _downButtonIcon.image = [UIImage imageNamed:@"down.png"];
         self.downButtonLabel = [[UILabel alloc] initWithFrame:CGRectMake(18, 0, 30, 16)];
         self.downButtonLabel.font = [UIFont systemFontOfSize:14.0f];
-        self.downButtonLabel.textColor = [UIColor colorWithRed:0.53 green:0.5 blue:0.53 alpha:1];
+        self.downButtonLabel.textColor = PRIMARY_GRAY_COLOR;
         [self.downButton addSubview:_downButtonIcon];
         [self.downButton addSubview:self.downButtonLabel];
     
@@ -75,7 +75,7 @@
         _commentButtonIcon.image = [UIImage imageNamed:@"comment.png"];
         self.commentButtonLabel = [[UILabel alloc] initWithFrame:CGRectMake(23, 0, 40, 16)];
         self.commentButtonLabel.font = [UIFont systemFontOfSize:14.0f];
-        self.commentButtonLabel.textColor = [UIColor colorWithRed:0.53 green:0.5 blue:0.53 alpha:1];
+        self.commentButtonLabel.textColor = PRIMARY_GRAY_COLOR;
         [self.commentButton addSubview:_commentButtonIcon];
         [self.commentButton addSubview:self.commentButtonLabel];
 
@@ -91,13 +91,9 @@
 
 - (void)setUpCell:(XHJoke *)joke
 {
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:joke.contentText];
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    [paragraphStyle setLineSpacing:16];
-    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [joke.contentText length])];
-//    cell.label.attributedText = attributedString ;
+    NSMutableAttributedString *attributedContentText = [joke setContentTextLineHeight:4];
     
-    self.contentLabel.attributedText = attributedString;
+    self.contentLabel.attributedText = attributedContentText;
     self.contentLabel.textColor = [UIColor colorWithRed:0.27 green:0.26 blue:0.26 alpha:1];
     self.contentLabel.frame = joke.textFrame;
     

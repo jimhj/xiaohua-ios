@@ -18,4 +18,6 @@
     #define CELL_FONT_SIZE 16.0f
     #define CELL_DEFAULT_HEIGHT 44.0f
     #define CELL_BOTTOM_VIEW_HEIGHT 22.0f
+    #define PRIMARY_GRAY_COLOR [UIColor colorWithRed:0.53 green:0.5 blue:0.53 alpha:1]
+
 #endif

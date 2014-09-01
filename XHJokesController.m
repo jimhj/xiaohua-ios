@@ -84,7 +84,7 @@
     [label sizeToFit];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(performAdd:)];
-    self.navigationItem.rightBarButtonItem.tintColor = [UIColor colorWithHue:0.4 saturation:0.83 brightness:0.6 alpha:1];
+    self.navigationItem.rightBarButtonItem.tintColor = PRIMARY_GRAY_COLOR;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

@@ -21,12 +21,12 @@
 
 @property (nonatomic,copy) NSString *contentText; // content 为空时取 title 为内容
 
-
 + (XHJoke *) initWithDictionary:(NSDictionary *)dict;
 - (CGSize)calcContentTextSize;
 - (CGFloat)calcCellHeight;
 - (CGRect)textFrame;
 - (CGRect)pictureFrame;
 - (CGRect)bottomFrame;
+- (NSMutableAttributedString *)setContentTextLineHeight:(CGFloat)lineHeight;
 
 @end

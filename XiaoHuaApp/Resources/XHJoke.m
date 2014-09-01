@@ -27,7 +27,6 @@
     
     [contentText stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     [contentText stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-    NSLog(@"%@", contentText);
     
     joke.contentText = contentText;
     
@@ -44,21 +43,25 @@
     return joke;
 }
 
+- (NSMutableAttributedString *)setContentTextLineHeight:(CGFloat)lineHeight
+{
+    NSMutableAttributedString *attributedContentText = [[NSMutableAttributedString alloc] initWithString:self.contentText attributes:@{ NSFontAttributeName:[UIFont systemFontOfSize:CELL_FONT_SIZE] }];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:lineHeight];
+    [attributedContentText addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [self.contentText length])];
+    return attributedContentText;
+}
+
 - (CGSize)calcContentTextSize
 {
     CGSize constraint = CGSizeMake(CELL_WIDTH - (CELL_MARGIN * 2), 20000.0f);
     
+    NSMutableAttributedString *attributedContentText = [self setContentTextLineHeight:4];
     
-    NSAttributedString *attrText =[[NSAttributedString alloc]initWithString:self.contentText
-                                                                 attributes:@{ NSFontAttributeName:[UIFont systemFontOfSize:CELL_FONT_SIZE] }];
-    
-    CGRect rect = [attrText boundingRectWithSize:constraint
-                                         options:NSStringDrawingUsesLineFragmentOrigin
-                                         context:nil];
-    CGSize size = rect.size;
-    size.height = size.height;
-    
-    return size;
+    CGRect rect = [attributedContentText boundingRectWithSize:constraint
+                                             options:NSStringDrawingUsesLineFragmentOrigin
+                                             context:nil];
+    return rect.size;
 }
 
 - (CGFloat)calcCellHeight
