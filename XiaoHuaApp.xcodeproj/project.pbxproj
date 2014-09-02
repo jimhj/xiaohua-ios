@@ -25,6 +25,12 @@
 		1B55FB2F19AEDE9C00C8A44E /* XHJoke.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB2E19AEDE9C00C8A44E /* XHJoke.m */; };
 		1B55FB3219AEDFF800C8A44E /* XHJokeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB3119AEDFF800C8A44E /* XHJokeCell.m */; };
 		1B55FB3619AF1F3C00C8A44E /* NSString+IsEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB3519AF1F3C00C8A44E /* NSString+IsEmpty.m */; };
+		1BBFB6C719B562B000F0E31F /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6C519B562B000F0E31F /* up.png */; };
+		1BBFB6C819B562B000F0E31F /* up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6C619B562B000F0E31F /* up@2x.png */; };
+		1BBFB6D419B591CC00F0E31F /* XHSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFB6D219B591CC00F0E31F /* XHSettingController.m */; };
+		1BBFB6D519B591CC00F0E31F /* XHSettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6D319B591CC00F0E31F /* XHSettingController.xib */; };
+		1BBFB6DC19B598E800F0E31F /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6DA19B598E800F0E31F /* setting.png */; };
+		1BBFB6DD19B598E800F0E31F /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6DB19B598E800F0E31F /* setting@2x.png */; };
 		BF080DC719AF75A3001D3EA9 /* placeholder@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = BF080DC619AF75A3001D3EA9 /* placeholder@2x.gif */; };
 		BF27E0A119B4BD3900AC9730 /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E09719B4BD3900AC9730 /* comment.png */; };
 		BF27E0A219B4BD3900AC9730 /* comment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E09819B4BD3900AC9730 /* comment@2x.png */; };
@@ -32,8 +38,6 @@
 		BF27E0A419B4BD3900AC9730 /* down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E09A19B4BD3900AC9730 /* down@2x.png */; };
 		BF27E0A519B4BD3900AC9730 /* message.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E09B19B4BD3900AC9730 /* message.png */; };
 		BF27E0A619B4BD3900AC9730 /* message@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E09C19B4BD3900AC9730 /* message@2x.png */; };
-		BF27E0A719B4BD3900AC9730 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E09D19B4BD3900AC9730 /* up.png */; };
-		BF27E0A819B4BD3900AC9730 /* up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E09E19B4BD3900AC9730 /* up@2x.png */; };
 		BF27E0A919B4BD3900AC9730 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E09F19B4BD3900AC9730 /* user.png */; };
 		BF27E0AA19B4BD3900AC9730 /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E0A019B4BD3900AC9730 /* user@2x.png */; };
 		BF27E0AD19B4BE4100AC9730 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E0AB19B4BE4100AC9730 /* refresh.png */; };
@@ -102,6 +106,13 @@
 		1B55FB3119AEDFF800C8A44E /* XHJokeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHJokeCell.m; sourceTree = SOURCE_ROOT; };
 		1B55FB3419AF1F3C00C8A44E /* NSString+IsEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IsEmpty.h"; sourceTree = "<group>"; };
 		1B55FB3519AF1F3C00C8A44E /* NSString+IsEmpty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IsEmpty.m"; sourceTree = "<group>"; };
+		1BBFB6C519B562B000F0E31F /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up.png; path = "../../../../../Pictures/素材/up.png"; sourceTree = "<group>"; };
+		1BBFB6C619B562B000F0E31F /* up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "up@2x.png"; path = "../../../../../Pictures/素材/up@2x.png"; sourceTree = "<group>"; };
+		1BBFB6D119B591CC00F0E31F /* XHSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSettingController.h; sourceTree = SOURCE_ROOT; };
+		1BBFB6D219B591CC00F0E31F /* XHSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSettingController.m; sourceTree = SOURCE_ROOT; };
+		1BBFB6D319B591CC00F0E31F /* XHSettingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHSettingController.xib; sourceTree = SOURCE_ROOT; };
+		1BBFB6DA19B598E800F0E31F /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = setting.png; path = "../../../../../Pictures/素材/setting.png"; sourceTree = "<group>"; };
+		1BBFB6DB19B598E800F0E31F /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "setting@2x.png"; path = "../../../../../Pictures/素材/setting@2x.png"; sourceTree = "<group>"; };
 		333BAACA3F9A4FECA9DD53C3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		7077413D4E2E4A87AE475A48 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF080DC619AF75A3001D3EA9 /* placeholder@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "placeholder@2x.gif"; sourceTree = "<group>"; };
@@ -111,8 +122,6 @@
 		BF27E09A19B4BD3900AC9730 /* down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down@2x.png"; sourceTree = "<group>"; };
 		BF27E09B19B4BD3900AC9730 /* message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = message.png; sourceTree = "<group>"; };
 		BF27E09C19B4BD3900AC9730 /* message@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "message@2x.png"; sourceTree = "<group>"; };
-		BF27E09D19B4BD3900AC9730 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
-		BF27E09E19B4BD3900AC9730 /* up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "up@2x.png"; sourceTree = "<group>"; };
 		BF27E09F19B4BD3900AC9730 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		BF27E0A019B4BD3900AC9730 /* user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@2x.png"; sourceTree = "<group>"; };
 		BF27E0AB19B4BE4100AC9730 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
@@ -257,6 +266,9 @@
 				1B55FB2919AED97400C8A44E /* XHUserController.m */,
 				1B55FB3019AEDFF800C8A44E /* XHJokeCell.h */,
 				1B55FB3119AEDFF800C8A44E /* XHJokeCell.m */,
+				1BBFB6D119B591CC00F0E31F /* XHSettingController.h */,
+				1BBFB6D219B591CC00F0E31F /* XHSettingController.m */,
+				1BBFB6D319B591CC00F0E31F /* XHSettingController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -273,6 +285,10 @@
 		1B3C9F6919ADDA3400C79552 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1BBFB6DA19B598E800F0E31F /* setting.png */,
+				1BBFB6DB19B598E800F0E31F /* setting@2x.png */,
+				1BBFB6C519B562B000F0E31F /* up.png */,
+				1BBFB6C619B562B000F0E31F /* up@2x.png */,
 				BF27E0AB19B4BE4100AC9730 /* refresh.png */,
 				BF27E0AC19B4BE4100AC9730 /* refresh@2x.png */,
 				BF27E09719B4BD3900AC9730 /* comment.png */,
@@ -281,8 +297,6 @@
 				BF27E09A19B4BD3900AC9730 /* down@2x.png */,
 				BF27E09B19B4BD3900AC9730 /* message.png */,
 				BF27E09C19B4BD3900AC9730 /* message@2x.png */,
-				BF27E09D19B4BD3900AC9730 /* up.png */,
-				BF27E09E19B4BD3900AC9730 /* up@2x.png */,
 				BF27E09F19B4BD3900AC9730 /* user.png */,
 				BF27E0A019B4BD3900AC9730 /* user@2x.png */,
 				BF080DC619AF75A3001D3EA9 /* placeholder@2x.gif */,
@@ -401,19 +415,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BBFB6C719B562B000F0E31F /* up.png in Resources */,
 				1B3C9F4219ADD1A700C79552 /* InfoPlist.strings in Resources */,
-				BF27E0A819B4BD3900AC9730 /* up@2x.png in Resources */,
 				BF27E0A219B4BD3900AC9730 /* comment@2x.png in Resources */,
 				BF27E0A119B4BD3900AC9730 /* comment.png in Resources */,
+				1BBFB6DD19B598E800F0E31F /* setting@2x.png in Resources */,
 				BF27E0AD19B4BE4100AC9730 /* refresh.png in Resources */,
 				BFCC28EA19B2206C00DE391F /* MJRefresh.bundle in Resources */,
 				BF27E0A619B4BD3900AC9730 /* message@2x.png in Resources */,
 				BF27E0A519B4BD3900AC9730 /* message.png in Resources */,
 				BF27E0A919B4BD3900AC9730 /* user.png in Resources */,
+				1BBFB6D519B591CC00F0E31F /* XHSettingController.xib in Resources */,
 				1B3C9F4A19ADD1A700C79552 /* Images.xcassets in Resources */,
 				BF27E0AE19B4BE4100AC9730 /* refresh@2x.png in Resources */,
-				BF27E0A719B4BD3900AC9730 /* up.png in Resources */,
+				1BBFB6C819B562B000F0E31F /* up@2x.png in Resources */,
 				BF080DC719AF75A3001D3EA9 /* placeholder@2x.gif in Resources */,
+				1BBFB6DC19B598E800F0E31F /* setting.png in Resources */,
 				BF27E0A419B4BD3900AC9730 /* down@2x.png in Resources */,
 				BF27E0A319B4BD3900AC9730 /* down.png in Resources */,
 				BF27E0AA19B4BD3900AC9730 /* user@2x.png in Resources */,
@@ -470,6 +487,7 @@
 			files = (
 				BFCC28ED19B2206C00DE391F /* MJRefreshFooterView.m in Sources */,
 				BFCC28F119B2206C00DE391F /* UIView+MJExtension.m in Sources */,
+				1BBFB6D419B591CC00F0E31F /* XHSettingController.m in Sources */,
 				BFCC28EF19B2206C00DE391F /* UIScrollView+MJExtension.m in Sources */,
 				1B3C9F4819ADD1A700C79552 /* XHAppDelegate.m in Sources */,
 				1B55FB3219AEDFF800C8A44E /* XHJokeCell.m in Sources */,

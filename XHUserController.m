@@ -19,6 +19,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+//        UIView *userView = [[[NSBundle mainBundle] loadNibNamed:@"UserView" owner:self options:nil] objectAtIndex:0];
+//        [self.view addSubview:userView];
     }
     return self;
 }

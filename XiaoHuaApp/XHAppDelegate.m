@@ -10,6 +10,7 @@
 #import "XHJokesController.h"
 #import "XHMessagesController.h"
 #import "XHUserController.h"
+#import "XHSettingController.h"
 
 @implementation XHAppDelegate
 
@@ -30,13 +31,18 @@
     msgController.tabBarItem.title = @"消息";
     UINavigationController *msgNav = [[UINavigationController alloc] initWithRootViewController:msgController];
     
-    XHUserController *userController = [[XHUserController alloc] initWithNibName:nil bundle:nil];
-    userController.tabBarItem.image = [UIImage imageNamed:@"user.png"];
-    userController.tabBarItem.title = @"我";
-    UINavigationController *userNav = [[UINavigationController alloc] initWithRootViewController:userController];
+//    XHUserController *userController = [[XHUserController alloc] initWithNibName:nil bundle:nil];
+//    userController.tabBarItem.image = [UIImage imageNamed:@"user.png"];
+//    userController.tabBarItem.title = @"我";
+//    UINavigationController *userNav = [[UINavigationController alloc] initWithRootViewController:userController];
+
+    XHSettingController *settingController = [[XHSettingController alloc] initWithNibName:@"XHSettingController" bundle:nil];
+    settingController.tabBarItem.image = [UIImage imageNamed:@"user.png"];
+    settingController.tabBarItem.title = @"我";
+    UINavigationController *settingNav = [[UINavigationController alloc] initWithRootViewController:settingController];
     
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[jokesNav, msgNav, userNav];
+    self.tabBarController.viewControllers = @[jokesNav, msgNav, settingNav];
     self.window.rootViewController = self.tabBarController;
     
     return YES;
