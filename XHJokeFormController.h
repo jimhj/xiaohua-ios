@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XHJokeFormController : UIViewController
+@interface XHJokeFormController : UIViewController <UITextViewDelegate>
+{
+    
+    IBOutlet UITextView *_contentTextView;
+}
 
 @end

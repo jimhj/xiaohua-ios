@@ -22,7 +22,9 @@
 - (BOOL)isEmpty {
     NSCharacterSet *charSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
     NSString *trimmed = [self stringByTrimmingCharactersInSet:charSet];
-    return [trimmed isEqualToString:@""];
+    BOOL _bool = [trimmed isEqualToString:@""] || [trimmed isEqualToString:@"<null>"];
+    
+    return _bool;
 }
 
 @end

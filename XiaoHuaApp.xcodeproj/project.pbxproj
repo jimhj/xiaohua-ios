@@ -24,18 +24,12 @@
 		1B55FB2F19AEDE9C00C8A44E /* XHJoke.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB2E19AEDE9C00C8A44E /* XHJoke.m */; };
 		1B55FB3219AEDFF800C8A44E /* XHJokeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB3119AEDFF800C8A44E /* XHJokeCell.m */; };
 		1B55FB3619AF1F3C00C8A44E /* NSString+IsEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB3519AF1F3C00C8A44E /* NSString+IsEmpty.m */; };
-		1BBFB6C719B562B000F0E31F /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6C519B562B000F0E31F /* up.png */; };
-		1BBFB6C819B562B000F0E31F /* up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6C619B562B000F0E31F /* up@2x.png */; };
 		1BBFB6D419B591CC00F0E31F /* XHSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFB6D219B591CC00F0E31F /* XHSettingController.m */; };
 		1BBFB6D519B591CC00F0E31F /* XHSettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6D319B591CC00F0E31F /* XHSettingController.xib */; };
-		1BBFB6DC19B598E800F0E31F /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6DA19B598E800F0E31F /* setting.png */; };
-		1BBFB6DD19B598E800F0E31F /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6DB19B598E800F0E31F /* setting@2x.png */; };
 		1BBFB6E119B5AEC800F0E31F /* XHLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFB6DF19B5AEC800F0E31F /* XHLoginController.m */; };
 		1BBFB6E219B5AEC800F0E31F /* XHLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6E019B5AEC800F0E31F /* XHLoginController.xib */; };
 		1BBFB6E619B5C26000F0E31F /* XHMessagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFB6E419B5C26000F0E31F /* XHMessagesController.m */; };
 		1BBFB6E719B5C26000F0E31F /* XHMessagesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6E519B5C26000F0E31F /* XHMessagesController.xib */; };
-		1BBFB6EA19B5C31A00F0E31F /* envelope.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6E819B5C31A00F0E31F /* envelope.png */; };
-		1BBFB6EB19B5C31A00F0E31F /* envelope@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6E919B5C31A00F0E31F /* envelope@2x.png */; };
 		1BBFB6EF19B5C50100F0E31F /* XHJokeFormController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFB6ED19B5C50100F0E31F /* XHJokeFormController.m */; };
 		1BBFB6F019B5C50100F0E31F /* XHJokeFormController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6EE19B5C50100F0E31F /* XHJokeFormController.xib */; };
 		BF080DC719AF75A3001D3EA9 /* placeholder@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = BF080DC619AF75A3001D3EA9 /* placeholder@2x.gif */; };
@@ -49,6 +43,12 @@
 		BF27E0AA19B4BD3900AC9730 /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E0A019B4BD3900AC9730 /* user@2x.png */; };
 		BF27E0AD19B4BE4100AC9730 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E0AB19B4BE4100AC9730 /* refresh.png */; };
 		BF27E0AE19B4BE4100AC9730 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E0AC19B4BE4100AC9730 /* refresh@2x.png */; };
+		BF513DDC19B601DD00023AA6 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = BF513DD819B601DD00023AA6 /* setting.png */; };
+		BF513DDD19B601DD00023AA6 /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF513DD919B601DD00023AA6 /* setting@2x.png */; };
+		BF513DDE19B601DD00023AA6 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = BF513DDA19B601DD00023AA6 /* up.png */; };
+		BF513DDF19B601DD00023AA6 /* up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF513DDB19B601DD00023AA6 /* up@2x.png */; };
+		BF513DE219B6024400023AA6 /* envelope.png in Resources */ = {isa = PBXBuildFile; fileRef = BF513DE019B6024400023AA6 /* envelope.png */; };
+		BF513DE319B6024400023AA6 /* envelope@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF513DE119B6024400023AA6 /* envelope@2x.png */; };
 		BFCC28EA19B2206C00DE391F /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BFCC28DA19B2206C00DE391F /* MJRefresh.bundle */; };
 		BFCC28EB19B2206C00DE391F /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCC28DD19B2206C00DE391F /* MJRefreshBaseView.m */; };
 		BFCC28EC19B2206C00DE391F /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCC28DF19B2206C00DE391F /* MJRefreshConst.m */; };
@@ -111,21 +111,15 @@
 		1B55FB3119AEDFF800C8A44E /* XHJokeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHJokeCell.m; sourceTree = SOURCE_ROOT; };
 		1B55FB3419AF1F3C00C8A44E /* NSString+IsEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IsEmpty.h"; sourceTree = "<group>"; };
 		1B55FB3519AF1F3C00C8A44E /* NSString+IsEmpty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IsEmpty.m"; sourceTree = "<group>"; };
-		1BBFB6C519B562B000F0E31F /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up.png; path = "../../../../../Pictures/素材/up.png"; sourceTree = "<group>"; };
-		1BBFB6C619B562B000F0E31F /* up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "up@2x.png"; path = "../../../../../Pictures/素材/up@2x.png"; sourceTree = "<group>"; };
 		1BBFB6D119B591CC00F0E31F /* XHSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSettingController.h; sourceTree = SOURCE_ROOT; };
 		1BBFB6D219B591CC00F0E31F /* XHSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSettingController.m; sourceTree = SOURCE_ROOT; };
 		1BBFB6D319B591CC00F0E31F /* XHSettingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHSettingController.xib; sourceTree = SOURCE_ROOT; };
-		1BBFB6DA19B598E800F0E31F /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = setting.png; path = "../../../../../Pictures/素材/setting.png"; sourceTree = "<group>"; };
-		1BBFB6DB19B598E800F0E31F /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "setting@2x.png"; path = "../../../../../Pictures/素材/setting@2x.png"; sourceTree = "<group>"; };
 		1BBFB6DE19B5AEC800F0E31F /* XHLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLoginController.h; sourceTree = SOURCE_ROOT; };
 		1BBFB6DF19B5AEC800F0E31F /* XHLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLoginController.m; sourceTree = SOURCE_ROOT; };
 		1BBFB6E019B5AEC800F0E31F /* XHLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHLoginController.xib; sourceTree = SOURCE_ROOT; };
 		1BBFB6E319B5C26000F0E31F /* XHMessagesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHMessagesController.h; sourceTree = SOURCE_ROOT; };
 		1BBFB6E419B5C26000F0E31F /* XHMessagesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHMessagesController.m; sourceTree = SOURCE_ROOT; };
 		1BBFB6E519B5C26000F0E31F /* XHMessagesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHMessagesController.xib; sourceTree = SOURCE_ROOT; };
-		1BBFB6E819B5C31A00F0E31F /* envelope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = envelope.png; path = "../../../../../Pictures/素材/envelope.png"; sourceTree = "<group>"; };
-		1BBFB6E919B5C31A00F0E31F /* envelope@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "envelope@2x.png"; path = "../../../../../Pictures/素材/envelope@2x.png"; sourceTree = "<group>"; };
 		1BBFB6EC19B5C50100F0E31F /* XHJokeFormController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHJokeFormController.h; sourceTree = SOURCE_ROOT; };
 		1BBFB6ED19B5C50100F0E31F /* XHJokeFormController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHJokeFormController.m; sourceTree = SOURCE_ROOT; };
 		1BBFB6EE19B5C50100F0E31F /* XHJokeFormController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHJokeFormController.xib; sourceTree = SOURCE_ROOT; };
@@ -142,6 +136,12 @@
 		BF27E0A019B4BD3900AC9730 /* user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@2x.png"; sourceTree = "<group>"; };
 		BF27E0AB19B4BE4100AC9730 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		BF27E0AC19B4BE4100AC9730 /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
+		BF513DD819B601DD00023AA6 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
+		BF513DD919B601DD00023AA6 /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@2x.png"; sourceTree = "<group>"; };
+		BF513DDA19B601DD00023AA6 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
+		BF513DDB19B601DD00023AA6 /* up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "up@2x.png"; sourceTree = "<group>"; };
+		BF513DE019B6024400023AA6 /* envelope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = envelope.png; sourceTree = "<group>"; };
+		BF513DE119B6024400023AA6 /* envelope@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "envelope@2x.png"; sourceTree = "<group>"; };
 		BFCC28DA19B2206C00DE391F /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
 		BFCC28DB19B2206C00DE391F /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		BFCC28DC19B2206C00DE391F /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
@@ -308,12 +308,12 @@
 		1B3C9F6919ADDA3400C79552 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1BBFB6E819B5C31A00F0E31F /* envelope.png */,
-				1BBFB6E919B5C31A00F0E31F /* envelope@2x.png */,
-				1BBFB6DA19B598E800F0E31F /* setting.png */,
-				1BBFB6DB19B598E800F0E31F /* setting@2x.png */,
-				1BBFB6C519B562B000F0E31F /* up.png */,
-				1BBFB6C619B562B000F0E31F /* up@2x.png */,
+				BF513DE019B6024400023AA6 /* envelope.png */,
+				BF513DE119B6024400023AA6 /* envelope@2x.png */,
+				BF513DD819B601DD00023AA6 /* setting.png */,
+				BF513DD919B601DD00023AA6 /* setting@2x.png */,
+				BF513DDA19B601DD00023AA6 /* up.png */,
+				BF513DDB19B601DD00023AA6 /* up@2x.png */,
 				BF27E0AB19B4BE4100AC9730 /* refresh.png */,
 				BF27E0AC19B4BE4100AC9730 /* refresh@2x.png */,
 				BF27E09719B4BD3900AC9730 /* comment.png */,
@@ -440,27 +440,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BBFB6C719B562B000F0E31F /* up.png in Resources */,
 				1B3C9F4219ADD1A700C79552 /* InfoPlist.strings in Resources */,
 				BF27E0A219B4BD3900AC9730 /* comment@2x.png in Resources */,
 				1BBFB6E219B5AEC800F0E31F /* XHLoginController.xib in Resources */,
 				BF27E0A119B4BD3900AC9730 /* comment.png in Resources */,
-				1BBFB6EA19B5C31A00F0E31F /* envelope.png in Resources */,
-				1BBFB6DD19B598E800F0E31F /* setting@2x.png in Resources */,
+				BF513DE319B6024400023AA6 /* envelope@2x.png in Resources */,
 				1BBFB6E719B5C26000F0E31F /* XHMessagesController.xib in Resources */,
 				BF27E0AD19B4BE4100AC9730 /* refresh.png in Resources */,
 				BFCC28EA19B2206C00DE391F /* MJRefresh.bundle in Resources */,
 				1BBFB6F019B5C50100F0E31F /* XHJokeFormController.xib in Resources */,
 				BF27E0A619B4BD3900AC9730 /* message@2x.png in Resources */,
 				BF27E0A519B4BD3900AC9730 /* message.png in Resources */,
+				BF513DDC19B601DD00023AA6 /* setting.png in Resources */,
 				BF27E0A919B4BD3900AC9730 /* user.png in Resources */,
+				BF513DDE19B601DD00023AA6 /* up.png in Resources */,
 				1BBFB6D519B591CC00F0E31F /* XHSettingController.xib in Resources */,
+				BF513DE219B6024400023AA6 /* envelope.png in Resources */,
 				1B3C9F4A19ADD1A700C79552 /* Images.xcassets in Resources */,
-				1BBFB6EB19B5C31A00F0E31F /* envelope@2x.png in Resources */,
 				BF27E0AE19B4BE4100AC9730 /* refresh@2x.png in Resources */,
-				1BBFB6C819B562B000F0E31F /* up@2x.png in Resources */,
+				BF513DDD19B601DD00023AA6 /* setting@2x.png in Resources */,
 				BF080DC719AF75A3001D3EA9 /* placeholder@2x.gif in Resources */,
-				1BBFB6DC19B598E800F0E31F /* setting.png in Resources */,
+				BF513DDF19B601DD00023AA6 /* up@2x.png in Resources */,
 				BF27E0A419B4BD3900AC9730 /* down@2x.png in Resources */,
 				BF27E0A319B4BD3900AC9730 /* down.png in Resources */,
 				BF27E0AA19B4BD3900AC9730 /* user@2x.png in Resources */,

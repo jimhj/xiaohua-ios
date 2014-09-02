@@ -28,12 +28,11 @@
 
 
 - (void)fetchJokesWithPage:(NSNumber *)page
-{
+{    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *parameters = @{@"page": page};
     
     [manager GET:@"http://www.xiaohuabolan.com/api/jokes.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@", operation);
         
         if ([page intValue] == 1) {
             [self.jokes removeAllObjects];
@@ -45,7 +44,11 @@
         }
         
         [self.tableView reloadData];
+
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        
+        [self.tableView headerEndRefreshing];
+        [self.tableView footerEndRefreshing];
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"笑话博览" message:@"网络不给力" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
@@ -87,27 +90,38 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(performAdd:)];
     self.navigationItem.rightBarButtonItem.tintColor = PRIMARY_GRAY_COLOR;
+    
+    self.tabBarController.delegate = self;
+    
 }
+
 
 - (void)viewWillAppear:(BOOL)animated {
     __weak XHJokesController *WeakSelf = self;
     
     [self.tableView addHeaderWithCallback:^{
         [WeakSelf fetchJokesWithPage:WeakSelf.currentPage];
-        [WeakSelf.tableView headerEndRefreshing];
     }];
     
     [self.tableView addFooterWithCallback:^{
         WeakSelf.currentPage = [NSNumber numberWithInt:[WeakSelf.currentPage intValue] + 1];
         [WeakSelf fetchJokesWithPage:WeakSelf.currentPage];
-        [WeakSelf.tableView footerEndRefreshing];
-        
     }];
+
+    [self.tableView headerBeginRefreshing];
+    
+}
+
+-(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    if (self.tabBarController.selectedIndex == 0) {
+        [self.tableView headerBeginRefreshing];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [self.tableView headerBeginRefreshing];
+
 }
 
 - (void)didReceiveMemoryWarning
