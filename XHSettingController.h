@@ -15,4 +15,5 @@
     
     __weak IBOutlet UIButton *_registerButton;
 }
+
 @end

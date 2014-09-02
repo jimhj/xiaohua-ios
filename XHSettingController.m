@@ -7,7 +7,7 @@
 //
 
 #import "XHSettingController.h"
-
+#import "XHLoginController.h"
 @interface XHSettingController ()
 
 @end
@@ -19,12 +19,13 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.view.backgroundColor = [UIColor colorWithRed:0.94 green:0.94 blue:0.96 alpha:1];
-        _loginButton.layer.cornerRadius = 10;
+        self.view.backgroundColor = PRIMARY_BG_COLOR;
+        _loginButton.backgroundColor = PRIMARY_BUTTON_COLOR;
+        _loginButton.layer.cornerRadius = 4;
 
-        _registerButton.layer.borderColor = [UIColor colorWithRed:0.78 green:0.78 blue:0.8 alpha:1].CGColor;
+        _registerButton.layer.borderColor = SECONDADY_BUTTON_COLOR.CGColor;
         _registerButton.layer.borderWidth = 1.0f;
-        _registerButton.layer.cornerRadius = 10;
+        _registerButton.layer.cornerRadius = 4;
 
     }
     return self;
@@ -45,6 +46,11 @@
     
     _userSettingTable.dataSource = self;
     _userSettingTable.delegate = self;
+}
+- (IBAction)displayLoginForm:(id)sender {
+    XHLoginController *loginForm =[[XHLoginController alloc] initWithNibName:@"XHLoginController" bundle:nil];
+    
+    [self.navigationController pushViewController:loginForm animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

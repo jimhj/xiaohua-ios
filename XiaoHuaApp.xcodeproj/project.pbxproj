@@ -20,7 +20,6 @@
 		1B3C9F5B19ADD1A700C79552 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B3C9F5919ADD1A700C79552 /* InfoPlist.strings */; };
 		1B3C9F5D19ADD1A700C79552 /* XiaoHuaAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B3C9F5C19ADD1A700C79552 /* XiaoHuaAppTests.m */; };
 		1B55FB1B19AECB3000C8A44E /* XHJokesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB1A19AECB3000C8A44E /* XHJokesController.m */; };
-		1B55FB2419AED71300C8A44E /* XHMessagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB2319AED71300C8A44E /* XHMessagesController.m */; };
 		1B55FB2A19AED97400C8A44E /* XHUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB2919AED97400C8A44E /* XHUserController.m */; };
 		1B55FB2F19AEDE9C00C8A44E /* XHJoke.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB2E19AEDE9C00C8A44E /* XHJoke.m */; };
 		1B55FB3219AEDFF800C8A44E /* XHJokeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB3119AEDFF800C8A44E /* XHJokeCell.m */; };
@@ -31,6 +30,14 @@
 		1BBFB6D519B591CC00F0E31F /* XHSettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6D319B591CC00F0E31F /* XHSettingController.xib */; };
 		1BBFB6DC19B598E800F0E31F /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6DA19B598E800F0E31F /* setting.png */; };
 		1BBFB6DD19B598E800F0E31F /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6DB19B598E800F0E31F /* setting@2x.png */; };
+		1BBFB6E119B5AEC800F0E31F /* XHLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFB6DF19B5AEC800F0E31F /* XHLoginController.m */; };
+		1BBFB6E219B5AEC800F0E31F /* XHLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6E019B5AEC800F0E31F /* XHLoginController.xib */; };
+		1BBFB6E619B5C26000F0E31F /* XHMessagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFB6E419B5C26000F0E31F /* XHMessagesController.m */; };
+		1BBFB6E719B5C26000F0E31F /* XHMessagesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6E519B5C26000F0E31F /* XHMessagesController.xib */; };
+		1BBFB6EA19B5C31A00F0E31F /* envelope.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6E819B5C31A00F0E31F /* envelope.png */; };
+		1BBFB6EB19B5C31A00F0E31F /* envelope@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6E919B5C31A00F0E31F /* envelope@2x.png */; };
+		1BBFB6EF19B5C50100F0E31F /* XHJokeFormController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFB6ED19B5C50100F0E31F /* XHJokeFormController.m */; };
+		1BBFB6F019B5C50100F0E31F /* XHJokeFormController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6EE19B5C50100F0E31F /* XHJokeFormController.xib */; };
 		BF080DC719AF75A3001D3EA9 /* placeholder@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = BF080DC619AF75A3001D3EA9 /* placeholder@2x.gif */; };
 		BF27E0A119B4BD3900AC9730 /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E09719B4BD3900AC9730 /* comment.png */; };
 		BF27E0A219B4BD3900AC9730 /* comment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E09819B4BD3900AC9730 /* comment@2x.png */; };
@@ -96,8 +103,6 @@
 		1B3C9F5C19ADD1A700C79552 /* XiaoHuaAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XiaoHuaAppTests.m; sourceTree = "<group>"; };
 		1B55FB1919AECB3000C8A44E /* XHJokesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHJokesController.h; sourceTree = SOURCE_ROOT; };
 		1B55FB1A19AECB3000C8A44E /* XHJokesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHJokesController.m; sourceTree = SOURCE_ROOT; };
-		1B55FB2219AED71300C8A44E /* XHMessagesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHMessagesController.h; sourceTree = SOURCE_ROOT; };
-		1B55FB2319AED71300C8A44E /* XHMessagesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHMessagesController.m; sourceTree = SOURCE_ROOT; };
 		1B55FB2819AED97400C8A44E /* XHUserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHUserController.h; sourceTree = SOURCE_ROOT; };
 		1B55FB2919AED97400C8A44E /* XHUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHUserController.m; sourceTree = SOURCE_ROOT; };
 		1B55FB2D19AEDE9C00C8A44E /* XHJoke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XHJoke.h; path = XiaoHuaApp/Resources/XHJoke.h; sourceTree = SOURCE_ROOT; };
@@ -113,6 +118,17 @@
 		1BBFB6D319B591CC00F0E31F /* XHSettingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHSettingController.xib; sourceTree = SOURCE_ROOT; };
 		1BBFB6DA19B598E800F0E31F /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = setting.png; path = "../../../../../Pictures/素材/setting.png"; sourceTree = "<group>"; };
 		1BBFB6DB19B598E800F0E31F /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "setting@2x.png"; path = "../../../../../Pictures/素材/setting@2x.png"; sourceTree = "<group>"; };
+		1BBFB6DE19B5AEC800F0E31F /* XHLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLoginController.h; sourceTree = SOURCE_ROOT; };
+		1BBFB6DF19B5AEC800F0E31F /* XHLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLoginController.m; sourceTree = SOURCE_ROOT; };
+		1BBFB6E019B5AEC800F0E31F /* XHLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHLoginController.xib; sourceTree = SOURCE_ROOT; };
+		1BBFB6E319B5C26000F0E31F /* XHMessagesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHMessagesController.h; sourceTree = SOURCE_ROOT; };
+		1BBFB6E419B5C26000F0E31F /* XHMessagesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHMessagesController.m; sourceTree = SOURCE_ROOT; };
+		1BBFB6E519B5C26000F0E31F /* XHMessagesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHMessagesController.xib; sourceTree = SOURCE_ROOT; };
+		1BBFB6E819B5C31A00F0E31F /* envelope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = envelope.png; path = "../../../../../Pictures/素材/envelope.png"; sourceTree = "<group>"; };
+		1BBFB6E919B5C31A00F0E31F /* envelope@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "envelope@2x.png"; path = "../../../../../Pictures/素材/envelope@2x.png"; sourceTree = "<group>"; };
+		1BBFB6EC19B5C50100F0E31F /* XHJokeFormController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHJokeFormController.h; sourceTree = SOURCE_ROOT; };
+		1BBFB6ED19B5C50100F0E31F /* XHJokeFormController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHJokeFormController.m; sourceTree = SOURCE_ROOT; };
+		1BBFB6EE19B5C50100F0E31F /* XHJokeFormController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHJokeFormController.xib; sourceTree = SOURCE_ROOT; };
 		333BAACA3F9A4FECA9DD53C3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		7077413D4E2E4A87AE475A48 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF080DC619AF75A3001D3EA9 /* placeholder@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "placeholder@2x.gif"; sourceTree = "<group>"; };
@@ -260,8 +276,6 @@
 			children = (
 				1B55FB1919AECB3000C8A44E /* XHJokesController.h */,
 				1B55FB1A19AECB3000C8A44E /* XHJokesController.m */,
-				1B55FB2219AED71300C8A44E /* XHMessagesController.h */,
-				1B55FB2319AED71300C8A44E /* XHMessagesController.m */,
 				1B55FB2819AED97400C8A44E /* XHUserController.h */,
 				1B55FB2919AED97400C8A44E /* XHUserController.m */,
 				1B55FB3019AEDFF800C8A44E /* XHJokeCell.h */,
@@ -269,6 +283,15 @@
 				1BBFB6D119B591CC00F0E31F /* XHSettingController.h */,
 				1BBFB6D219B591CC00F0E31F /* XHSettingController.m */,
 				1BBFB6D319B591CC00F0E31F /* XHSettingController.xib */,
+				1BBFB6DE19B5AEC800F0E31F /* XHLoginController.h */,
+				1BBFB6DF19B5AEC800F0E31F /* XHLoginController.m */,
+				1BBFB6E019B5AEC800F0E31F /* XHLoginController.xib */,
+				1BBFB6E319B5C26000F0E31F /* XHMessagesController.h */,
+				1BBFB6E419B5C26000F0E31F /* XHMessagesController.m */,
+				1BBFB6E519B5C26000F0E31F /* XHMessagesController.xib */,
+				1BBFB6EC19B5C50100F0E31F /* XHJokeFormController.h */,
+				1BBFB6ED19B5C50100F0E31F /* XHJokeFormController.m */,
+				1BBFB6EE19B5C50100F0E31F /* XHJokeFormController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -285,6 +308,8 @@
 		1B3C9F6919ADDA3400C79552 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1BBFB6E819B5C31A00F0E31F /* envelope.png */,
+				1BBFB6E919B5C31A00F0E31F /* envelope@2x.png */,
 				1BBFB6DA19B598E800F0E31F /* setting.png */,
 				1BBFB6DB19B598E800F0E31F /* setting@2x.png */,
 				1BBFB6C519B562B000F0E31F /* up.png */,
@@ -418,15 +443,20 @@
 				1BBFB6C719B562B000F0E31F /* up.png in Resources */,
 				1B3C9F4219ADD1A700C79552 /* InfoPlist.strings in Resources */,
 				BF27E0A219B4BD3900AC9730 /* comment@2x.png in Resources */,
+				1BBFB6E219B5AEC800F0E31F /* XHLoginController.xib in Resources */,
 				BF27E0A119B4BD3900AC9730 /* comment.png in Resources */,
+				1BBFB6EA19B5C31A00F0E31F /* envelope.png in Resources */,
 				1BBFB6DD19B598E800F0E31F /* setting@2x.png in Resources */,
+				1BBFB6E719B5C26000F0E31F /* XHMessagesController.xib in Resources */,
 				BF27E0AD19B4BE4100AC9730 /* refresh.png in Resources */,
 				BFCC28EA19B2206C00DE391F /* MJRefresh.bundle in Resources */,
+				1BBFB6F019B5C50100F0E31F /* XHJokeFormController.xib in Resources */,
 				BF27E0A619B4BD3900AC9730 /* message@2x.png in Resources */,
 				BF27E0A519B4BD3900AC9730 /* message.png in Resources */,
 				BF27E0A919B4BD3900AC9730 /* user.png in Resources */,
 				1BBFB6D519B591CC00F0E31F /* XHSettingController.xib in Resources */,
 				1B3C9F4A19ADD1A700C79552 /* Images.xcassets in Resources */,
+				1BBFB6EB19B5C31A00F0E31F /* envelope@2x.png in Resources */,
 				BF27E0AE19B4BE4100AC9730 /* refresh@2x.png in Resources */,
 				1BBFB6C819B562B000F0E31F /* up@2x.png in Resources */,
 				BF080DC719AF75A3001D3EA9 /* placeholder@2x.gif in Resources */,
@@ -487,18 +517,20 @@
 			files = (
 				BFCC28ED19B2206C00DE391F /* MJRefreshFooterView.m in Sources */,
 				BFCC28F119B2206C00DE391F /* UIView+MJExtension.m in Sources */,
+				1BBFB6E119B5AEC800F0E31F /* XHLoginController.m in Sources */,
 				1BBFB6D419B591CC00F0E31F /* XHSettingController.m in Sources */,
 				BFCC28EF19B2206C00DE391F /* UIScrollView+MJExtension.m in Sources */,
 				1B3C9F4819ADD1A700C79552 /* XHAppDelegate.m in Sources */,
 				1B55FB3219AEDFF800C8A44E /* XHJokeCell.m in Sources */,
 				BFCC28F019B2206C00DE391F /* UIScrollView+MJRefresh.m in Sources */,
-				1B55FB2419AED71300C8A44E /* XHMessagesController.m in Sources */,
 				1B55FB3619AF1F3C00C8A44E /* NSString+IsEmpty.m in Sources */,
 				BFCC28EC19B2206C00DE391F /* MJRefreshConst.m in Sources */,
 				BFCC28EE19B2206C00DE391F /* MJRefreshHeaderView.m in Sources */,
 				1B55FB2F19AEDE9C00C8A44E /* XHJoke.m in Sources */,
+				1BBFB6EF19B5C50100F0E31F /* XHJokeFormController.m in Sources */,
 				1B55FB2A19AED97400C8A44E /* XHUserController.m in Sources */,
 				BFCC28EB19B2206C00DE391F /* MJRefreshBaseView.m in Sources */,
+				1BBFB6E619B5C26000F0E31F /* XHMessagesController.m in Sources */,
 				1B3C9F4419ADD1A700C79552 /* main.m in Sources */,
 				1B55FB1B19AECB3000C8A44E /* XHJokesController.m in Sources */,
 			);

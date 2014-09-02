@@ -10,8 +10,8 @@
 #import "XHJokeCell.h"
 #import "XHJoke.h"
 #import "AFNetworking.h"
-#import "MBProgressHUD.h"
 #import "MJRefresh.h"
+#import "XHJokeFormController.h"
 
 @interface XHJokesController ()
 
@@ -21,7 +21,9 @@
 
 - (void)performAdd:(id)sender
 {
-    NSLog(@"Add button pressed!");
+    XHJokeFormController *jokeForm =[[XHJokeFormController alloc] initWithNibName:@"XHJokeFormController" bundle:nil];
+    
+    [self.navigationController pushViewController:jokeForm animated:YES];
 }
 
 

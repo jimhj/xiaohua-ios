@@ -25,6 +25,9 @@
                     <state key="normal" title="登录">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="displayLoginForm:" destination="-1" eventType="touchUpInside" id="ykx-Y1-VRb"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W61-1j-Zqq">
                     <rect key="frame" x="176" y="119" width="124" height="52"/>

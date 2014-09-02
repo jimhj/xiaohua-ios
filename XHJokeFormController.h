@@ -1,5 +1,5 @@
 //
-//  XHMessagesController.h
+//  XHJokeFormController.h
 //  XiaoHuaApp
 //
 //  Created by HuangJin on 14-9-2.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XHMessagesController : UIViewController
+@interface XHJokeFormController : UIViewController
 
 @end

@@ -26,7 +26,7 @@
     jokesController.tabBarItem.title = @"笑话";
     UINavigationController *jokesNav = [[UINavigationController alloc] initWithRootViewController:jokesController];
     
-    XHMessagesController *msgController = [[XHMessagesController alloc] initWithNibName:nil bundle:nil];
+    XHMessagesController *msgController = [[XHMessagesController alloc] initWithNibName:@"XHMessagesController" bundle:nil];
     msgController.tabBarItem.image = [UIImage imageNamed:@"message.png"];
     msgController.tabBarItem.title = @"消息";
     UINavigationController *msgNav = [[UINavigationController alloc] initWithRootViewController:msgController];
