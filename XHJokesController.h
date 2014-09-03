@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface XHJokesController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UITabBarControllerDelegate>
+{
+    NSInteger _loadTimes;
+}
 
 @property (nonatomic, retain) NSMutableArray *jokes;
 @property (nonatomic, copy) NSNumber *currentPage;

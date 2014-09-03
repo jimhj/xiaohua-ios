@@ -17,7 +17,8 @@
 
 - (void)performUpVoteButtonPressed
 {
-    NSLog(@"Up vote Button Pressed.");
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"兄弟们给我顶上" delegate:self cancelButtonTitle:@"明白了" otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

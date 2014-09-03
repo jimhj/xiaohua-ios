@@ -23,7 +23,9 @@
 {
     XHJokeFormController *jokeForm =[[XHJokeFormController alloc] initWithNibName:@"XHJokeFormController" bundle:nil];
     
-    [self.navigationController pushViewController:jokeForm animated:YES];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:jokeForm];
+    
+    [self presentViewController:navController animated:YES completion:^{}];
 }
 
 
@@ -93,6 +95,7 @@
     
     self.tabBarController.delegate = self;
     
+    _loadTimes = 0;
 }
 
 
@@ -107,21 +110,30 @@
         WeakSelf.currentPage = [NSNumber numberWithInt:[WeakSelf.currentPage intValue] + 1];
         [WeakSelf fetchJokesWithPage:WeakSelf.currentPage];
     }];
-
-    [self.tableView headerBeginRefreshing];
     
+    if (_loadTimes == 0) {
+         _loadTimes += 1;
+        [self.tableView headerBeginRefreshing];
+    }
 }
 
 -(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
-    if (self.tabBarController.selectedIndex == 0) {
+    NSLog(@"%lu", _loadTimes);
+    if (self.tabBarController.selectedIndex == 0 && _loadTimes > 1) {
+        _loadTimes = 2;
         [self.tableView headerBeginRefreshing];
     }
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    _loadTimes += 1;
+}
 
+- (void) viewDidDisappear:(BOOL)animated
+{
+    _loadTimes -= 1;
 }
 
 - (void)didReceiveMemoryWarning

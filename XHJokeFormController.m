@@ -16,6 +16,11 @@
 
 @implementation XHJokeFormController
 
+- (void)dissmissJokeFormModal:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:^{}];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,14 +33,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
-    label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont boldSystemFontOfSize:16.0];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = [UIColor grayColor];
-    self.navigationItem.titleView = label;
-    label.text = @"发表笑料";
-    [label sizeToFit];
+    
+    UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] init];
+    leftBar.title = @"取消";
+    leftBar.tintColor = PRIMARY_GRAY_COLOR;
+    [leftBar setTarget:self];
+    [leftBar setAction:@selector(dissmissJokeFormModal:)];
+    self.navigationItem.leftBarButtonItem = leftBar;
     
     _contentTextView.text = FORM_PLACEHOLDER;
     _contentTextView.textColor = [UIColor lightGrayColor];
