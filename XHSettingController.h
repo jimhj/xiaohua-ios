@@ -12,8 +12,10 @@
 {
     __weak IBOutlet UITableView *_userSettingTable;
     __weak IBOutlet UIButton *_loginButton;
-    
     __weak IBOutlet UIButton *_registerButton;
+    __weak IBOutlet UIButton *_postButton;
 }
+
+- (IBAction)postButtonPressed:(id)sender;
 
 @end

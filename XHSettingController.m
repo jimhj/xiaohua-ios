@@ -10,6 +10,7 @@
 #import "XHLoginController.h"
 #import "XHPreferences.h"
 #import "MBProgressHUD.h"
+#import "XHJokeFormController.h"
 
 @interface XHSettingController ()
 
@@ -29,7 +30,8 @@
         _registerButton.layer.borderColor = SECONDADY_BUTTON_COLOR.CGColor;
         _registerButton.layer.borderWidth = 1.0f;
         _registerButton.layer.cornerRadius = 4;
-
+        
+        _postButton.layer.cornerRadius = 4;
     }
     return self;
 }
@@ -58,6 +60,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    
+    [self resetLoginState];
     [_userSettingTable reloadData];
 }
 
@@ -151,8 +155,9 @@
         [XHPreferences setAvatarUrl:NULL];
         [XHPreferences setEmail:NULL];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"您已退出登录" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-        [alert show];
         [tableView reloadData];
+        [self resetLoginState];
+        [alert show];        
     } else if (cell.tag == 1) {
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.labelText = @"正在清理";
@@ -162,10 +167,30 @@
     }
 }
 
+- (void) resetLoginState
+{
+    if ([XHPreferences userDidLogin]) {
+        _loginButton.hidden = YES;
+        _registerButton.hidden = YES;
+        _postButton.hidden = NO;
+    } else {
+        _loginButton.hidden = NO;
+        _registerButton.hidden = NO;
+        _postButton.hidden = YES;
+    }
+}
+
 - (void) hideHud:(MBProgressHUD *)hud
 {
     hud.labelText = @"清理完成";
     [hud hide:YES];
 }
 
+- (IBAction)postButtonPressed:(id)sender {
+    XHJokeFormController *jokeForm =[[XHJokeFormController alloc] initWithNibName:@"XHJokeFormController" bundle:nil];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:jokeForm];
+    
+    [self presentViewController:navController animated:YES completion:^{}];
+}
 @end
