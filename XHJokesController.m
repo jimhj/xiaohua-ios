@@ -33,6 +33,7 @@
 {
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:kApiURL]];
     
+    NSLog(@"%@", kApiURL);
     NSDictionary *parameters = @{@"page": page};
     
     [manager GET:@"jokes.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {

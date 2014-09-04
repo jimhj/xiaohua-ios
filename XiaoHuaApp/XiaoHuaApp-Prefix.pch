@@ -15,7 +15,7 @@
     #import <Foundation/Foundation.h>
 #endif
 
-#ifdef DEBUG
+#ifdef DEBUG1
 #define kAppDomain @"127.0.0.1:8000"
 #else
 #define kAppDomain @"www.xiaohuabolan.com"
