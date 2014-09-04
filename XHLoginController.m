@@ -77,6 +77,9 @@
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    
+    _scrollView.delegate = self;
+    _scrollView.contentSize = self.view.frame.size;
 }
 
 -(void)dismissKeyboard {

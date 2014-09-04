@@ -12,6 +12,8 @@
 #import "AFNetworking.h"
 #import "MJRefresh.h"
 #import "XHJokeFormController.h"
+#import "XHLoginController.h"
+#import "XHPreferences.h"
 
 @interface XHJokesController ()
 
@@ -21,10 +23,17 @@
 
 - (void)performAdd:(id)sender
 {
-    XHJokeFormController *jokeForm =[[XHJokeFormController alloc] initWithNibName:@"XHJokeFormController" bundle:nil];
+    UINavigationController *navController;
     
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:jokeForm];
-    
+    if ([XHPreferences userDidLogin]) {
+        XHJokeFormController *jokeForm =[[XHJokeFormController alloc] initWithNibName:@"XHJokeFormController" bundle:nil];
+        navController = [[UINavigationController alloc] initWithRootViewController:jokeForm];
+        
+    } else {
+        XHLoginController *loginForm = [[XHLoginController alloc] initWithNibName:@"XHLoginController" bundle:nil];
+        navController = [[UINavigationController alloc] initWithRootViewController:loginForm];
+    }
+
     [self presentViewController:navController animated:YES completion:^{}];
 }
 

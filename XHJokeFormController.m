@@ -41,6 +41,11 @@
     [leftBar setAction:@selector(dissmissJokeFormModal:)];
     self.navigationItem.leftBarButtonItem = leftBar;
     
+    UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] init];
+    rightBar.title = @"投稿";
+//    rightBar.tintColor = [UIColor blueColor];
+    self.navigationItem.rightBarButtonItem = rightBar;
+    
     _contentTextView.text = FORM_PLACEHOLDER;
     _contentTextView.textColor = [UIColor lightGrayColor];
     _contentTextView.delegate = self;

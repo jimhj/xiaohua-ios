@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XHLoginController : UIViewController
+@interface XHLoginController : UIViewController <UIScrollViewDelegate>
 {
     __weak IBOutlet UITextField *_emailTextField;
     __weak IBOutlet UITextField *_passwordTextField;
     __weak IBOutlet UIButton *_loginButton;
     __weak IBOutlet UIButton *_registerButton;
+    __weak IBOutlet UIScrollView *_scrollView;
 }
 
 - (IBAction)loginButtonPressed:(id)sender;
