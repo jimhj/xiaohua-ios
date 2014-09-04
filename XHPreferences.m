@@ -7,6 +7,8 @@
 //
 
 #import "XHPreferences.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+
 
 @implementation XHPreferences
 
@@ -40,16 +42,41 @@
     [self setValue:value forKey:@"name"];
 }
 
-
-+ (NSString *)password
++ (BOOL)userDidLogin
 {
-    return [[self userDefatuls] stringForKey:@"password"];
+    return [self privateToken].length > 0;
 }
 
-+ (void)setPassword:(NSString *)value
++ (NSString *) avatarUrl
 {
-    [self setValue:value forKey:@"password"];
+    return [[self userDefatuls] stringForKey:@"avatar_url"];
 }
+
++ (void)setAvatarUrl:(NSString *)value
+{
+    [self setValue:value forKey:@"avatar_url"];
+}
+
++(UIImage *)avatarImage
+{
+    __block UIImage *avatar;
+    
+    if ([self avatarUrl].length == 0) {
+        avatar = [UIImage imageNamed:@"avatar.png"];
+    } else {
+        SDWebImageManager *manager = [SDWebImageManager sharedManager];
+        [manager downloadImageWithURL:[NSURL URLWithString:[self avatarUrl]]
+                              options:0
+                             progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                                 
+                             } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                 avatar = image;
+                             }];
+    }
+    
+    return avatar;
+}
+
 
 #pragma mark - Private
 + (NSUserDefaults *) userDefatuls {

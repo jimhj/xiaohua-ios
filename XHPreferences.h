@@ -19,7 +19,10 @@
 + (NSString *) name;
 + (void) setName: (NSString *)value;
 
-+ (NSString *) password;
-+ (void) setPassword: (NSString *)value;
++ (NSString *) avatarUrl;
++ (void)setAvatarUrl:(NSString *)value;
++ (UIImage *)avatarImage;
+
++ (BOOL)userDidLogin;
 
 @end

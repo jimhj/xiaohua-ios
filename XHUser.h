@@ -15,8 +15,6 @@
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *avatarUrl;
 
-+ (BOOL) authorize: (NSString *) email password:(NSString *)password;
 + (XHUser *) currentUser;
-+ (void) checkLogin;
 
 @end

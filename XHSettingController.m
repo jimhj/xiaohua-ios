@@ -8,6 +8,9 @@
 
 #import "XHSettingController.h"
 #import "XHLoginController.h"
+#import "XHPreferences.h"
+#import "MBProgressHUD.h"
+
 @interface XHSettingController ()
 
 @end
@@ -49,8 +52,13 @@
 }
 - (IBAction)displayLoginForm:(id)sender {
     XHLoginController *loginForm =[[XHLoginController alloc] initWithNibName:@"XHLoginController" bundle:nil];
-    
-    [self.navigationController pushViewController:loginForm animated:YES];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginForm];
+    [self presentViewController:navController animated:YES completion:^{}];    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [_userSettingTable reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,24 +71,101 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    if ([XHPreferences userDidLogin]) {
+        return 3;
+    } else {
+        return 1;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return  1;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([XHPreferences userDidLogin] && indexPath.section == 0) {
+        return 70.f;
+    } else {
+        return 44.f;
+    }
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell * cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@""];
-    cell.imageView.image = [UIImage imageNamed:@"setting.png"];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.text = @"清除缓存";
+    
     [cell.textLabel setFont:[UIFont systemFontOfSize:16.0f]];
-//    cell.textLabel.text.font = [UIFont systemFontOfSize:12.0f];
     cell.textLabel.textColor = PRIMARY_GRAY_COLOR;
+    
+    NSLog(@"%@", [XHPreferences privateToken]);
+    NSLog(@"%@", [XHPreferences name]);
+    NSLog(@"%i", indexPath.section);
+    
+    if ([XHPreferences userDidLogin]) {
+        if (indexPath.section == 0) {
+            UIImageView *imageView = [[UIImageView alloc] initWithImage:[XHPreferences avatarImage]];
+            imageView.frame = CGRectMake(10, 15, 40, 40);
+            imageView.layer.cornerRadius = 20;
+            imageView.clipsToBounds = YES;
+            [cell addSubview:imageView];
+
+            
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(60, 20, 160, 30)];
+            label.text = [XHPreferences name];
+            label.font = [UIFont systemFontOfSize:16.0f];
+            label.textColor = PRIMARY_BUTTON_COLOR;
+            [cell addSubview:label];
+            
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.tag = 0;
+            
+        } else if (indexPath.section == 1) {
+            cell.imageView.image = [UIImage imageNamed:@"setting.png"];
+            cell.textLabel.text = @"清除缓存";
+            cell.tag = 1;
+        } else {
+            cell.imageView.image = [UIImage imageNamed:@"power.png"];
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            cell.textLabel.text = @"退出";
+            cell.tag = 9;
+        }
+    } else {
+        cell.imageView.image = [UIImage imageNamed:@"setting.png"];
+        cell.textLabel.text = @"清除缓存";
+        cell.tag = 1;
+    }
+    
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSLog(@"%i", cell.tag);
+    
+    if (cell.tag == 9) {
+        [XHPreferences setPrivateToken:NULL];
+        [XHPreferences setName:NULL];
+        [XHPreferences setAvatarUrl:NULL];
+        [XHPreferences setEmail:NULL];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"您已退出登录" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [tableView reloadData];
+    } else if (cell.tag == 1) {
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"正在清理";
+        [hud show:YES];
+        [self performSelector:@selector(hideHud:) withObject:hud afterDelay:2];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
+}
+
+- (void) hideHud:(MBProgressHUD *)hud
+{
+    hud.labelText = @"清理完成";
+    [hud hide:YES];
 }
 
 @end

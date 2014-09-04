@@ -20,10 +20,11 @@
 
 
 - (BOOL)isEmpty {
+    BOOL _bool;
     NSCharacterSet *charSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
     NSString *trimmed = [self stringByTrimmingCharactersInSet:charSet];
-    BOOL _bool = [trimmed isEqualToString:@""] || [trimmed isEqualToString:@"<null>"];
-    
+    _bool = [trimmed isEqualToString:@""];
+    _bool = _bool || [trimmed isEqualToString:@"<null>"];
     return _bool;
 }
 

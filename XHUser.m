@@ -14,30 +14,11 @@
 
 static XHUser *_currentUser;
 
-+ (BOOL)authorize:(NSString *)email password:(NSString *)password
-{
-    __block BOOL result = NO;
-    
-    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:kApiURL]];
-    NSDictionary *parameters = @{@"email": email, @"password": password};
-    [manager POST:@"users/sign_in.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        result = YES;
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-    }];
-    
-    return result;
-}
 
 + (XHUser *)currentUser
 {
     return _currentUser;
 }
 
-+ (void)checkLogin
-{
-    [self authorize:[XHPreferences email] password:[XHPreferences password]];
-}
 
 @end

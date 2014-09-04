@@ -36,9 +36,7 @@
     NSDictionary *parameters = @{@"page": page};
     
     [manager GET:@"jokes.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        NSLog(@"%@", responseObject);
-        
+                
         if ([page intValue] == 1) {
             [self.jokes removeAllObjects];
         }
@@ -159,7 +157,8 @@
     return [self.jokes count];
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     XHJoke * joke = [self.jokes objectAtIndex:indexPath.row];
     return [joke calcCellHeight];
 }

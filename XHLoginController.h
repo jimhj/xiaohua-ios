@@ -16,4 +16,6 @@
     __weak IBOutlet UIButton *_registerButton;
 }
 
+- (IBAction)loginButtonPressed:(id)sender;
+
 @end
