@@ -11,10 +11,9 @@
 @interface XHLoginController : UIViewController
 {
     __weak IBOutlet UITextField *_emailTextField;
-    __weak IBOutlet UITextField *_nameTextField;
     __weak IBOutlet UITextField *_passwordTextField;
-    __weak IBOutlet UIButton *_registerButton;
     __weak IBOutlet UIButton *_loginButton;
+    __weak IBOutlet UIButton *_registerButton;
 }
 
 @end

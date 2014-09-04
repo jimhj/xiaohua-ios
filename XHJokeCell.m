@@ -98,7 +98,7 @@
     self.contentLabel.textColor = [UIColor colorWithRed:0.27 green:0.26 blue:0.26 alpha:1];
     self.contentLabel.frame = joke.textFrame;
     
-    if (![joke.picture_url isEmpty]) {
+    if ([joke didHavePicture]) {
         self.jokePicture.frame = joke.pictureFrame;
         [self.jokePicture sd_setImageWithURL:[NSURL URLWithString:joke.picture_url] placeholderImage:[UIImage imageNamed:@"placeholder.gif"]];
     } else {

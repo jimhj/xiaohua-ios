@@ -70,7 +70,7 @@
     float textFrameHeight = [self textFrame].size.height;
     height = height + textFrameHeight;
     
-    if (![self.picture_url isEmpty]) {
+    if ([self didHavePicture]) {
         float pictureFrameHeight = [self pictureFrame].size.height;
         height = height + pictureFrameHeight;
     }
@@ -112,7 +112,7 @@
     
     float offsetY = CELL_MARGIN + textFrameSize.height;
     
-    if (![self.picture_url isEmpty]) {
+    if ([self didHavePicture]) {
         offsetY = offsetY + pictureFrameSize.height;
     }
     
@@ -120,6 +120,12 @@
     
     frame = CGRectMake(CELL_MARGIN, offsetY, textFrameSize.width, CELL_BOTTOM_VIEW_HEIGHT);
     return frame;
+}
+
+- (BOOL)didHavePicture
+{
+    BOOL _bool = ![self.picture_url isEmpty] && (![self.picture_height  isEqual: @""]) && ![self.picture_width isEqual:@""];
+    return _bool;
 }
 
 @end

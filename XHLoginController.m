@@ -45,30 +45,26 @@
     [label sizeToFit];
         
     [self setTextFieldStyle:_emailTextField];
-    [self setTextFieldStyle:_nameTextField];
     [self setTextFieldStyle:_passwordTextField];
     
-    _registerButton.layer.cornerRadius = 4;
-    _registerButton.backgroundColor = PRIMARY_BUTTON_COLOR;
-    
     _loginButton.layer.cornerRadius = 4;
-    _loginButton.layer.borderColor = SECONDADY_BUTTON_COLOR.CGColor;
-    _loginButton.layer.borderWidth = 1.f;
+    _loginButton.backgroundColor = PRIMARY_BUTTON_COLOR;
+    
+    _registerButton.layer.cornerRadius = 4;
+    _registerButton.layer.borderColor = SECONDADY_BUTTON_COLOR.CGColor;
+    _registerButton.layer.borderWidth = 1.f;
     
     
-//    CGRect textFieldFrame = _emailTextField.frame;
-//    textFieldFrame.size.height = 100;
-//    _emailTextField.frame = textFieldFrame;
-//    
-//    CGRect nameFieldFrame = _nameTextField.frame;
-//    nameFieldFrame.size.height = 100;
-//    _nameTextField.frame = nameFieldFrame;
-//    
-//    CGRect pwdFieldFrame = _passwordTextField.frame;
-//    pwdFieldFrame.size.height = 100;
-//    _passwordTextField.frame = pwdFieldFrame;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
 }
 
+-(void)dismissKeyboard {
+    [_emailTextField resignFirstResponder];
+    [_passwordTextField resignFirstResponder];
+}
 
 - (void)didReceiveMemoryWarning
 {

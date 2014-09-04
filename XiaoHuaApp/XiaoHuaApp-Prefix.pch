@@ -13,14 +13,22 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-    #define CELL_WIDTH 320.0f
-    #define CELL_MARGIN 10.0f
-    #define CELL_FONT_SIZE 16.0f
-    #define CELL_DEFAULT_HEIGHT 44.0f
-    #define CELL_BOTTOM_VIEW_HEIGHT 22.0f
-    #define PRIMARY_GRAY_COLOR [UIColor colorWithRed:0.53 green:0.5 blue:0.53 alpha:1]
-    #define PRIMARY_BG_COLOR [UIColor colorWithRed:0.94 green:0.94 blue:0.96 alpha:1]
-    #define PRIMARY_BUTTON_COLOR [UIColor colorWithRed:0.16 green:0.66 blue:0.46 alpha:1]
-    #define SECONDADY_BUTTON_COLOR [UIColor colorWithRed:0.78 green:0.78 blue:0.8 alpha:1]
-
 #endif
+
+#ifdef DEBUG
+#define kAppDomain @"127.0.0.1:8000"
+#else
+#define kAppDomain @"www.xiaohuabolan.com"
+#endif
+
+#define kApiURL [NSString stringWithFormat:@"http://%@/api",kAppDomain]
+
+#define CELL_WIDTH 320.0f
+#define CELL_MARGIN 10.0f
+#define CELL_FONT_SIZE 16.0f
+#define CELL_DEFAULT_HEIGHT 44.0f
+#define CELL_BOTTOM_VIEW_HEIGHT 22.0f
+#define PRIMARY_GRAY_COLOR [UIColor colorWithRed:0.53 green:0.5 blue:0.53 alpha:1]
+#define PRIMARY_BG_COLOR [UIColor colorWithRed:0.94 green:0.94 blue:0.96 alpha:1]
+#define PRIMARY_BUTTON_COLOR [UIColor colorWithRed:0.16 green:0.66 blue:0.46 alpha:1]
+#define SECONDADY_BUTTON_COLOR [UIColor colorWithRed:0.78 green:0.78 blue:0.8 alpha:1]

@@ -32,6 +32,8 @@
 		1BBFB6E719B5C26000F0E31F /* XHMessagesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6E519B5C26000F0E31F /* XHMessagesController.xib */; };
 		1BBFB6EF19B5C50100F0E31F /* XHJokeFormController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFB6ED19B5C50100F0E31F /* XHJokeFormController.m */; };
 		1BBFB6F019B5C50100F0E31F /* XHJokeFormController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6EE19B5C50100F0E31F /* XHJokeFormController.xib */; };
+		1BE0A07419B6C920004BAF97 /* XHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0A07319B6C920004BAF97 /* XHUser.m */; };
+		1BE0A07719B6EC80004BAF97 /* XHPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0A07619B6EC80004BAF97 /* XHPreferences.m */; };
 		BF080DC719AF75A3001D3EA9 /* placeholder@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = BF080DC619AF75A3001D3EA9 /* placeholder@2x.gif */; };
 		BF27E0A119B4BD3900AC9730 /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E09719B4BD3900AC9730 /* comment.png */; };
 		BF27E0A219B4BD3900AC9730 /* comment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E09819B4BD3900AC9730 /* comment@2x.png */; };
@@ -123,6 +125,10 @@
 		1BBFB6EC19B5C50100F0E31F /* XHJokeFormController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHJokeFormController.h; sourceTree = SOURCE_ROOT; };
 		1BBFB6ED19B5C50100F0E31F /* XHJokeFormController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHJokeFormController.m; sourceTree = SOURCE_ROOT; };
 		1BBFB6EE19B5C50100F0E31F /* XHJokeFormController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHJokeFormController.xib; sourceTree = SOURCE_ROOT; };
+		1BE0A07219B6C920004BAF97 /* XHUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHUser.h; sourceTree = SOURCE_ROOT; };
+		1BE0A07319B6C920004BAF97 /* XHUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHUser.m; sourceTree = SOURCE_ROOT; };
+		1BE0A07519B6EC80004BAF97 /* XHPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPreferences.h; sourceTree = SOURCE_ROOT; };
+		1BE0A07619B6EC80004BAF97 /* XHPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPreferences.m; sourceTree = SOURCE_ROOT; };
 		333BAACA3F9A4FECA9DD53C3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		7077413D4E2E4A87AE475A48 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF080DC619AF75A3001D3EA9 /* placeholder@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "placeholder@2x.gif"; sourceTree = "<group>"; };
@@ -301,6 +307,10 @@
 			children = (
 				1B55FB2D19AEDE9C00C8A44E /* XHJoke.h */,
 				1B55FB2E19AEDE9C00C8A44E /* XHJoke.m */,
+				1BE0A07219B6C920004BAF97 /* XHUser.h */,
+				1BE0A07319B6C920004BAF97 /* XHUser.m */,
+				1BE0A07519B6EC80004BAF97 /* XHPreferences.h */,
+				1BE0A07619B6EC80004BAF97 /* XHPreferences.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -523,7 +533,9 @@
 				1B3C9F4819ADD1A700C79552 /* XHAppDelegate.m in Sources */,
 				1B55FB3219AEDFF800C8A44E /* XHJokeCell.m in Sources */,
 				BFCC28F019B2206C00DE391F /* UIScrollView+MJRefresh.m in Sources */,
+				1BE0A07719B6EC80004BAF97 /* XHPreferences.m in Sources */,
 				1B55FB3619AF1F3C00C8A44E /* NSString+IsEmpty.m in Sources */,
+				1BE0A07419B6C920004BAF97 /* XHUser.m in Sources */,
 				BFCC28EC19B2206C00DE391F /* MJRefreshConst.m in Sources */,
 				BFCC28EE19B2206C00DE391F /* MJRefreshHeaderView.m in Sources */,
 				1B55FB2F19AEDE9C00C8A44E /* XHJoke.m in Sources */,
@@ -736,7 +748,7 @@
 				1B3C9F5F19ADD1A700C79552 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		1B3C9F6019ADD1A700C79552 /* Build configuration list for PBXNativeTarget "XiaoHuaApp" */ = {
 			isa = XCConfigurationList;
@@ -745,7 +757,7 @@
 				1B3C9F6219ADD1A700C79552 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		1B3C9F6319ADD1A700C79552 /* Build configuration list for PBXNativeTarget "XiaoHuaAppTests" */ = {
 			isa = XCConfigurationList;
@@ -754,7 +766,7 @@
 				1B3C9F6519ADD1A700C79552 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

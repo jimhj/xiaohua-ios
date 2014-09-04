@@ -28,5 +28,7 @@
 - (CGRect)pictureFrame;
 - (CGRect)bottomFrame;
 - (NSMutableAttributedString *)setContentTextLineHeight:(CGFloat)lineHeight;
+- (BOOL) didHavePicture;
+
 
 @end

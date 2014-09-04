@@ -30,11 +30,14 @@
 
 
 - (void)fetchJokesWithPage:(NSNumber *)page
-{    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+{
+    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:kApiURL]];
+    
     NSDictionary *parameters = @{@"page": page};
     
-    [manager GET:@"http://www.xiaohuabolan.com/api/jokes.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:@"jokes.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSLog(@"%@", responseObject);
         
         if ([page intValue] == 1) {
             [self.jokes removeAllObjects];
@@ -55,6 +58,8 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"笑话博览" message:@"网络不给力" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];
+        [self.tableView headerEndRefreshing];
+        [self.tableView footerEndRefreshing];
     }];
 }
 
@@ -119,7 +124,6 @@
 
 -(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
-    NSLog(@"%lu", _loadTimes);
     if (self.tabBarController.selectedIndex == 0 && _loadTimes > 1) {
         _loadTimes = 2;
         [self.tableView headerBeginRefreshing];
