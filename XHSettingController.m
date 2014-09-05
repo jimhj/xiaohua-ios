@@ -11,6 +11,7 @@
 #import "XHPreferences.h"
 #import "MBProgressHUD.h"
 #import "XHJokeFormController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface XHSettingController ()
 
@@ -103,13 +104,11 @@
     [cell.textLabel setFont:[UIFont systemFontOfSize:16.0f]];
     cell.textLabel.textColor = PRIMARY_GRAY_COLOR;
     
-    NSLog(@"%@", [XHPreferences privateToken]);
-    NSLog(@"%@", [XHPreferences name]);
-    NSLog(@"%i", indexPath.section);
-    
     if ([XHPreferences userDidLogin]) {
         if (indexPath.section == 0) {
-            UIImageView *imageView = [[UIImageView alloc] initWithImage:[XHPreferences avatarImage]];
+            
+            UIImageView *imageView = [[UIImageView alloc] init];
+            [imageView sd_setImageWithURL:[NSURL URLWithString:[XHPreferences avatarUrl]] placeholderImage:[UIImage imageNamed:@"avatar.png"]];
             imageView.frame = CGRectMake(10, 15, 40, 40);
             imageView.layer.cornerRadius = 20;
             imageView.clipsToBounds = YES;

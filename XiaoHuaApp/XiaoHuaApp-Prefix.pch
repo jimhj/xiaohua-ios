@@ -15,10 +15,10 @@
     #import <Foundation/Foundation.h>
 #endif
 
-#ifdef DEBUG1
-#define kAppDomain @"127.0.0.1:8000"
+#ifdef DEBUG
+    #define kAppDomain @"127.0.0.1:8000"
 #else
-#define kAppDomain @"www.xiaohuabolan.com"
+    #define kAppDomain @"www.xiaohuabolan.com"
 #endif
 
 #define kApiURL [NSString stringWithFormat:@"http://%@/api",kAppDomain]
