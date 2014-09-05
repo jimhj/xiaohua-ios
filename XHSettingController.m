@@ -146,7 +146,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    NSLog(@"%i", cell.tag);
     
     if (cell.tag == 9) {
         [XHPreferences setPrivateToken:NULL];
