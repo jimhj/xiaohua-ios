@@ -24,6 +24,8 @@
 		1B55FB2F19AEDE9C00C8A44E /* XHJoke.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB2E19AEDE9C00C8A44E /* XHJoke.m */; };
 		1B55FB3219AEDFF800C8A44E /* XHJokeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB3119AEDFF800C8A44E /* XHJokeCell.m */; };
 		1B55FB3619AF1F3C00C8A44E /* NSString+IsEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB3519AF1F3C00C8A44E /* NSString+IsEmpty.m */; };
+		1B600F5019B9A0C7005D3082 /* XHRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B600F4E19B9A0C7005D3082 /* XHRegisterController.m */; };
+		1B600F5119B9A0C7005D3082 /* XHRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B600F4F19B9A0C7005D3082 /* XHRegisterController.xib */; };
 		1BBFB6D419B591CC00F0E31F /* XHSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFB6D219B591CC00F0E31F /* XHSettingController.m */; };
 		1BBFB6D519B591CC00F0E31F /* XHSettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6D319B591CC00F0E31F /* XHSettingController.xib */; };
 		1BBFB6E119B5AEC800F0E31F /* XHLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFB6DF19B5AEC800F0E31F /* XHLoginController.m */; };
@@ -117,6 +119,9 @@
 		1B55FB3119AEDFF800C8A44E /* XHJokeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHJokeCell.m; sourceTree = SOURCE_ROOT; };
 		1B55FB3419AF1F3C00C8A44E /* NSString+IsEmpty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IsEmpty.h"; sourceTree = "<group>"; };
 		1B55FB3519AF1F3C00C8A44E /* NSString+IsEmpty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IsEmpty.m"; sourceTree = "<group>"; };
+		1B600F4D19B9A0C7005D3082 /* XHRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRegisterController.h; sourceTree = SOURCE_ROOT; };
+		1B600F4E19B9A0C7005D3082 /* XHRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRegisterController.m; sourceTree = SOURCE_ROOT; };
+		1B600F4F19B9A0C7005D3082 /* XHRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHRegisterController.xib; sourceTree = SOURCE_ROOT; };
 		1BBFB6D119B591CC00F0E31F /* XHSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSettingController.h; sourceTree = SOURCE_ROOT; };
 		1BBFB6D219B591CC00F0E31F /* XHSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSettingController.m; sourceTree = SOURCE_ROOT; };
 		1BBFB6D319B591CC00F0E31F /* XHSettingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHSettingController.xib; sourceTree = SOURCE_ROOT; };
@@ -306,6 +311,9 @@
 				1BBFB6EC19B5C50100F0E31F /* XHJokeFormController.h */,
 				1BBFB6ED19B5C50100F0E31F /* XHJokeFormController.m */,
 				1BBFB6EE19B5C50100F0E31F /* XHJokeFormController.xib */,
+				1B600F4D19B9A0C7005D3082 /* XHRegisterController.h */,
+				1B600F4E19B9A0C7005D3082 /* XHRegisterController.m */,
+				1B600F4F19B9A0C7005D3082 /* XHRegisterController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -385,9 +393,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1B3C9F3319ADD1A700C79552 /* XiaoHuaApp */ = {
+		1B3C9F3319ADD1A700C79552 /* 笑话博览 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1B3C9F6019ADD1A700C79552 /* Build configuration list for PBXNativeTarget "XiaoHuaApp" */;
+			buildConfigurationList = 1B3C9F6019ADD1A700C79552 /* Build configuration list for PBXNativeTarget "笑话博览" */;
 			buildPhases = (
 				C35A54070E0B400085D92C2A /* Check Pods Manifest.lock */,
 				1B3C9F3019ADD1A700C79552 /* Sources */,
@@ -399,7 +407,7 @@
 			);
 			dependencies = (
 			);
-			name = XiaoHuaApp;
+			name = "笑话博览";
 			productName = XiaoHuaApp;
 			productReference = 1B3C9F3419ADD1A700C79552 /* XiaoHuaApp.app */;
 			productType = "com.apple.product-type.application";
@@ -451,7 +459,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1B3C9F3319ADD1A700C79552 /* XiaoHuaApp */,
+				1B3C9F3319ADD1A700C79552 /* 笑话博览 */,
 				1B3C9F4E19ADD1A700C79552 /* XiaoHuaAppTests */,
 			);
 		};
@@ -466,6 +474,7 @@
 				BF27E0A219B4BD3900AC9730 /* comment@2x.png in Resources */,
 				BFC06AF519B8A6D2009F4F35 /* power.png in Resources */,
 				1BBFB6E219B5AEC800F0E31F /* XHLoginController.xib in Resources */,
+				1B600F5119B9A0C7005D3082 /* XHRegisterController.xib in Resources */,
 				BF27E0A119B4BD3900AC9730 /* comment.png in Resources */,
 				BF513DE319B6024400023AA6 /* envelope@2x.png in Resources */,
 				BFC06AF819B8A707009F4F35 /* avatar.png in Resources */,
@@ -544,6 +553,7 @@
 				BFCC28ED19B2206C00DE391F /* MJRefreshFooterView.m in Sources */,
 				BFCC28F119B2206C00DE391F /* UIView+MJExtension.m in Sources */,
 				1BBFB6E119B5AEC800F0E31F /* XHLoginController.m in Sources */,
+				1B600F5019B9A0C7005D3082 /* XHRegisterController.m in Sources */,
 				1BBFB6D419B591CC00F0E31F /* XHSettingController.m in Sources */,
 				BFCC28EF19B2206C00DE391F /* UIScrollView+MJExtension.m in Sources */,
 				1B3C9F4819ADD1A700C79552 /* XHAppDelegate.m in Sources */,
@@ -577,17 +587,17 @@
 /* Begin PBXTargetDependency section */
 		1B39385419B4624600FCCF15 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1B3C9F3319ADD1A700C79552 /* XiaoHuaApp */;
+			target = 1B3C9F3319ADD1A700C79552 /* 笑话博览 */;
 			targetProxy = 1B39385319B4624600FCCF15 /* PBXContainerItemProxy */;
 		};
 		1B39385619B4624600FCCF15 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1B3C9F3319ADD1A700C79552 /* XiaoHuaApp */;
+			target = 1B3C9F3319ADD1A700C79552 /* 笑话博览 */;
 			targetProxy = 1B39385519B4624600FCCF15 /* PBXContainerItemProxy */;
 		};
 		1B3C9F5519ADD1A700C79552 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1B3C9F3319ADD1A700C79552 /* XiaoHuaApp */;
+			target = 1B3C9F3319ADD1A700C79552 /* 笑话博览 */;
 			targetProxy = 1B3C9F5419ADD1A700C79552 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -688,6 +698,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XiaoHuaApp/XiaoHuaApp-Prefix.pch";
 				INFOPLIST_FILE = "XiaoHuaApp/XiaoHuaApp-Info.plist";
@@ -704,6 +715,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XiaoHuaApp/XiaoHuaApp-Prefix.pch";
 				INFOPLIST_FILE = "XiaoHuaApp/XiaoHuaApp-Info.plist";
@@ -766,7 +778,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		1B3C9F6019ADD1A700C79552 /* Build configuration list for PBXNativeTarget "XiaoHuaApp" */ = {
+		1B3C9F6019ADD1A700C79552 /* Build configuration list for PBXNativeTarget "笑话博览" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B3C9F6119ADD1A700C79552 /* Debug */,

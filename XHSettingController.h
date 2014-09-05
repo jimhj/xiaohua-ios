@@ -17,5 +17,6 @@
 }
 
 - (IBAction)postButtonPressed:(id)sender;
+- (IBAction)registerButtonPressed:(id)sender;
 
 @end

@@ -11,6 +11,7 @@
 #import "XHPreferences.h"
 #import "MBProgressHUD.h"
 #import "XHJokeFormController.h"
+#import "XHRegisterController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface XHSettingController ()
@@ -188,6 +189,14 @@
     XHJokeFormController *jokeForm =[[XHJokeFormController alloc] initWithNibName:@"XHJokeFormController" bundle:nil];
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:jokeForm];
+    
+    [self presentViewController:navController animated:YES completion:^{}];
+}
+
+- (IBAction)registerButtonPressed:(id)sender {
+    XHRegisterController *registForm =[[XHRegisterController alloc] initWithNibName:@"XHRegisterController" bundle:nil];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:registForm];
     
     [self presentViewController:navController animated:YES completion:^{}];
 }

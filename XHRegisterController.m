@@ -1,24 +1,22 @@
 //
-//  XHLoginController.m
+//  XHRegisterController.m
 //  XiaoHuaApp
 //
-//  Created by HuangJin on 14-9-2.
+//  Created by HuangJin on 14-9-5.
 //  Copyright (c) 2014年 Ebooom. All rights reserved.
 //
 
-#import "XHLoginController.h"
-#import "XHUser.h"
+#import "XHRegisterController.h"
 #import "MBProgressHUD.h"
 #import "AFNetworking.h"
-#import "NSString+IsEmpty.h"
 #import "XHPreferences.h"
-#import "XHSettingController.h"
+#import "NSString+IsEmpty.h"
 
-@interface XHLoginController ()
+@interface XHRegisterController ()
 
 @end
 
-@implementation XHLoginController
+@implementation XHRegisterController
 
 - (void) setTextFieldStyle:(UITextField *)textField
 {
@@ -30,15 +28,16 @@
     textField.layer.cornerRadius = 4.f;
 }
 
-- (void)dissmissLoginFormModal:(id)sender
+- (void)dissmissRegisterFormModal:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:^{}];
+     [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        // Custom initialization
     }
     return self;
 }
@@ -53,38 +52,24 @@
     label.textAlignment = NSTextAlignmentCenter;
     label.textColor = [UIColor grayColor];
     self.navigationItem.titleView = label;
-    label.text = @"登录";
+    label.text = @"注册";
     [label sizeToFit];
     
     UIBarButtonItem *leftBar = [[UIBarButtonItem alloc] init];
     leftBar.title = @"取消";
     leftBar.tintColor = PRIMARY_GRAY_COLOR;
     [leftBar setTarget:self];
-    [leftBar setAction:@selector(dissmissLoginFormModal:)];
+    [leftBar setAction:@selector(dissmissRegisterFormModal:)];
     self.navigationItem.leftBarButtonItem = leftBar;
-        
-    [self setTextFieldStyle:_emailTextField];
-    [self setTextFieldStyle:_passwordTextField];
     
     _registerButton.layer.cornerRadius = 4;
-    _registerButton.backgroundColor = PRIMARY_BUTTON_COLOR;
     
-    _loginButton.layer.cornerRadius = 4;
-    _loginButton.layer.borderColor = SECONDADY_BUTTON_COLOR.CGColor;
-    _loginButton.layer.borderWidth = 1.f;
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(dismissKeyboard)];
-    [self.view addGestureRecognizer:tap];
+    [self setTextFieldStyle:_emailTextField];
+    [self setTextFieldStyle:_nameTextField];
+    [self setTextFieldStyle:_pwdTextField];
     
     _scrollView.delegate = self;
     _scrollView.contentSize = self.view.frame.size;
-}
-
--(void)dismissKeyboard {
-    [_emailTextField resignFirstResponder];
-    [_passwordTextField resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,29 +78,30 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)loginButtonPressed:(id)sender
+- (IBAction)registerButtonPressed:(id)sender
 {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"正在登录...";
     
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:kApiURL]];
-    NSDictionary *parameters = @{@"email": _emailTextField.text, @"password": _passwordTextField.text};
+    NSDictionary *parameters = @{@"email": _emailTextField.text,
+                                 @"name": _nameTextField.text,
+                                 @"password":_pwdTextField.text};
     
     [hud show:YES];
     
-    [manager POST:@"users/sign_in.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [hud hide:YES];
-        
+    [manager POST:@"users/sign_up.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSString *error = [responseObject objectForKey:@"error"];
         if ([error isEmpty] || (error.length == 0)) {
             [XHPreferences setPrivateToken:[responseObject objectForKey:@"private_token"]];
             [XHPreferences setEmail:[responseObject objectForKey:@"email"]];
             [XHPreferences setName:[responseObject objectForKey:@"name"]];
             [XHPreferences setAvatarUrl:[responseObject objectForKey:@"avatar_url"]];
-            [self dismissViewControllerAnimated:YES completion:^{
-            }];
-            NSLog(@"%@", [XHPreferences name]);
+            hud.labelText = @"注册成功啦 >_<";
+            [hud hide:YES afterDelay:4];
+            [self dismissViewControllerAnimated:YES completion:^{}];
         } else {
+            [hud hide:YES];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:error delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
             [alert show];
         }
@@ -123,6 +109,6 @@
         [hud hide:YES];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:[error localizedDescription] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];
-    }];    
+    }];
 }
 @end
