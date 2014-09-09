@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XHJokeFormController : UIViewController <UITextViewDelegate>
+@interface XHJokeFormController : UIViewController <UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     
     IBOutlet UITextView *_contentTextView;
+    UIImageView *_imageView;
+    UIButton *_closeButton;
 }
+
+@property (nonatomic, strong) UIToolbar *toolBar;
 
 @end

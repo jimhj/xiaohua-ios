@@ -13,6 +13,7 @@
 #import "NSString+IsEmpty.h"
 
 #define FORM_PLACEHOLDER @"分享我知道的笑料, 内容务必要纯洁啊 ! >_<"
+#define kOFFSET_FOR_KEYBOARD 80.0
 
 @interface XHJokeFormController ()
 
@@ -90,15 +91,84 @@
     [rightBar setAction:@selector(postJoke:)];
     self.navigationItem.rightBarButtonItem = rightBar;
     
+    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(40, 200, 220, 10)];
+    _imageView.userInteractionEnabled = YES;
+    _imageView.hidden = YES;
+    [self.view addSubview:_imageView];
+    
+    _closeButton = [[UIButton alloc] initWithFrame:CGRectMake(248, 188, 24, 24)];
+    [_closeButton setImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
+    [_closeButton addTarget:self action:@selector(removePictureView) forControlEvents:UIControlEventTouchUpInside];
+    _closeButton.hidden = YES;
+    
+    [self.view addSubview:_closeButton];
+    
     _contentTextView.text = FORM_PLACEHOLDER;
     _contentTextView.textColor = [UIColor lightGrayColor];
+    _contentTextView.textContainerInset = UIEdgeInsetsMake(10, 10, 10, 10);
     _contentTextView.delegate = self;
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(dismissKeyboard)];
     
-    [self.view addGestureRecognizer:tap];
+    float width = self.view.bounds.size.width;
+    self.toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - 44, width, 44)];
+    UIBarButtonItem *pictureButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"picture.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                                                                      style:UIBarButtonItemStylePlain
+                                                                     target:self
+                                                                     action:@selector(pictureButtonPressed:)];
+    
+    UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                                                            target:nil
+                                                                            action:nil];
+    spacer.width = 50;
+    
+    UIBarButtonItem *spacer_2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                                                              target:nil
+                                                                              action:nil];
+    spacer_2.width = 120;
+    
+    UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"camera.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                                                                      style:UIBarButtonItemStylePlain
+                                                                     target:self
+                                                                     action:@selector(cameraButtonPressed:)];
+    
+    
+    self.toolBar.items = [NSArray arrayWithObjects:spacer, pictureButton, spacer_2, cameraButton, nil];
+    
+    [self.view addSubview:self.toolBar];
+    
+    _contentTextView.inputAccessoryView = self.toolBar;
+}
+
+- (void) removePictureView
+{
+    _imageView.hidden = YES;
+    _closeButton.hidden = YES;
+    _imageView.image = nil;
+}
+
+- (void) pictureButtonPressed:(id)sender
+{
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    imagePicker.delegate = self;
+    [self presentViewController:imagePicker animated:YES completion:^{}];
+}
+
+- (void) cameraButtonPressed:(id)sender
+{
+    NSLog(@"11111111");
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    _imageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    
+    float frameHeight = 220 * _imageView.image.size.height / _imageView.image.size.width;
+    [_imageView setFrame:CGRectMake(40, 200, 220, frameHeight)];
+    
+    _imageView.hidden = NO;
+    _closeButton.hidden = NO;
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)dismissKeyboard {
@@ -121,43 +191,13 @@
     }
 }
 
-- (void) handleKeyboardDidShow:(NSNotification *) notification
+- (float) calcScreenTopBarHeight
 {
-    NSValue *keyboardRectAsObject = [[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey];
-    CGRect keyboardRect = CGRectZero;
-    
-    [keyboardRectAsObject getValue:&keyboardRect];
-    
-    _contentTextView.contentInset = UIEdgeInsetsMake(60.f, 0.f, keyboardRect.size.height - 60.f, 0.f);
-}
-
-- (void) handleKeyboardWillHide:(NSNotification *) notification
-{
-    _contentTextView.contentInset = UIEdgeInsetsMake(60.f, 0, 0, 0);
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(handleKeyboardDidShow:)
-                                                 name:UIKeyboardDidShowNotification
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(handleKeyboardWillHide:)
-                                                 name:UIKeyboardWillHideNotification
-                                               object:nil];
-    
-    _contentTextView.frame = self.view.bounds;
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    float totalHeight = 0.f;
+    float statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height;
+    float navBarHeight = self.navigationController.navigationBar.frame.size.height;
+    totalHeight = statusBarHeight + navBarHeight;
+    return totalHeight;
 }
 
 - (void)didReceiveMemoryWarning
