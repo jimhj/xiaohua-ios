@@ -93,7 +93,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B3C9F3419ADD1A700C79552 /* XiaoHuaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XiaoHuaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B3C9F3419ADD1A700C79552 /* 笑话博览.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "笑话博览.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B3C9F3719ADD1A700C79552 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1B3C9F3919ADD1A700C79552 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1B3C9F3B19ADD1A700C79552 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -218,7 +218,7 @@
 		1B3C9F3519ADD1A700C79552 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1B3C9F3419ADD1A700C79552 /* XiaoHuaApp.app */,
+				1B3C9F3419ADD1A700C79552 /* 笑话博览.app */,
 				1B3C9F4F19ADD1A700C79552 /* XiaoHuaAppTests.xctest */,
 			);
 			name = Products;
@@ -409,7 +409,7 @@
 			);
 			name = "笑话博览";
 			productName = XiaoHuaApp;
-			productReference = 1B3C9F3419ADD1A700C79552 /* XiaoHuaApp.app */;
+			productReference = 1B3C9F3419ADD1A700C79552 /* 笑话博览.app */;
 			productType = "com.apple.product-type.application";
 		};
 		1B3C9F4E19ADD1A700C79552 /* XiaoHuaAppTests */ = {
