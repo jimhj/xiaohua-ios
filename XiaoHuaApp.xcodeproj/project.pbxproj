@@ -26,12 +26,6 @@
 		1B55FB3619AF1F3C00C8A44E /* NSString+IsEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B55FB3519AF1F3C00C8A44E /* NSString+IsEmpty.m */; };
 		1B600F5019B9A0C7005D3082 /* XHRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B600F4E19B9A0C7005D3082 /* XHRegisterController.m */; };
 		1B600F5119B9A0C7005D3082 /* XHRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B600F4F19B9A0C7005D3082 /* XHRegisterController.xib */; };
-		1BBF2D0F19BEEF4C00F5DCEA /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBF2D0B19BEEF4C00F5DCEA /* camera.png */; };
-		1BBF2D1019BEEF4C00F5DCEA /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBF2D0C19BEEF4C00F5DCEA /* camera@2x.png */; };
-		1BBF2D1119BEEF4C00F5DCEA /* picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBF2D0D19BEEF4C00F5DCEA /* picture.png */; };
-		1BBF2D1219BEEF4C00F5DCEA /* picture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBF2D0E19BEEF4C00F5DCEA /* picture@2x.png */; };
-		1BBF2D1519BEFECC00F5DCEA /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBF2D1319BEFECC00F5DCEA /* close.png */; };
-		1BBF2D1619BEFECC00F5DCEA /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BBF2D1419BEFECC00F5DCEA /* close@2x.png */; };
 		1BBFB6D419B591CC00F0E31F /* XHSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFB6D219B591CC00F0E31F /* XHSettingController.m */; };
 		1BBFB6D519B591CC00F0E31F /* XHSettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBFB6D319B591CC00F0E31F /* XHSettingController.xib */; };
 		1BBFB6E119B5AEC800F0E31F /* XHLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFB6DF19B5AEC800F0E31F /* XHLoginController.m */; };
@@ -63,6 +57,12 @@
 		BFC06AF519B8A6D2009F4F35 /* power.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC06AF319B8A6D2009F4F35 /* power.png */; };
 		BFC06AF819B8A707009F4F35 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC06AF619B8A707009F4F35 /* avatar.png */; };
 		BFC06AF919B8A707009F4F35 /* avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC06AF719B8A707009F4F35 /* avatar@2x.png */; };
+		BFC8704019BF3FCE00010A5C /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC8703A19BF3FCE00010A5C /* camera.png */; };
+		BFC8704119BF3FCE00010A5C /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC8703B19BF3FCE00010A5C /* camera@2x.png */; };
+		BFC8704219BF3FCE00010A5C /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC8703C19BF3FCE00010A5C /* close.png */; };
+		BFC8704319BF3FCE00010A5C /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC8703D19BF3FCE00010A5C /* close@2x.png */; };
+		BFC8704419BF3FCE00010A5C /* picture.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC8703E19BF3FCE00010A5C /* picture.png */; };
+		BFC8704519BF3FCE00010A5C /* picture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC8703F19BF3FCE00010A5C /* picture@2x.png */; };
 		BFCC28EA19B2206C00DE391F /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BFCC28DA19B2206C00DE391F /* MJRefresh.bundle */; };
 		BFCC28EB19B2206C00DE391F /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCC28DD19B2206C00DE391F /* MJRefreshBaseView.m */; };
 		BFCC28EC19B2206C00DE391F /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCC28DF19B2206C00DE391F /* MJRefreshConst.m */; };
@@ -128,12 +128,6 @@
 		1B600F4D19B9A0C7005D3082 /* XHRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHRegisterController.h; sourceTree = SOURCE_ROOT; };
 		1B600F4E19B9A0C7005D3082 /* XHRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHRegisterController.m; sourceTree = SOURCE_ROOT; };
 		1B600F4F19B9A0C7005D3082 /* XHRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHRegisterController.xib; sourceTree = SOURCE_ROOT; };
-		1BBF2D0B19BEEF4C00F5DCEA /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera.png; path = "../../../../../Pictures/素材/camera.png"; sourceTree = "<group>"; };
-		1BBF2D0C19BEEF4C00F5DCEA /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera@2x.png"; path = "../../../../../Pictures/素材/camera@2x.png"; sourceTree = "<group>"; };
-		1BBF2D0D19BEEF4C00F5DCEA /* picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = picture.png; path = "../../../../../Pictures/素材/picture.png"; sourceTree = "<group>"; };
-		1BBF2D0E19BEEF4C00F5DCEA /* picture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "picture@2x.png"; path = "../../../../../Pictures/素材/picture@2x.png"; sourceTree = "<group>"; };
-		1BBF2D1319BEFECC00F5DCEA /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = close.png; path = "../../../../../Pictures/素材/close.png"; sourceTree = "<group>"; };
-		1BBF2D1419BEFECC00F5DCEA /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "close@2x.png"; path = "../../../../../Pictures/素材/close@2x.png"; sourceTree = "<group>"; };
 		1BBFB6D119B591CC00F0E31F /* XHSettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSettingController.h; sourceTree = SOURCE_ROOT; };
 		1BBFB6D219B591CC00F0E31F /* XHSettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSettingController.m; sourceTree = SOURCE_ROOT; };
 		1BBFB6D319B591CC00F0E31F /* XHSettingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHSettingController.xib; sourceTree = SOURCE_ROOT; };
@@ -173,6 +167,12 @@
 		BFC06AF319B8A6D2009F4F35 /* power.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = power.png; sourceTree = "<group>"; };
 		BFC06AF619B8A707009F4F35 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
 		BFC06AF719B8A707009F4F35 /* avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "avatar@2x.png"; sourceTree = "<group>"; };
+		BFC8703A19BF3FCE00010A5C /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		BFC8703B19BF3FCE00010A5C /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
+		BFC8703C19BF3FCE00010A5C /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		BFC8703D19BF3FCE00010A5C /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
+		BFC8703E19BF3FCE00010A5C /* picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picture.png; sourceTree = "<group>"; };
+		BFC8703F19BF3FCE00010A5C /* picture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "picture@2x.png"; sourceTree = "<group>"; };
 		BFCC28DA19B2206C00DE391F /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
 		BFCC28DB19B2206C00DE391F /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		BFCC28DC19B2206C00DE391F /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
@@ -346,12 +346,12 @@
 		1B3C9F6919ADDA3400C79552 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1BBF2D1319BEFECC00F5DCEA /* close.png */,
-				1BBF2D1419BEFECC00F5DCEA /* close@2x.png */,
-				1BBF2D0B19BEEF4C00F5DCEA /* camera.png */,
-				1BBF2D0C19BEEF4C00F5DCEA /* camera@2x.png */,
-				1BBF2D0D19BEEF4C00F5DCEA /* picture.png */,
-				1BBF2D0E19BEEF4C00F5DCEA /* picture@2x.png */,
+				BFC8703A19BF3FCE00010A5C /* camera.png */,
+				BFC8703B19BF3FCE00010A5C /* camera@2x.png */,
+				BFC8703C19BF3FCE00010A5C /* close.png */,
+				BFC8703D19BF3FCE00010A5C /* close@2x.png */,
+				BFC8703E19BF3FCE00010A5C /* picture.png */,
+				BFC8703F19BF3FCE00010A5C /* picture@2x.png */,
 				BFC06AF619B8A707009F4F35 /* avatar.png */,
 				BFC06AF719B8A707009F4F35 /* avatar@2x.png */,
 				BFC06AF219B8A6D2009F4F35 /* power@2x.png */,
@@ -492,36 +492,36 @@
 				BF27E0A219B4BD3900AC9730 /* comment@2x.png in Resources */,
 				BFC06AF519B8A6D2009F4F35 /* power.png in Resources */,
 				1BBFB6E219B5AEC800F0E31F /* XHLoginController.xib in Resources */,
-				1BBF2D0F19BEEF4C00F5DCEA /* camera.png in Resources */,
 				1B600F5119B9A0C7005D3082 /* XHRegisterController.xib in Resources */,
 				BF27E0A119B4BD3900AC9730 /* comment.png in Resources */,
 				BF513DE319B6024400023AA6 /* envelope@2x.png in Resources */,
 				BFC06AF819B8A707009F4F35 /* avatar.png in Resources */,
+				BFC8704319BF3FCE00010A5C /* close@2x.png in Resources */,
 				1BBFB6E719B5C26000F0E31F /* XHMessagesController.xib in Resources */,
+				BFC8704519BF3FCE00010A5C /* picture@2x.png in Resources */,
+				BFC8704219BF3FCE00010A5C /* close.png in Resources */,
 				BF27E0AD19B4BE4100AC9730 /* refresh.png in Resources */,
 				BFC06AF919B8A707009F4F35 /* avatar@2x.png in Resources */,
 				BFCC28EA19B2206C00DE391F /* MJRefresh.bundle in Resources */,
 				1BBFB6F019B5C50100F0E31F /* XHJokeFormController.xib in Resources */,
 				BF27E0A619B4BD3900AC9730 /* message@2x.png in Resources */,
-				1BBF2D1619BEFECC00F5DCEA /* close@2x.png in Resources */,
 				BF27E0A519B4BD3900AC9730 /* message.png in Resources */,
 				BF513DDC19B601DD00023AA6 /* setting.png in Resources */,
 				BF27E0A919B4BD3900AC9730 /* user.png in Resources */,
 				BF513DDE19B601DD00023AA6 /* up.png in Resources */,
 				1BBFB6D519B591CC00F0E31F /* XHSettingController.xib in Resources */,
 				BF513DE219B6024400023AA6 /* envelope.png in Resources */,
+				BFC8704019BF3FCE00010A5C /* camera.png in Resources */,
 				1B3C9F4A19ADD1A700C79552 /* Images.xcassets in Resources */,
+				BFC8704419BF3FCE00010A5C /* picture.png in Resources */,
 				BF27E0AE19B4BE4100AC9730 /* refresh@2x.png in Resources */,
-				1BBF2D1019BEEF4C00F5DCEA /* camera@2x.png in Resources */,
+				BFC8704119BF3FCE00010A5C /* camera@2x.png in Resources */,
 				BF513DDD19B601DD00023AA6 /* setting@2x.png in Resources */,
 				BF080DC719AF75A3001D3EA9 /* placeholder@2x.gif in Resources */,
-				1BBF2D1119BEEF4C00F5DCEA /* picture.png in Resources */,
 				BF513DDF19B601DD00023AA6 /* up@2x.png in Resources */,
 				BF27E0A419B4BD3900AC9730 /* down@2x.png in Resources */,
-				1BBF2D1219BEEF4C00F5DCEA /* picture@2x.png in Resources */,
 				BF27E0A319B4BD3900AC9730 /* down.png in Resources */,
 				BFC06AF419B8A6D2009F4F35 /* power@2x.png in Resources */,
-				1BBF2D1519BEFECC00F5DCEA /* close.png in Resources */,
 				BF27E0AA19B4BD3900AC9730 /* user@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
