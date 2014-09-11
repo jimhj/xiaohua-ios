@@ -31,20 +31,33 @@
 - (void) postJoke:(id)sender
 {
     if ([XHPreferences userDidLogin]) {
+        
         NSCharacterSet *charSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
         NSString *jokeContent = [_contentTextView.text stringByTrimmingCharactersInSet:charSet];
+        
         if (jokeContent.length == 0 || [jokeContent isEqualToString:kFORM_PLACEHOLDER]) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"你还啥都没有写呢 - -" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
             [alert show];
+            
         } else {
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
             hud.labelText = @"正在发布...";
             [hud show:YES];
             
-            AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:kApiURL]];
-            NSDictionary *parameters = @{@"content": _contentTextView.text, @"token": [XHPreferences privateToken]};
+            NSMutableDictionary *parameters = [[NSMutableDictionary alloc] initWithDictionary: @{@"content": _contentTextView.text, @"token": [XHPreferences privateToken]}];
             
-            [manager POST:@"jokes.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:kApiURL]];
+
+            [manager POST:@"jokes.json" parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+                
+                if (_imageView.image != nil) {
+                    NSData *imageData = UIImageJPEGRepresentation(_imageView.image, 0.9);
+                    [formData appendPartWithFileData:imageData name:@"picture" fileName:@"sample.jpeg" mimeType:@"image/jpeg"];
+                }
+                
+            } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                
                 hud.mode = MBProgressHUDModeText;
                 
                 NSString *error = [responseObject objectForKey:@"error"];
@@ -57,7 +70,9 @@
                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:error delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
                     [alert show];
                 }
+                
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                
                 [hud hide:YES];
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:[error localizedDescription] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
                 [alert show];
