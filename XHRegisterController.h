@@ -15,7 +15,9 @@
     __weak IBOutlet UITextField *_pwdTextField;
     __weak IBOutlet UIButton *_registerButton;
     __weak IBOutlet UIScrollView *_scrollView;
+    __weak IBOutlet UIButton *_loginViewButton;
 }
 - (IBAction)registerButtonPressed:(id)sender;
+- (IBAction)loginViewButtonPressed:(id)sender;
 
 @end

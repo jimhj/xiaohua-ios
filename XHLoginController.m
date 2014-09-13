@@ -13,6 +13,7 @@
 #import "NSString+IsEmpty.h"
 #import "XHPreferences.h"
 #import "XHSettingController.h"
+#import "XHRegisterController.h"
 
 @interface XHLoginController ()
 
@@ -32,7 +33,8 @@
 
 - (void)dissmissLoginFormModal:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:^{}];
+    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -124,5 +126,14 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:[error localizedDescription] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];
     }];    
+}
+
+- (IBAction)registViewButtonPressed:(id)sender
+{
+    XHRegisterController *registForm =[[XHRegisterController alloc] initWithNibName:@"XHRegisterController" bundle:nil];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:registForm];
+    
+    [self presentViewController:navController animated:YES completion:nil];
 }
 @end

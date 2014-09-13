@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XHRegisterController">
             <connections>
                 <outlet property="_emailTextField" destination="891-fq-YJE" id="gRG-we-vcQ"/>
+                <outlet property="_loginViewButton" destination="bMm-0j-fxi" id="5cr-hO-z7m"/>
                 <outlet property="_nameTextField" destination="NOv-eT-UQI" id="1vA-Xi-4BJ"/>
                 <outlet property="_pwdTextField" destination="VNq-Eq-qkX" id="i7g-uJ-Wn6"/>
                 <outlet property="_registerButton" destination="N14-nY-sdZ" id="IhK-Fr-h63"/>
@@ -51,6 +52,17 @@
                             </state>
                             <connections>
                                 <action selector="registerButtonPressed:" destination="-1" eventType="touchUpInside" id="Gud-d8-QW7"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMm-0j-fxi">
+                            <rect key="frame" x="93" y="406" width="135" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="已有帐号，直接登录">
+                                <color key="titleColor" name="windowFrameColor" catalog="System" colorSpace="catalog"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="loginViewButtonPressed:" destination="-1" eventType="touchUpInside" id="iiu-r1-DkC"/>
                             </connections>
                         </button>
                     </subviews>

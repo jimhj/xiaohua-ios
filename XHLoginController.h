@@ -18,5 +18,6 @@
 }
 
 - (IBAction)loginButtonPressed:(id)sender;
+- (IBAction)registViewButtonPressed:(id)sender;
 
 @end

@@ -16,7 +16,7 @@
 #endif
 
 #ifdef DEBUG
-    #define kAppDomain @"127.0.0.1:8000"
+    #define kAppDomain @"192.168.0.100:8000"
 #else
     #define kAppDomain @"www.xiaohuabolan.com"
 #endif

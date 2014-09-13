@@ -7,6 +7,7 @@
 //
 
 #import "XHRegisterController.h"
+#import "XHLoginController.h"
 #import "MBProgressHUD.h"
 #import "AFNetworking.h"
 #import "XHPreferences.h"
@@ -30,7 +31,8 @@
 
 - (void)dissmissRegisterFormModal:(id)sender
 {
-     [self dismissViewControllerAnimated:YES completion:^{}];
+    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -110,5 +112,16 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:[error localizedDescription] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];
     }];
+}
+
+- (IBAction)loginViewButtonPressed:(id)sender
+{
+//    __weak XHRegisterController *WeakSelf = self;
+    
+    XHLoginController *loginForm =[[XHLoginController alloc] initWithNibName:@"XHLoginController" bundle:nil];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginForm];
+    
+    [self presentViewController:navController animated:YES completion:nil];
 }
 @end

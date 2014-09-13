@@ -91,6 +91,36 @@
     return self;
 }
 
+- (UIToolbar *)setToolBarPosition
+{
+    CGRect frame = CGRectMake(0, kMainScreeHeight - 44, self.view.bounds.size.width, 44);
+    UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:frame];
+    
+    UIBarButtonItem *pictureButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"picture.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                                                                      style:UIBarButtonItemStylePlain
+                                                                     target:self
+                                                                     action:@selector(pictureButtonPressed:)];
+    
+    UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                                                            target:nil
+                                                                            action:nil];
+    spacer.width = 50;
+    
+    UIBarButtonItem *spacer_2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                                                              target:nil
+                                                                              action:nil];
+    spacer_2.width = 120;
+    
+    UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"camera.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                                                                     style:UIBarButtonItemStylePlain
+                                                                    target:self
+                                                                    action:@selector(cameraButtonPressed:)];
+    
+    toolBar.items = [NSArray arrayWithObjects:spacer, pictureButton, spacer_2, cameraButton, nil];
+    
+    return toolBar;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -125,30 +155,7 @@
     _contentTextView.textContainerInset = UIEdgeInsetsMake(10, 10, 10, 10);
     _contentTextView.delegate = self;
     
-    CGRect frame = CGRectMake(0, kMainScreeHeight - 44, self.view.bounds.size.width, 44);
-    self.toolBar = [[UIToolbar alloc] initWithFrame:frame];
-    
-    UIBarButtonItem *pictureButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"picture.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                                                                      style:UIBarButtonItemStylePlain
-                                                                     target:self
-                                                                     action:@selector(pictureButtonPressed:)];
-    
-    UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
-                                                                            target:nil
-                                                                            action:nil];
-    spacer.width = 50;
-    
-    UIBarButtonItem *spacer_2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
-                                                                              target:nil
-                                                                              action:nil];
-    spacer_2.width = 120;
-    
-    UIBarButtonItem *cameraButton = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"camera.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                                                                      style:UIBarButtonItemStylePlain
-                                                                     target:self
-                                                                     action:@selector(cameraButtonPressed:)];
-    
-    self.toolBar.items = [NSArray arrayWithObjects:spacer, pictureButton, spacer_2, cameraButton, nil];
+    self.toolBar = [self setToolBarPosition];
     
     [self.view addSubview:self.toolBar];
     
@@ -172,7 +179,10 @@
 
 - (void) cameraButtonPressed:(id)sender
 {
-    NSLog(@"11111111");
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc ] init];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    imagePicker.delegate = self;
+    [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
@@ -189,7 +199,11 @@
     _imageView.hidden = NO;
     _closeButton.hidden = NO;
     
-    [self dismissViewControllerAnimated:YES completion:^{}];
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+        _contentTextView.inputAccessoryView = self.toolBar;
+    
+    }];
 }
 
 - (void)dismissKeyboard {
