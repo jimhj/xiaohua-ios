@@ -461,7 +461,7 @@
 				ORGANIZATIONNAME = Ebooom;
 				TargetAttributes = {
 					1B3C9F3319ADD1A700C79552 = {
-						DevelopmentTeam = CFYZ7SD66W;
+						DevelopmentTeam = HRBVNLPR5B;
 					};
 					1B3C9F4E19ADD1A700C79552 = {
 						TestTargetID = 1B3C9F3319ADD1A700C79552;
@@ -723,7 +723,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 333BAACA3F9A4FECA9DD53C3 /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -742,7 +742,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 333BAACA3F9A4FECA9DD53C3 /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -807,7 +807,7 @@
 				1B3C9F5F19ADD1A700C79552 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 		1B3C9F6019ADD1A700C79552 /* Build configuration list for PBXNativeTarget "笑话博览" */ = {
 			isa = XCConfigurationList;
@@ -816,7 +816,7 @@
 				1B3C9F6219ADD1A700C79552 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 		1B3C9F6319ADD1A700C79552 /* Build configuration list for PBXNativeTarget "XiaoHuaAppTests" */ = {
 			isa = XCConfigurationList;
@@ -825,7 +825,7 @@
 				1B3C9F6519ADD1A700C79552 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
