@@ -92,7 +92,7 @@
     self.currentPage = [NSNumber numberWithInt:1];
     self.jokes = [[NSMutableArray alloc] init];
     
-    self.tableView.separatorInset = UIEdgeInsetsZero;
+    [self.tableView setSeparatorInset:UIEdgeInsetsZero];
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
     label.backgroundColor = [UIColor clearColor];
@@ -179,13 +179,28 @@
     if (jokeCell == nil) {
         jokeCell = [[XHJokeCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"XHJokeCell"];
     }
+    
     return jokeCell;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     XHJoke *joke = [self.jokes objectAtIndex:indexPath.row];
+    
+    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [tableView setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+        [tableView setLayoutMargins:UIEdgeInsetsZero];
+    }
+    
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+
     [(XHJokeCell *)cell setUpCell:joke];
+
     
 }
 
@@ -197,6 +212,13 @@
 - (NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 0;
+}
+
+- (void)viewDidLayoutSubviews
+{
+    if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+        [self.tableView setLayoutMargins:UIEdgeInsetsZero];
+    }
 }
 
 /*
