@@ -17,14 +17,19 @@
 
 - (void)performUpVoteButtonPressed
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"兄弟们给我顶上" delegate:self cancelButtonTitle:@"明白了" otherButtonTitles:nil, nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"兄弟们给我顶上" delegate:self cancelButtonTitle:@"明白了" otherButtonTitles:nil, nil];
     [alert show];
 }
-//
-//- (UIEdgeInsets)layoutMargins
-//{
-//    return UIEdgeInsetsZero;
-//}
+
+- (void)performReportButtonPressed:(id)sender
+{
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                       delegate:self
+                                              cancelButtonTitle:@"取消"
+                                         destructiveButtonTitle:nil
+                                              otherButtonTitles:@"举报", nil];
+    [sheet showInView:[sender superview]];
+}
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -45,9 +50,12 @@
         [self addSubview:self.jokePicture];
 
         self.bottomLeftView = [[UIView alloc] init];
+        self.bottomLeftView.frame = CGRectMake(0, 0, CELL_WIDTH, CELL_BOTTOM_VIEW_HEIGHT);
+        
         self.upButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.downButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.commentButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.reportButton = [UIButton buttonWithType:UIButtonTypeCustom];
         
 //        self.bottomLeftView.layer.borderColor = [UIColor redColor].CGColor;
 //        self.bottomLeftView.layer.borderWidth = 1.0f;
@@ -58,7 +66,8 @@
         
         self.upButton.frame = CGRectMake(0, 0, CELL_BUTTON_WIDTH, CELL_BUTTON_WIDTH);
         self.downButton.frame = CGRectMake(CELL_BUTTON_WIDTH, 0, CELL_BUTTON_WIDTH, CELL_BUTTON_WIDTH);
-        self.commentButton.frame = CGRectMake(CELL_BUTTON_WIDTH * 2, 0, 60, CELL_BUTTON_WIDTH);
+        self.commentButton.frame = CGRectMake(CELL_BUTTON_WIDTH * 2, 0, CELL_BUTTON_WIDTH, CELL_BUTTON_WIDTH);
+        self.reportButton.frame = CGRectMake(286, 8, 12, CELL_BUTTON_WIDTH);
         
         UIImageView *_upButtonIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 16, 16)];
         _upButtonIcon.image = [UIImage imageNamed:@"up.png"];
@@ -85,9 +94,15 @@
         [self.commentButton addSubview:_commentButtonIcon];
         [self.commentButton addSubview:self.commentButtonLabel];
 
+        UIImageView *_reportButtonIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0, 12, 3)];
+        _reportButtonIcon.image = [UIImage imageNamed:@"more"];
+        [self.reportButton addSubview:_reportButtonIcon];
+        [self.reportButton addTarget:self action:@selector(performReportButtonPressed:) forControlEvents:UIControlEventTouchDown];
+
         [self.bottomLeftView addSubview:self.upButton];
         [self.bottomLeftView addSubview:self.downButton];
         [self.bottomLeftView addSubview:self.commentButton];
+        [self.bottomLeftView addSubview:self.reportButton];
         
         [self addSubview:self.bottomLeftView];
     }
@@ -127,6 +142,23 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        [self didSelectReportOption];
+    }
+}
+
+- (void)didSelectReportOption
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                    message:@"举报成功"
+                                                   delegate:self
+                                          cancelButtonTitle:@"确定"
+                                          otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 @end

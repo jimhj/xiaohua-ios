@@ -12,7 +12,7 @@
 #import "XHPreferences.h"
 #import "NSString+IsEmpty.h"
 
-#define kFORM_PLACEHOLDER @"分享我知道的笑料, 内容务必要纯洁啊 ! >_<"
+#define kFORM_PLACEHOLDER @"分享我知道的笑料, 内容务必要纯洁啊 ! >_< 您发表的笑话不得包含有暴力，政治，色情; 不得包含邮件，电话，地址等隐私信息；人脸可打码；不合法的内容将会被删除。转载请注明来自笑话博览。内容版权归笑话博览所有。"
 #define kOFFSET_FOR_KEYBOARD 80.0
 #define kMainScreeHeight [[UIScreen mainScreen] bounds].size.height
 #define kImageViewWidth 220

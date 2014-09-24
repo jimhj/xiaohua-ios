@@ -37,6 +37,8 @@
 		1BE0A07419B6C920004BAF97 /* XHUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0A07319B6C920004BAF97 /* XHUser.m */; };
 		1BE0A07719B6EC80004BAF97 /* XHPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE0A07619B6EC80004BAF97 /* XHPreferences.m */; };
 		BF080DC719AF75A3001D3EA9 /* placeholder@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = BF080DC619AF75A3001D3EA9 /* placeholder@2x.gif */; };
+		BF105C0419D2584A0064DBD3 /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = BF105C0219D2584A0064DBD3 /* more.png */; };
+		BF105C0519D2584A0064DBD3 /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF105C0319D2584A0064DBD3 /* more@2x.png */; };
 		BF27E0A119B4BD3900AC9730 /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E09719B4BD3900AC9730 /* comment.png */; };
 		BF27E0A219B4BD3900AC9730 /* comment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E09819B4BD3900AC9730 /* comment@2x.png */; };
 		BF27E0A319B4BD3900AC9730 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E09919B4BD3900AC9730 /* down.png */; };
@@ -147,6 +149,8 @@
 		333BAACA3F9A4FECA9DD53C3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		7077413D4E2E4A87AE475A48 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF080DC619AF75A3001D3EA9 /* placeholder@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "placeholder@2x.gif"; sourceTree = "<group>"; };
+		BF105C0219D2584A0064DBD3 /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
+		BF105C0319D2584A0064DBD3 /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@2x.png"; sourceTree = "<group>"; };
 		BF27E09719B4BD3900AC9730 /* comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comment.png; sourceTree = "<group>"; };
 		BF27E09819B4BD3900AC9730 /* comment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comment@2x.png"; sourceTree = "<group>"; };
 		BF27E09919B4BD3900AC9730 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
@@ -346,6 +350,8 @@
 		1B3C9F6919ADDA3400C79552 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF105C0219D2584A0064DBD3 /* more.png */,
+				BF105C0319D2584A0064DBD3 /* more@2x.png */,
 				BFC8703A19BF3FCE00010A5C /* camera.png */,
 				BFC8703B19BF3FCE00010A5C /* camera@2x.png */,
 				BFC8703C19BF3FCE00010A5C /* close.png */,
@@ -493,6 +499,7 @@
 			files = (
 				1B3C9F4219ADD1A700C79552 /* InfoPlist.strings in Resources */,
 				BF27E0A219B4BD3900AC9730 /* comment@2x.png in Resources */,
+				BF105C0419D2584A0064DBD3 /* more.png in Resources */,
 				BFC06AF519B8A6D2009F4F35 /* power.png in Resources */,
 				1BBFB6E219B5AEC800F0E31F /* XHLoginController.xib in Resources */,
 				1B600F5119B9A0C7005D3082 /* XHRegisterController.xib in Resources */,
@@ -511,6 +518,7 @@
 				BF27E0A519B4BD3900AC9730 /* message.png in Resources */,
 				BF513DDC19B601DD00023AA6 /* setting.png in Resources */,
 				BF27E0A919B4BD3900AC9730 /* user.png in Resources */,
+				BF105C0519D2584A0064DBD3 /* more@2x.png in Resources */,
 				BF513DDE19B601DD00023AA6 /* up.png in Resources */,
 				1BBFB6D519B591CC00F0E31F /* XHSettingController.xib in Resources */,
 				BF513DE219B6024400023AA6 /* envelope.png in Resources */,

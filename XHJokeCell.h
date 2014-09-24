@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "XHJoke.h"
 
-@interface XHJokeCell : UITableViewCell
+@interface XHJokeCell : UITableViewCell <UIActionSheetDelegate>
 
 @property (nonatomic, strong) XHJoke *joke;
 
@@ -23,6 +23,8 @@
 @property (nonatomic, strong) UIButton *upButton;
 @property (nonatomic, strong) UIButton *downButton;
 @property (nonatomic, strong) UIButton *commentButton;
+@property (nonatomic, strong) UIButton *reportButton;
+
 @property (nonatomic, strong) UILabel *upButtonLabel;
 @property (nonatomic, strong) UILabel *downButtonLabel;
 @property (nonatomic, strong) UILabel *commentButtonLabel;
