@@ -8,6 +8,7 @@
 
 #import "XHRegisterController.h"
 #import "XHLoginController.h"
+#import "XHPrivacyViewController.h"
 #import "MBProgressHUD.h"
 #import "AFNetworking.h"
 #import "XHPreferences.h"
@@ -112,6 +113,15 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:[error localizedDescription] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];
     }];
+}
+
+- (IBAction)privacyButtonPressed:(id)sender
+{
+    XHPrivacyViewController *privacyModal = [[XHPrivacyViewController alloc] initWithNibName:@"XHPrivacyViewController" bundle:nil];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:privacyModal];
+    
+    [self presentViewController:navController animated:YES completion:nil];
 }
 
 - (IBAction)loginViewButtonPressed:(id)sender

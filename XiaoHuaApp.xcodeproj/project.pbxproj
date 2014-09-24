@@ -39,6 +39,9 @@
 		BF080DC719AF75A3001D3EA9 /* placeholder@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = BF080DC619AF75A3001D3EA9 /* placeholder@2x.gif */; };
 		BF105C0419D2584A0064DBD3 /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = BF105C0219D2584A0064DBD3 /* more.png */; };
 		BF105C0519D2584A0064DBD3 /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF105C0319D2584A0064DBD3 /* more@2x.png */; };
+		BF105C0E19D26E2D0064DBD3 /* XHPrivacyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF105C0C19D26E2D0064DBD3 /* XHPrivacyViewController.m */; };
+		BF105C0F19D26E2D0064DBD3 /* XHPrivacyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF105C0D19D26E2D0064DBD3 /* XHPrivacyViewController.xib */; };
+		BF105C1119D26F450064DBD3 /* privacy.html in Resources */ = {isa = PBXBuildFile; fileRef = BF105C1019D26F450064DBD3 /* privacy.html */; };
 		BF27E0A119B4BD3900AC9730 /* comment.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E09719B4BD3900AC9730 /* comment.png */; };
 		BF27E0A219B4BD3900AC9730 /* comment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E09819B4BD3900AC9730 /* comment@2x.png */; };
 		BF27E0A319B4BD3900AC9730 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E09919B4BD3900AC9730 /* down.png */; };
@@ -151,6 +154,10 @@
 		BF080DC619AF75A3001D3EA9 /* placeholder@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "placeholder@2x.gif"; sourceTree = "<group>"; };
 		BF105C0219D2584A0064DBD3 /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
 		BF105C0319D2584A0064DBD3 /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@2x.png"; sourceTree = "<group>"; };
+		BF105C0B19D26E2D0064DBD3 /* XHPrivacyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPrivacyViewController.h; sourceTree = SOURCE_ROOT; };
+		BF105C0C19D26E2D0064DBD3 /* XHPrivacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPrivacyViewController.m; sourceTree = SOURCE_ROOT; };
+		BF105C0D19D26E2D0064DBD3 /* XHPrivacyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHPrivacyViewController.xib; sourceTree = SOURCE_ROOT; };
+		BF105C1019D26F450064DBD3 /* privacy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacy.html; sourceTree = "<group>"; };
 		BF27E09719B4BD3900AC9730 /* comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comment.png; sourceTree = "<group>"; };
 		BF27E09819B4BD3900AC9730 /* comment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comment@2x.png"; sourceTree = "<group>"; };
 		BF27E09919B4BD3900AC9730 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
@@ -330,6 +337,9 @@
 				1B600F4D19B9A0C7005D3082 /* XHRegisterController.h */,
 				1B600F4E19B9A0C7005D3082 /* XHRegisterController.m */,
 				1B600F4F19B9A0C7005D3082 /* XHRegisterController.xib */,
+				BF105C0B19D26E2D0064DBD3 /* XHPrivacyViewController.h */,
+				BF105C0C19D26E2D0064DBD3 /* XHPrivacyViewController.m */,
+				BF105C0D19D26E2D0064DBD3 /* XHPrivacyViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -350,6 +360,7 @@
 		1B3C9F6919ADDA3400C79552 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF105C1019D26F450064DBD3 /* privacy.html */,
 				BF105C0219D2584A0064DBD3 /* more.png */,
 				BF105C0319D2584A0064DBD3 /* more@2x.png */,
 				BFC8703A19BF3FCE00010A5C /* camera.png */,
@@ -513,7 +524,9 @@
 				BF27E0AD19B4BE4100AC9730 /* refresh.png in Resources */,
 				BFC06AF919B8A707009F4F35 /* avatar@2x.png in Resources */,
 				BFCC28EA19B2206C00DE391F /* MJRefresh.bundle in Resources */,
+				BF105C1119D26F450064DBD3 /* privacy.html in Resources */,
 				1BBFB6F019B5C50100F0E31F /* XHJokeFormController.xib in Resources */,
+				BF105C0F19D26E2D0064DBD3 /* XHPrivacyViewController.xib in Resources */,
 				BF27E0A619B4BD3900AC9730 /* message@2x.png in Resources */,
 				BF27E0A519B4BD3900AC9730 /* message.png in Resources */,
 				BF513DDC19B601DD00023AA6 /* setting.png in Resources */,
@@ -592,6 +605,7 @@
 				1BBFB6D419B591CC00F0E31F /* XHSettingController.m in Sources */,
 				BFCC28EF19B2206C00DE391F /* UIScrollView+MJExtension.m in Sources */,
 				1B3C9F4819ADD1A700C79552 /* XHAppDelegate.m in Sources */,
+				BF105C0E19D26E2D0064DBD3 /* XHPrivacyViewController.m in Sources */,
 				1B55FB3219AEDFF800C8A44E /* XHJokeCell.m in Sources */,
 				BFCC28F019B2206C00DE391F /* UIScrollView+MJRefresh.m in Sources */,
 				1BE0A07719B6EC80004BAF97 /* XHPreferences.m in Sources */,
