@@ -93,6 +93,7 @@
 
 - (UIToolbar *)setToolBarPosition
 {
+//    CGRect frame = CGRectMake(0, kMainScreeHeight - 44, self.view.bounds.size.width, 44);
     CGRect frame = CGRectMake(0, kMainScreeHeight - 44, self.view.bounds.size.width, 44);
     UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:frame];
     
@@ -159,7 +160,9 @@
     
     [self.view addSubview:self.toolBar];
     
-    _contentTextView.inputAccessoryView = self.toolBar;
+    
+//    _contentTextView.inputAccessoryView = self.toolBar;
+    
 }
 
 - (void) removePictureView
@@ -199,19 +202,24 @@
     _imageView.hidden = NO;
     _closeButton.hidden = NO;
     
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-        _contentTextView.inputAccessoryView = self.toolBar;
-    
-    }];
+//    [self dismissViewControllerAnimated:YES completion:^{
+//        
+//        _contentTextView.inputAccessoryView = self.toolBar;
+//    
+//    }];
 }
 
 - (void)dismissKeyboard {
+    self.toolBar = [self setToolBarPosition];
+    [self.view addSubview:self.toolBar];
     [_contentTextView resignFirstResponder];
 }
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
+    [self.toolBar removeFromSuperview];
+    _contentTextView.inputAccessoryView = self.toolBar;
+
     if ([_contentTextView.text isEqual: kFORM_PLACEHOLDER]) {
         _contentTextView.text = @"";
         _contentTextView.textColor = [UIColor blackColor];
