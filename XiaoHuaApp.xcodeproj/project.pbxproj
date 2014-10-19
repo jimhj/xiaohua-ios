@@ -241,6 +241,7 @@
 		BFE126CC19F3C9D0007B78A3 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
 		BFE126CD19F3C9D0007B78A3 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
 		BFE126DA19F3CCC6007B78A3 /* libBaiduMobStat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBaiduMobStat.a; path = "../../../Downloads/Baidu_Mtj_iOS_SDK_V3.3/Products-armv7-armv7s/ios_api/Release-iphoneos/libBaiduMobStat.a"; sourceTree = "<group>"; };
+		BFE126DE19F3D8EB007B78A3 /* BaiduMobStat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaiduMobStat.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +319,7 @@
 				1B3C9F6719ADDA3400C79552 /* Controllers */,
 				1B3C9F6819ADDA3400C79552 /* Models */,
 				1B3C9F6919ADDA3400C79552 /* Resources */,
+				BFE126DE19F3D8EB007B78A3 /* BaiduMobStat.h */,
 				1B3C9F4619ADD1A700C79552 /* XHAppDelegate.h */,
 				1B3C9F4719ADD1A700C79552 /* XHAppDelegate.m */,
 				1B3C9F4919ADD1A700C79552 /* Images.xcassets */,
