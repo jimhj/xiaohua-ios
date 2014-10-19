@@ -201,6 +201,8 @@
 		BFCC28E819B2206C00DE391F /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		BFCC28E919B2206C00DE391F /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		BFE126DE19F3D8EB007B78A3 /* BaiduMobStat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaiduMobStat.h; sourceTree = "<group>"; };
+		BFE126DF19F3F31A007B78A3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		BFE126E019F3F31A007B78A3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -493,6 +495,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = 1B3C9F2B19ADD1A700C79552;
 			productRefGroup = 1B3C9F3519ADD1A700C79552 /* Products */;
@@ -658,6 +661,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1B3C9F4119ADD1A700C79552 /* en */,
+				BFE126DF19F3F31A007B78A3 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -666,6 +670,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1B3C9F5A19ADD1A700C79552 /* en */,
+				BFE126E019F3F31A007B78A3 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
