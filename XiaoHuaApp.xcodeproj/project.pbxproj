@@ -90,6 +90,7 @@
 		BFE126D519F3C9D0007B78A3 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE126C819F3C9D0007B78A3 /* CJSONDeserializer.m */; };
 		BFE126D619F3C9D0007B78A3 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE126CA19F3C9D0007B78A3 /* CJSONScanner.m */; };
 		BFE126D719F3C9D0007B78A3 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE126CC19F3C9D0007B78A3 /* CJSONSerializer.m */; };
+		BFE126DB19F3CCC6007B78A3 /* libBaiduMobStat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE126DA19F3CCC6007B78A3 /* libBaiduMobStat.a */; };
 		FB4F044A9300474D8C22AB53 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7077413D4E2E4A87AE475A48 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -239,6 +240,7 @@
 		BFE126CB19F3C9D0007B78A3 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
 		BFE126CC19F3C9D0007B78A3 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
 		BFE126CD19F3C9D0007B78A3 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
+		BFE126DA19F3CCC6007B78A3 /* libBaiduMobStat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libBaiduMobStat.a; path = "../../../Downloads/Baidu_Mtj_iOS_SDK_V3.3/Products-armv7-armv7s/ios_api/Release-iphoneos/libBaiduMobStat.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFE126DB19F3CCC6007B78A3 /* libBaiduMobStat.a in Frameworks */,
 				BFE1268F19F3C845007B78A3 /* SystemConfiguration.framework in Frameworks */,
 				BFE1268D19F3C82E007B78A3 /* CoreTelephony.framework in Frameworks */,
 				BFE1268B19F3C7D4007B78A3 /* Security.framework in Frameworks */,
@@ -293,6 +296,7 @@
 		1B3C9F3619ADD1A700C79552 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFE126DA19F3CCC6007B78A3 /* libBaiduMobStat.a */,
 				BFE1268E19F3C845007B78A3 /* SystemConfiguration.framework */,
 				BFE1268C19F3C82E007B78A3 /* CoreTelephony.framework */,
 				BFE1268A19F3C7D4007B78A3 /* Security.framework */,
@@ -858,6 +862,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 333BAACA3F9A4FECA9DD53C3 /* Pods.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -866,6 +871,11 @@
 				GCC_PREFIX_HEADER = "XiaoHuaApp/XiaoHuaApp-Prefix.pch";
 				INFOPLIST_FILE = "XiaoHuaApp/XiaoHuaApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/jimmy/Downloads/Baidu_Mtj_iOS_SDK_V3.3/Products-armv7-armv7s/ios_api/universal-bin",
+					"/Users/jimmy/Downloads/Baidu_Mtj_iOS_SDK_V3.3/Products-armv7-armv7s/ios_api/Release-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -877,6 +887,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 333BAACA3F9A4FECA9DD53C3 /* Pods.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -885,6 +896,11 @@
 				GCC_PREFIX_HEADER = "XiaoHuaApp/XiaoHuaApp-Prefix.pch";
 				INFOPLIST_FILE = "XiaoHuaApp/XiaoHuaApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/jimmy/Downloads/Baidu_Mtj_iOS_SDK_V3.3/Products-armv7-armv7s/ios_api/universal-bin",
+					"/Users/jimmy/Downloads/Baidu_Mtj_iOS_SDK_V3.3/Products-armv7-armv7s/ios_api/Release-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
