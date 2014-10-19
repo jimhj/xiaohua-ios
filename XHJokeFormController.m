@@ -202,11 +202,13 @@
     _imageView.hidden = NO;
     _closeButton.hidden = NO;
     
-//    [self dismissViewControllerAnimated:YES completion:^{
-//        
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+        [self.toolBar removeFromSuperview];
+        _contentTextView.inputAccessoryView = self.toolBar;
 //        _contentTextView.inputAccessoryView = self.toolBar;
-//    
-//    }];
+    
+    }];
 }
 
 - (void)dismissKeyboard {
