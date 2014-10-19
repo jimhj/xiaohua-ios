@@ -76,6 +76,20 @@
 		BFCC28EF19B2206C00DE391F /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCC28E519B2206C00DE391F /* UIScrollView+MJExtension.m */; };
 		BFCC28F019B2206C00DE391F /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCC28E719B2206C00DE391F /* UIScrollView+MJRefresh.m */; };
 		BFCC28F119B2206C00DE391F /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCC28E919B2206C00DE391F /* UIView+MJExtension.m */; };
+		BFE1268919F3C7C5007B78A3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE1268819F3C7C5007B78A3 /* CoreLocation.framework */; };
+		BFE1268B19F3C7D4007B78A3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE1268A19F3C7D4007B78A3 /* Security.framework */; };
+		BFE1268D19F3C82E007B78A3 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE1268C19F3C82E007B78A3 /* CoreTelephony.framework */; };
+		BFE1268F19F3C845007B78A3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE1268E19F3C845007B78A3 /* SystemConfiguration.framework */; };
+		BFE126CE19F3C9D0007B78A3 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE126B719F3C9D0007B78A3 /* CDataScanner.m */; };
+		BFE126CF19F3C9D0007B78A3 /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE126BA19F3C9D0007B78A3 /* CFilteringJSONSerializer.m */; };
+		BFE126D019F3C9D0007B78A3 /* CJSONDeserializer_BlocksExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE126BC19F3C9D0007B78A3 /* CJSONDeserializer_BlocksExtensions.m */; };
+		BFE126D119F3C9D0007B78A3 /* CJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE126BE19F3C9D0007B78A3 /* CJSONSerialization.m */; };
+		BFE126D219F3C9D0007B78A3 /* CJSONSerializedData.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE126C019F3C9D0007B78A3 /* CJSONSerializedData.m */; };
+		BFE126D319F3C9D0007B78A3 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE126C319F3C9D0007B78A3 /* CDataScanner_Extensions.m */; };
+		BFE126D419F3C9D0007B78A3 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE126C519F3C9D0007B78A3 /* NSDictionary_JSONExtensions.m */; };
+		BFE126D519F3C9D0007B78A3 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE126C819F3C9D0007B78A3 /* CJSONDeserializer.m */; };
+		BFE126D619F3C9D0007B78A3 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE126CA19F3C9D0007B78A3 /* CJSONScanner.m */; };
+		BFE126D719F3C9D0007B78A3 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE126CC19F3C9D0007B78A3 /* CJSONSerializer.m */; };
 		FB4F044A9300474D8C22AB53 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7077413D4E2E4A87AE475A48 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -200,6 +214,31 @@
 		BFCC28E719B2206C00DE391F /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		BFCC28E819B2206C00DE391F /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		BFCC28E919B2206C00DE391F /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		BFE1268819F3C7C5007B78A3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BFE1268A19F3C7D4007B78A3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BFE1268C19F3C82E007B78A3 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		BFE1268E19F3C845007B78A3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BFE126B619F3C9D0007B78A3 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
+		BFE126B719F3C9D0007B78A3 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
+		BFE126B919F3C9D0007B78A3 /* CFilteringJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFilteringJSONSerializer.h; sourceTree = "<group>"; };
+		BFE126BA19F3C9D0007B78A3 /* CFilteringJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFilteringJSONSerializer.m; sourceTree = "<group>"; };
+		BFE126BB19F3C9D0007B78A3 /* CJSONDeserializer_BlocksExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer_BlocksExtensions.h; sourceTree = "<group>"; };
+		BFE126BC19F3C9D0007B78A3 /* CJSONDeserializer_BlocksExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer_BlocksExtensions.m; sourceTree = "<group>"; };
+		BFE126BD19F3C9D0007B78A3 /* CJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerialization.h; sourceTree = "<group>"; };
+		BFE126BE19F3C9D0007B78A3 /* CJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerialization.m; sourceTree = "<group>"; };
+		BFE126BF19F3C9D0007B78A3 /* CJSONSerializedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializedData.h; sourceTree = "<group>"; };
+		BFE126C019F3C9D0007B78A3 /* CJSONSerializedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializedData.m; sourceTree = "<group>"; };
+		BFE126C219F3C9D0007B78A3 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
+		BFE126C319F3C9D0007B78A3 /* CDataScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner_Extensions.m; sourceTree = "<group>"; };
+		BFE126C419F3C9D0007B78A3 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
+		BFE126C519F3C9D0007B78A3 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
+		BFE126C719F3C9D0007B78A3 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
+		BFE126C819F3C9D0007B78A3 /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
+		BFE126C919F3C9D0007B78A3 /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
+		BFE126CA19F3C9D0007B78A3 /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONScanner.m; sourceTree = "<group>"; };
+		BFE126CB19F3C9D0007B78A3 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
+		BFE126CC19F3C9D0007B78A3 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
+		BFE126CD19F3C9D0007B78A3 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +246,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFE1268F19F3C845007B78A3 /* SystemConfiguration.framework in Frameworks */,
+				BFE1268D19F3C82E007B78A3 /* CoreTelephony.framework in Frameworks */,
+				BFE1268B19F3C7D4007B78A3 /* Security.framework in Frameworks */,
+				BFE1268919F3C7C5007B78A3 /* CoreLocation.framework in Frameworks */,
 				1B3C9F3A19ADD1A700C79552 /* CoreGraphics.framework in Frameworks */,
 				1B3C9F3C19ADD1A700C79552 /* UIKit.framework in Frameworks */,
 				1B3C9F3819ADD1A700C79552 /* Foundation.framework in Frameworks */,
@@ -250,6 +293,10 @@
 		1B3C9F3619ADD1A700C79552 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFE1268E19F3C845007B78A3 /* SystemConfiguration.framework */,
+				BFE1268C19F3C82E007B78A3 /* CoreTelephony.framework */,
+				BFE1268A19F3C7D4007B78A3 /* Security.framework */,
+				BFE1268819F3C7C5007B78A3 /* CoreLocation.framework */,
 				1B3C9F3719ADD1A700C79552 /* Foundation.framework */,
 				1B3C9F3919ADD1A700C79552 /* CoreGraphics.framework */,
 				1B3C9F3B19ADD1A700C79552 /* UIKit.framework */,
@@ -397,6 +444,7 @@
 		BFCC28D719B21F0E00DE391F /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				BFE126B519F3C9D0007B78A3 /* TouchJSON */,
 				BFCC28D919B2206C00DE391F /* MJRefresh */,
 			);
 			path = Libraries;
@@ -423,6 +471,59 @@
 				BFCC28E919B2206C00DE391F /* UIView+MJExtension.m */,
 			);
 			path = MJRefresh;
+			sourceTree = "<group>";
+		};
+		BFE126B519F3C9D0007B78A3 /* TouchJSON */ = {
+			isa = PBXGroup;
+			children = (
+				BFE126B619F3C9D0007B78A3 /* CDataScanner.h */,
+				BFE126B719F3C9D0007B78A3 /* CDataScanner.m */,
+				BFE126B819F3C9D0007B78A3 /* Experimental */,
+				BFE126C119F3C9D0007B78A3 /* Extensions */,
+				BFE126C619F3C9D0007B78A3 /* JSON */,
+			);
+			name = TouchJSON;
+			path = "../../../../../Downloads/Baidu_Mtj_iOS_SDK_V3.3/Products-armv7-armv7s/ios_api/TouchJSON";
+			sourceTree = "<group>";
+		};
+		BFE126B819F3C9D0007B78A3 /* Experimental */ = {
+			isa = PBXGroup;
+			children = (
+				BFE126B919F3C9D0007B78A3 /* CFilteringJSONSerializer.h */,
+				BFE126BA19F3C9D0007B78A3 /* CFilteringJSONSerializer.m */,
+				BFE126BB19F3C9D0007B78A3 /* CJSONDeserializer_BlocksExtensions.h */,
+				BFE126BC19F3C9D0007B78A3 /* CJSONDeserializer_BlocksExtensions.m */,
+				BFE126BD19F3C9D0007B78A3 /* CJSONSerialization.h */,
+				BFE126BE19F3C9D0007B78A3 /* CJSONSerialization.m */,
+				BFE126BF19F3C9D0007B78A3 /* CJSONSerializedData.h */,
+				BFE126C019F3C9D0007B78A3 /* CJSONSerializedData.m */,
+			);
+			path = Experimental;
+			sourceTree = "<group>";
+		};
+		BFE126C119F3C9D0007B78A3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BFE126C219F3C9D0007B78A3 /* CDataScanner_Extensions.h */,
+				BFE126C319F3C9D0007B78A3 /* CDataScanner_Extensions.m */,
+				BFE126C419F3C9D0007B78A3 /* NSDictionary_JSONExtensions.h */,
+				BFE126C519F3C9D0007B78A3 /* NSDictionary_JSONExtensions.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BFE126C619F3C9D0007B78A3 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				BFE126C719F3C9D0007B78A3 /* CJSONDeserializer.h */,
+				BFE126C819F3C9D0007B78A3 /* CJSONDeserializer.m */,
+				BFE126C919F3C9D0007B78A3 /* CJSONScanner.h */,
+				BFE126CA19F3C9D0007B78A3 /* CJSONScanner.m */,
+				BFE126CB19F3C9D0007B78A3 /* CJSONSerializer.h */,
+				BFE126CC19F3C9D0007B78A3 /* CJSONSerializer.m */,
+				BFE126CD19F3C9D0007B78A3 /* JSONRepresentation.h */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -601,11 +702,16 @@
 				BFCC28ED19B2206C00DE391F /* MJRefreshFooterView.m in Sources */,
 				BFCC28F119B2206C00DE391F /* UIView+MJExtension.m in Sources */,
 				1BBFB6E119B5AEC800F0E31F /* XHLoginController.m in Sources */,
+				BFE126D719F3C9D0007B78A3 /* CJSONSerializer.m in Sources */,
+				BFE126D619F3C9D0007B78A3 /* CJSONScanner.m in Sources */,
 				1B600F5019B9A0C7005D3082 /* XHRegisterController.m in Sources */,
 				1BBFB6D419B591CC00F0E31F /* XHSettingController.m in Sources */,
 				BFCC28EF19B2206C00DE391F /* UIScrollView+MJExtension.m in Sources */,
+				BFE126D119F3C9D0007B78A3 /* CJSONSerialization.m in Sources */,
 				1B3C9F4819ADD1A700C79552 /* XHAppDelegate.m in Sources */,
 				BF105C0E19D26E2D0064DBD3 /* XHPrivacyViewController.m in Sources */,
+				BFE126D019F3C9D0007B78A3 /* CJSONDeserializer_BlocksExtensions.m in Sources */,
+				BFE126CE19F3C9D0007B78A3 /* CDataScanner.m in Sources */,
 				1B55FB3219AEDFF800C8A44E /* XHJokeCell.m in Sources */,
 				BFCC28F019B2206C00DE391F /* UIScrollView+MJRefresh.m in Sources */,
 				1BE0A07719B6EC80004BAF97 /* XHPreferences.m in Sources */,
@@ -613,12 +719,17 @@
 				1BE0A07419B6C920004BAF97 /* XHUser.m in Sources */,
 				BFCC28EC19B2206C00DE391F /* MJRefreshConst.m in Sources */,
 				BFCC28EE19B2206C00DE391F /* MJRefreshHeaderView.m in Sources */,
+				BFE126CF19F3C9D0007B78A3 /* CFilteringJSONSerializer.m in Sources */,
 				1B55FB2F19AEDE9C00C8A44E /* XHJoke.m in Sources */,
 				1BBFB6EF19B5C50100F0E31F /* XHJokeFormController.m in Sources */,
 				1B55FB2A19AED97400C8A44E /* XHUserController.m in Sources */,
 				BFCC28EB19B2206C00DE391F /* MJRefreshBaseView.m in Sources */,
+				BFE126D219F3C9D0007B78A3 /* CJSONSerializedData.m in Sources */,
+				BFE126D519F3C9D0007B78A3 /* CJSONDeserializer.m in Sources */,
 				1BBFB6E619B5C26000F0E31F /* XHMessagesController.m in Sources */,
+				BFE126D419F3C9D0007B78A3 /* NSDictionary_JSONExtensions.m in Sources */,
 				1B3C9F4419ADD1A700C79552 /* main.m in Sources */,
+				BFE126D319F3C9D0007B78A3 /* CDataScanner_Extensions.m in Sources */,
 				1B55FB1B19AECB3000C8A44E /* XHJokesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
