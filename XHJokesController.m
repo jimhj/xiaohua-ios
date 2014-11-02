@@ -16,6 +16,7 @@
 #import "XHPreferences.h"
 #import "UIViewController+MMDrawerController.h"
 #import "MMDrawerBarButtonItem.h"
+#import "NSString+IsEmpty.h"
 
 @interface XHJokesController ()
 
@@ -46,8 +47,17 @@
     
     NSLog(@"%@", kApiURL);
     NSDictionary *parameters = @{@"page": page};
+    NSString *url;
     
-    [manager GET:@"jokes.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    if ([self.channel isEmpty]) {
+        url = @"jokes.json";
+    } else {
+        url = [[NSString alloc] initWithFormat:@"jokes/%@.json", self.channel];
+    }
+    
+    NSLog(@"request url: %@", url);
+    
+    [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
                 
         if ([page intValue] == 1) {
             [self.jokes removeAllObjects];
@@ -86,6 +96,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+        
+    NSLog(@"%@", self.channel);
     
     self.tableView.backgroundColor = PRIMARY_BG_COLOR;
     
@@ -100,11 +112,26 @@
     
     [self.tableView setSeparatorInset:UIEdgeInsetsZero];
     
-    
-    UIImageView *logo = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 69, 24)];
-    logo.contentMode = UIViewContentModeScaleAspectFit;
-    logo.image = [UIImage imageNamed:@"logo.png"];
-    self.navigationItem.titleView = logo;
+    if ([self.channel isEmpty]) {
+        UIImageView *logo = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 69, 24)];
+        logo.contentMode = UIViewContentModeScaleAspectFit;
+        logo.image = [UIImage imageNamed:@"logo.png"];
+        self.navigationItem.titleView = logo;
+    } else {
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+        label.backgroundColor = [UIColor clearColor];
+        label.font = [UIFont boldSystemFontOfSize:16.0];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.textColor = [UIColor whiteColor]; // change this color
+        self.navigationItem.titleView = label;
+        
+        NSDictionary *titles = @{@"meinvmeitu":@"美女美图", @"xieemanhua":@"邪恶漫画", @"youmoqiushi":@"幽默糗事", @"neihanduanzi":@"内涵段子"};
+
+        label.text = [titles objectForKey:self.channel];
+        [label sizeToFit];
+        self.navigationItem.titleView = label;
+    }
+
     
     [self setupLeftMenuButton];
     

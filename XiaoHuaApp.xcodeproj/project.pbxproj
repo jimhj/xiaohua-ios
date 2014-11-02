@@ -54,9 +54,12 @@
 		BF27E0AE19B4BE4100AC9730 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E0AC19B4BE4100AC9730 /* refresh@2x.png */; };
 		BF3CF7591A05DF07004BBA97 /* XHLeftSideDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3CF7571A05DF07004BBA97 /* XHLeftSideDrawerViewController.m */; };
 		BF3CF75A1A05DF07004BBA97 /* XHLeftSideDrawerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3CF7581A05DF07004BBA97 /* XHLeftSideDrawerViewController.xib */; };
-		BF3CF75C1A061B6C004BBA97 /* drawer_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF3CF75B1A061B6C004BBA97 /* drawer_bg.jpg */; };
 		BF3CF75F1A063294004BBA97 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3CF75D1A063294004BBA97 /* logo.png */; };
 		BF3CF7601A063294004BBA97 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3CF75E1A063294004BBA97 /* logo@2x.png */; };
+		BF3CF7631A066F53004BBA97 /* drawer.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3CF7611A066F53004BBA97 /* drawer.png */; };
+		BF3CF7641A066F53004BBA97 /* drawer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3CF7621A066F53004BBA97 /* drawer@2x.png */; };
+		BF3CF7671A06824E004BBA97 /* off.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3CF7651A06824E004BBA97 /* off.png */; };
+		BF3CF7681A06824E004BBA97 /* off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3CF7661A06824E004BBA97 /* off@2x.png */; };
 		BF513DDC19B601DD00023AA6 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = BF513DD819B601DD00023AA6 /* setting.png */; };
 		BF513DDD19B601DD00023AA6 /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF513DD919B601DD00023AA6 /* setting@2x.png */; };
 		BF513DDE19B601DD00023AA6 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = BF513DDA19B601DD00023AA6 /* up.png */; };
@@ -177,9 +180,12 @@
 		BF3CF7561A05DF07004BBA97 /* XHLeftSideDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLeftSideDrawerViewController.h; sourceTree = SOURCE_ROOT; };
 		BF3CF7571A05DF07004BBA97 /* XHLeftSideDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLeftSideDrawerViewController.m; sourceTree = SOURCE_ROOT; };
 		BF3CF7581A05DF07004BBA97 /* XHLeftSideDrawerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHLeftSideDrawerViewController.xib; sourceTree = SOURCE_ROOT; };
-		BF3CF75B1A061B6C004BBA97 /* drawer_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = drawer_bg.jpg; sourceTree = "<group>"; };
 		BF3CF75D1A063294004BBA97 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		BF3CF75E1A063294004BBA97 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		BF3CF7611A066F53004BBA97 /* drawer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drawer.png; sourceTree = "<group>"; };
+		BF3CF7621A066F53004BBA97 /* drawer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "drawer@2x.png"; sourceTree = "<group>"; };
+		BF3CF7651A06824E004BBA97 /* off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = off.png; sourceTree = "<group>"; };
+		BF3CF7661A06824E004BBA97 /* off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "off@2x.png"; sourceTree = "<group>"; };
 		BF513DD819B601DD00023AA6 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
 		BF513DD919B601DD00023AA6 /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@2x.png"; sourceTree = "<group>"; };
 		BF513DDA19B601DD00023AA6 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
@@ -377,7 +383,8 @@
 		1B3C9F6919ADDA3400C79552 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BF3CF75B1A061B6C004BBA97 /* drawer_bg.jpg */,
+				BF3CF7651A06824E004BBA97 /* off.png */,
+				BF3CF7661A06824E004BBA97 /* off@2x.png */,
 				BF105C1019D26F450064DBD3 /* privacy.html */,
 				BF105C0219D2584A0064DBD3 /* more.png */,
 				BF105C0319D2584A0064DBD3 /* more@2x.png */,
@@ -395,6 +402,8 @@
 				BFC06AF319B8A6D2009F4F35 /* power.png */,
 				BF513DE019B6024400023AA6 /* envelope.png */,
 				BF513DE119B6024400023AA6 /* envelope@2x.png */,
+				BF3CF7611A066F53004BBA97 /* drawer.png */,
+				BF3CF7621A066F53004BBA97 /* drawer@2x.png */,
 				BF513DD819B601DD00023AA6 /* setting.png */,
 				BF513DD919B601DD00023AA6 /* setting@2x.png */,
 				BF513DDA19B601DD00023AA6 /* up.png */,
@@ -544,6 +553,7 @@
 				BFC06AF519B8A6D2009F4F35 /* power.png in Resources */,
 				1BBFB6E219B5AEC800F0E31F /* XHLoginController.xib in Resources */,
 				1B600F5119B9A0C7005D3082 /* XHRegisterController.xib in Resources */,
+				BF3CF7671A06824E004BBA97 /* off.png in Resources */,
 				BF27E0A119B4BD3900AC9730 /* comment.png in Resources */,
 				BF513DE319B6024400023AA6 /* envelope@2x.png in Resources */,
 				BFC06AF819B8A707009F4F35 /* avatar.png in Resources */,
@@ -555,12 +565,13 @@
 				BF27E0AD19B4BE4100AC9730 /* refresh.png in Resources */,
 				BFC06AF919B8A707009F4F35 /* avatar@2x.png in Resources */,
 				BFCC28EA19B2206C00DE391F /* MJRefresh.bundle in Resources */,
-				BF3CF75C1A061B6C004BBA97 /* drawer_bg.jpg in Resources */,
 				BF105C1119D26F450064DBD3 /* privacy.html in Resources */,
 				1BBFB6F019B5C50100F0E31F /* XHJokeFormController.xib in Resources */,
 				BF105C0F19D26E2D0064DBD3 /* XHPrivacyViewController.xib in Resources */,
 				BF27E0A619B4BD3900AC9730 /* message@2x.png in Resources */,
 				BF27E0A519B4BD3900AC9730 /* message.png in Resources */,
+				BF3CF7631A066F53004BBA97 /* drawer.png in Resources */,
+				BF3CF7681A06824E004BBA97 /* off@2x.png in Resources */,
 				BF3CF7601A063294004BBA97 /* logo@2x.png in Resources */,
 				BF513DDC19B601DD00023AA6 /* setting.png in Resources */,
 				BF27E0A919B4BD3900AC9730 /* user.png in Resources */,
@@ -573,6 +584,7 @@
 				BFC8704419BF3FCE00010A5C /* picture.png in Resources */,
 				BF3CF75F1A063294004BBA97 /* logo.png in Resources */,
 				BF27E0AE19B4BE4100AC9730 /* refresh@2x.png in Resources */,
+				BF3CF7641A066F53004BBA97 /* drawer@2x.png in Resources */,
 				BFC8704119BF3FCE00010A5C /* camera@2x.png in Resources */,
 				BF513DDD19B601DD00023AA6 /* setting@2x.png in Resources */,
 				BF080DC719AF75A3001D3EA9 /* placeholder@2x.gif in Resources */,

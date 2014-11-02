@@ -34,7 +34,9 @@
 - (void)dissmissLoginFormModal:(id)sender
 {
     [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^{
+
+    }];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -115,6 +117,7 @@
             [XHPreferences setName:[responseObject objectForKey:@"name"]];
             [XHPreferences setAvatarUrl:[responseObject objectForKey:@"avatar_url"]];
             [self dismissViewControllerAnimated:YES completion:^{
+                
             }];
             NSLog(@"%@", [XHPreferences name]);
         } else {

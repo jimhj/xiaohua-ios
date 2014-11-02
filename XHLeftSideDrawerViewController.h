@@ -13,7 +13,10 @@
 {
     
     __weak IBOutlet UITableView *_navTableView;
+    __weak IBOutlet UIButton *_logoutButton;
 }
+
+- (IBAction)logoutButtonPressed:(id)sender;
 
 //@property (nonatomic, strong) NSArray *drawerWidths;
 @end

@@ -31,6 +31,7 @@
     XHLeftSideDrawerViewController *leftSideDrawerViewController = [[XHLeftSideDrawerViewController alloc] init];
         
     XHJokesController *jokesController = [[XHJokesController alloc] initWithNibName:nil bundle:nil];
+    jokesController.channel = @"";
 //    jokesController.tabBarItem.image = [UIImage imageNamed:@"refresh.png"];
 //    jokesController.tabBarItem.title = @"笑话";
     UINavigationController *jokesNav = [[UINavigationController alloc] initWithRootViewController:jokesController];
