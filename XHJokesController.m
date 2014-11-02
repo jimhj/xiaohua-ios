@@ -14,6 +14,8 @@
 #import "XHJokeFormController.h"
 #import "XHLoginController.h"
 #import "XHPreferences.h"
+#import "UIViewController+MMDrawerController.h"
+#import "MMDrawerBarButtonItem.h"
 
 @interface XHJokesController ()
 
@@ -76,6 +78,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -84,8 +87,11 @@
 {
     [super viewDidLoad];
     
+    self.tableView.backgroundColor = PRIMARY_BG_COLOR;
+    
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        
+    self.tableView.separatorColor = [UIColor clearColor];
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -94,17 +100,22 @@
     
     [self.tableView setSeparatorInset:UIEdgeInsetsZero];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
-    label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont boldSystemFontOfSize:16.0];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = [UIColor grayColor];
-    self.navigationItem.titleView = label;
-    label.text = @"笑话博览";
-    [label sizeToFit];
+    
+    UIImageView *logo = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 69, 24)];
+    logo.contentMode = UIViewContentModeScaleAspectFit;
+    logo.image = [UIImage imageNamed:@"logo.png"];
+    self.navigationItem.titleView = logo;
+    
+    [self setupLeftMenuButton];
+    
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0 green:0.51 blue:0.27 alpha:1];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+
+    self.navigationController.navigationBar.translucent = YES;
+    
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(performAdd:)];
-    self.navigationItem.rightBarButtonItem.tintColor = PRIMARY_GRAY_COLOR;
     
     self.tabBarController.delegate = self;
     
@@ -187,21 +198,19 @@
 {
     XHJoke *joke = [self.jokes objectAtIndex:indexPath.row];
     
-    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
-        [tableView setSeparatorInset:UIEdgeInsetsZero];
-    }
-    
-    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
-        [tableView setLayoutMargins:UIEdgeInsetsZero];
-    }
-    
-    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
-        [cell setLayoutMargins:UIEdgeInsetsZero];
-    }
+//    if ([tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+//        [tableView setSeparatorInset:UIEdgeInsetsZero];
+//    }
+//    
+//    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+//        [tableView setLayoutMargins:UIEdgeInsetsZero];
+//    }
+//    
+//    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+//        [cell setLayoutMargins:UIEdgeInsetsZero];
+//    }
 
     [(XHJokeCell *)cell setUpCell:joke];
-
-    
 }
 
 - (BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath
@@ -216,9 +225,9 @@
 
 - (void)viewDidLayoutSubviews
 {
-    if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
-        [self.tableView setLayoutMargins:UIEdgeInsetsZero];
-    }
+//    if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+//        [self.tableView setLayoutMargins:UIEdgeInsetsZero];
+//    }
 }
 
 /*
@@ -269,5 +278,14 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)setupLeftMenuButton{
+    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];
+    [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
+}
+
+-(void)leftDrawerButtonPress:(id)sender{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+}
 
 @end

@@ -1,5 +1,9 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
 platform :ios, '7.1'
 pod 'MBProgressHUD'
 pod 'SDWebImage'
 pod 'AFNetworking', '~> 2.0'
 pod 'TPKeyboardAvoiding', '~> 1.2.4'
+pod 'MMDrawerController', '~> 0.5.7'
+pod 'MSCellAccessory'

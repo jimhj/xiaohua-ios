@@ -19,7 +19,8 @@
 @property (nonatomic, strong) UIImageView *authorAvatar;
 @property (nonatomic, strong) UILabel *authorName;
 
-@property (nonatomic, strong) UIView *bottomLeftView;
+@property (nonatomic, strong) UIView *cellMainView;
+@property (nonatomic, strong) UIView *bottomView;
 @property (nonatomic, strong) UIButton *upButton;
 @property (nonatomic, strong) UIButton *downButton;
 @property (nonatomic, strong) UIButton *commentButton;

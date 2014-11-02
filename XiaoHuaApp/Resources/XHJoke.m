@@ -81,14 +81,43 @@
     return height;
 }
 
-- (CGRect)textFrame
+- (CGRect)mainFrame
 {
-    CGSize size = [self calcContentTextSize];
-    float frameHeight = size.height + CELL_MARGIN;
+    float frameHeight;
+    CGSize textSize = [self textFrame].size;
+    CGSize bottomSize = [self bottomFrame].size;
+    
+    frameHeight = textSize.height + bottomSize.height;
+    
+    if ([self didHavePicture]) {
+        CGSize pictureSize = [self pictureFrame].size;
+        frameHeight = frameHeight + pictureSize.height;
+    }
+    
+    frameHeight =  frameHeight + CELL_MARGIN * 2;
     
     CGRect frame = CGRectMake(CELL_MARGIN, CELL_MARGIN, CELL_WIDTH - (CELL_MARGIN * 2), frameHeight);
     return frame;
 }
+
+- (CGRect)textFrame
+{
+    CGSize size = [self calcContentTextSize];
+//    float frameHeight = size.height;
+    
+    CGRect frame = CGRectMake(CELL_MARGIN, CELL_MARGIN, CELL_WIDTH - (CELL_MARGIN * 4), size.height);
+    return frame;
+}
+
+//- (CGRect)textFrame
+//{
+//    CGSize size = [self calcContentTextSize];
+//    float frameHeight = size.height + CELL_MARGIN;
+//    
+//    CGRect frame = CGRectMake(CELL_MARGIN, CELL_MARGIN, CELL_WIDTH - (CELL_MARGIN * 2), frameHeight);
+//    return frame;
+//}
+
 
 - (CGRect)pictureFrame
 {

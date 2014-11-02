@@ -52,6 +52,11 @@
 		BF27E0AA19B4BD3900AC9730 /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E0A019B4BD3900AC9730 /* user@2x.png */; };
 		BF27E0AD19B4BE4100AC9730 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E0AB19B4BE4100AC9730 /* refresh.png */; };
 		BF27E0AE19B4BE4100AC9730 /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF27E0AC19B4BE4100AC9730 /* refresh@2x.png */; };
+		BF3CF7591A05DF07004BBA97 /* XHLeftSideDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF3CF7571A05DF07004BBA97 /* XHLeftSideDrawerViewController.m */; };
+		BF3CF75A1A05DF07004BBA97 /* XHLeftSideDrawerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3CF7581A05DF07004BBA97 /* XHLeftSideDrawerViewController.xib */; };
+		BF3CF75C1A061B6C004BBA97 /* drawer_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF3CF75B1A061B6C004BBA97 /* drawer_bg.jpg */; };
+		BF3CF75F1A063294004BBA97 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3CF75D1A063294004BBA97 /* logo.png */; };
+		BF3CF7601A063294004BBA97 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3CF75E1A063294004BBA97 /* logo@2x.png */; };
 		BF513DDC19B601DD00023AA6 /* setting.png in Resources */ = {isa = PBXBuildFile; fileRef = BF513DD819B601DD00023AA6 /* setting.png */; };
 		BF513DDD19B601DD00023AA6 /* setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF513DD919B601DD00023AA6 /* setting@2x.png */; };
 		BF513DDE19B601DD00023AA6 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = BF513DDA19B601DD00023AA6 /* up.png */; };
@@ -104,6 +109,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04BE392E6E9EE0037FA46591 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1B3C9F3419ADD1A700C79552 /* 笑话博览.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "笑话博览.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B3C9F3719ADD1A700C79552 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1B3C9F3919ADD1A700C79552 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -149,7 +155,7 @@
 		1BE0A07319B6C920004BAF97 /* XHUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHUser.m; sourceTree = SOURCE_ROOT; };
 		1BE0A07519B6EC80004BAF97 /* XHPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHPreferences.h; sourceTree = SOURCE_ROOT; };
 		1BE0A07619B6EC80004BAF97 /* XHPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHPreferences.m; sourceTree = SOURCE_ROOT; };
-		333BAACA3F9A4FECA9DD53C3 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		3EDC9130B08735BD7C919B02 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7077413D4E2E4A87AE475A48 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF080DC619AF75A3001D3EA9 /* placeholder@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "placeholder@2x.gif"; sourceTree = "<group>"; };
 		BF105C0219D2584A0064DBD3 /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
@@ -168,6 +174,12 @@
 		BF27E0A019B4BD3900AC9730 /* user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@2x.png"; sourceTree = "<group>"; };
 		BF27E0AB19B4BE4100AC9730 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		BF27E0AC19B4BE4100AC9730 /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
+		BF3CF7561A05DF07004BBA97 /* XHLeftSideDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLeftSideDrawerViewController.h; sourceTree = SOURCE_ROOT; };
+		BF3CF7571A05DF07004BBA97 /* XHLeftSideDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLeftSideDrawerViewController.m; sourceTree = SOURCE_ROOT; };
+		BF3CF7581A05DF07004BBA97 /* XHLeftSideDrawerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHLeftSideDrawerViewController.xib; sourceTree = SOURCE_ROOT; };
+		BF3CF75B1A061B6C004BBA97 /* drawer_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = drawer_bg.jpg; sourceTree = "<group>"; };
+		BF3CF75D1A063294004BBA97 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		BF3CF75E1A063294004BBA97 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		BF513DD819B601DD00023AA6 /* setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting.png; sourceTree = "<group>"; };
 		BF513DD919B601DD00023AA6 /* setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@2x.png"; sourceTree = "<group>"; };
 		BF513DDA19B601DD00023AA6 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
@@ -200,7 +212,6 @@
 		BFCC28E719B2206C00DE391F /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		BFCC28E819B2206C00DE391F /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		BFCC28E919B2206C00DE391F /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
-		BFE126DE19F3D8EB007B78A3 /* BaiduMobStat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaiduMobStat.h; sourceTree = "<group>"; };
 		BFE126DF19F3F31A007B78A3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		BFE126E019F3F31A007B78A3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,7 +248,7 @@
 				1B3C9F5619ADD1A700C79552 /* XiaoHuaAppTests */,
 				1B3C9F3619ADD1A700C79552 /* Frameworks */,
 				1B3C9F3519ADD1A700C79552 /* Products */,
-				333BAACA3F9A4FECA9DD53C3 /* Pods.xcconfig */,
+				77B7FFC377CD57E61CD78684 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -270,7 +281,6 @@
 				1B3C9F6719ADDA3400C79552 /* Controllers */,
 				1B3C9F6819ADDA3400C79552 /* Models */,
 				1B3C9F6919ADDA3400C79552 /* Resources */,
-				BFE126DE19F3D8EB007B78A3 /* BaiduMobStat.h */,
 				1B3C9F4619ADD1A700C79552 /* XHAppDelegate.h */,
 				1B3C9F4719ADD1A700C79552 /* XHAppDelegate.m */,
 				1B3C9F4919ADD1A700C79552 /* Images.xcassets */,
@@ -344,6 +354,9 @@
 				BF105C0B19D26E2D0064DBD3 /* XHPrivacyViewController.h */,
 				BF105C0C19D26E2D0064DBD3 /* XHPrivacyViewController.m */,
 				BF105C0D19D26E2D0064DBD3 /* XHPrivacyViewController.xib */,
+				BF3CF7561A05DF07004BBA97 /* XHLeftSideDrawerViewController.h */,
+				BF3CF7571A05DF07004BBA97 /* XHLeftSideDrawerViewController.m */,
+				BF3CF7581A05DF07004BBA97 /* XHLeftSideDrawerViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -364,6 +377,7 @@
 		1B3C9F6919ADDA3400C79552 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF3CF75B1A061B6C004BBA97 /* drawer_bg.jpg */,
 				BF105C1019D26F450064DBD3 /* privacy.html */,
 				BF105C0219D2584A0064DBD3 /* more.png */,
 				BF105C0319D2584A0064DBD3 /* more@2x.png */,
@@ -373,6 +387,8 @@
 				BFC8703D19BF3FCE00010A5C /* close@2x.png */,
 				BFC8703E19BF3FCE00010A5C /* picture.png */,
 				BFC8703F19BF3FCE00010A5C /* picture@2x.png */,
+				BF3CF75D1A063294004BBA97 /* logo.png */,
+				BF3CF75E1A063294004BBA97 /* logo@2x.png */,
 				BFC06AF619B8A707009F4F35 /* avatar.png */,
 				BFC06AF719B8A707009F4F35 /* avatar@2x.png */,
 				BFC06AF219B8A6D2009F4F35 /* power@2x.png */,
@@ -396,6 +412,15 @@
 				BF080DC619AF75A3001D3EA9 /* placeholder@2x.gif */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		77B7FFC377CD57E61CD78684 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3EDC9130B08735BD7C919B02 /* Pods.debug.xcconfig */,
+				04BE392E6E9EE0037FA46591 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		BFCC28D719B21F0E00DE391F /* Libraries */ = {
@@ -524,16 +549,19 @@
 				BFC06AF819B8A707009F4F35 /* avatar.png in Resources */,
 				BFC8704319BF3FCE00010A5C /* close@2x.png in Resources */,
 				1BBFB6E719B5C26000F0E31F /* XHMessagesController.xib in Resources */,
+				BF3CF75A1A05DF07004BBA97 /* XHLeftSideDrawerViewController.xib in Resources */,
 				BFC8704519BF3FCE00010A5C /* picture@2x.png in Resources */,
 				BFC8704219BF3FCE00010A5C /* close.png in Resources */,
 				BF27E0AD19B4BE4100AC9730 /* refresh.png in Resources */,
 				BFC06AF919B8A707009F4F35 /* avatar@2x.png in Resources */,
 				BFCC28EA19B2206C00DE391F /* MJRefresh.bundle in Resources */,
+				BF3CF75C1A061B6C004BBA97 /* drawer_bg.jpg in Resources */,
 				BF105C1119D26F450064DBD3 /* privacy.html in Resources */,
 				1BBFB6F019B5C50100F0E31F /* XHJokeFormController.xib in Resources */,
 				BF105C0F19D26E2D0064DBD3 /* XHPrivacyViewController.xib in Resources */,
 				BF27E0A619B4BD3900AC9730 /* message@2x.png in Resources */,
 				BF27E0A519B4BD3900AC9730 /* message.png in Resources */,
+				BF3CF7601A063294004BBA97 /* logo@2x.png in Resources */,
 				BF513DDC19B601DD00023AA6 /* setting.png in Resources */,
 				BF27E0A919B4BD3900AC9730 /* user.png in Resources */,
 				BF105C0519D2584A0064DBD3 /* more@2x.png in Resources */,
@@ -543,6 +571,7 @@
 				BFC8704019BF3FCE00010A5C /* camera.png in Resources */,
 				1B3C9F4A19ADD1A700C79552 /* Images.xcassets in Resources */,
 				BFC8704419BF3FCE00010A5C /* picture.png in Resources */,
+				BF3CF75F1A063294004BBA97 /* logo.png in Resources */,
 				BF27E0AE19B4BE4100AC9730 /* refresh@2x.png in Resources */,
 				BFC8704119BF3FCE00010A5C /* camera@2x.png in Resources */,
 				BF513DDD19B601DD00023AA6 /* setting@2x.png in Resources */,
@@ -578,7 +607,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C35A54070E0B400085D92C2A /* Check Pods Manifest.lock */ = {
@@ -624,6 +653,7 @@
 				BFCC28EB19B2206C00DE391F /* MJRefreshBaseView.m in Sources */,
 				1BBFB6E619B5C26000F0E31F /* XHMessagesController.m in Sources */,
 				1B3C9F4419ADD1A700C79552 /* main.m in Sources */,
+				BF3CF7591A05DF07004BBA97 /* XHLeftSideDrawerViewController.m in Sources */,
 				1B55FB1B19AECB3000C8A44E /* XHJokesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -752,7 +782,7 @@
 		};
 		1B3C9F6119ADD1A700C79552 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 333BAACA3F9A4FECA9DD53C3 /* Pods.xcconfig */;
+			baseConfigurationReference = 3EDC9130B08735BD7C919B02 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
@@ -763,11 +793,7 @@
 				GCC_PREFIX_HEADER = "XiaoHuaApp/XiaoHuaApp-Prefix.pch";
 				INFOPLIST_FILE = "XiaoHuaApp/XiaoHuaApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/jimmy/Downloads/Baidu_Mtj_iOS_SDK_V3.3/Products-armv7-armv7s/ios_api/universal-bin",
-					"/Users/jimmy/Downloads/Baidu_Mtj_iOS_SDK_V3.3/Products-armv7-armv7s/ios_api/Release-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -777,7 +803,7 @@
 		};
 		1B3C9F6219ADD1A700C79552 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 333BAACA3F9A4FECA9DD53C3 /* Pods.xcconfig */;
+			baseConfigurationReference = 04BE392E6E9EE0037FA46591 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
@@ -788,11 +814,7 @@
 				GCC_PREFIX_HEADER = "XiaoHuaApp/XiaoHuaApp-Prefix.pch";
 				INFOPLIST_FILE = "XiaoHuaApp/XiaoHuaApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/jimmy/Downloads/Baidu_Mtj_iOS_SDK_V3.3/Products-armv7-armv7s/ios_api/universal-bin",
-					"/Users/jimmy/Downloads/Baidu_Mtj_iOS_SDK_V3.3/Products-armv7-armv7s/ios_api/Release-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

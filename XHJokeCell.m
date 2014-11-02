@@ -37,37 +37,42 @@
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.contentView.backgroundColor = [UIColor clearColor];
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = PRIMARY_BG_COLOR;
+        
+//        self.backgroundColor = [UIColor whiteColor];
+//        self.layer.borderColor = [UIColor redColor].CGColor;
+//        self.layer.borderWidth = 1.0f;
+        
+        self.cellMainView = [[UIView alloc] init];
+        
         
         self.contentLabel = [[UILabel alloc] init];
         self.contentLabel.numberOfLines = 0;
         [self.contentLabel setFont:[UIFont systemFontOfSize:CELL_FONT_SIZE]];
         [self.contentLabel setLineBreakMode:NSLineBreakByWordWrapping];
-        [self addSubview:self.contentLabel];
+//        [self addSubview:self.contentLabel];
         
         self.jokePicture = [[UIImageView alloc] init];
         self.jokePicture.contentMode = UIViewContentModeScaleToFill;
-        [self addSubview:self.jokePicture];
+//        [self addSubview:self.jokePicture];
+        
+        self.cellMainView.backgroundColor = [UIColor whiteColor];
+        [self.cellMainView addSubview: self.contentLabel];
+        [self.cellMainView addSubview: self.jokePicture];
 
-        self.bottomLeftView = [[UIView alloc] init];
-        self.bottomLeftView.frame = CGRectMake(0, 0, CELL_WIDTH, CELL_BOTTOM_VIEW_HEIGHT);
+
+        self.bottomView = [[UIView alloc] init];
+        self.bottomView.frame = CGRectMake(0, 0, CELL_WIDTH, CELL_BOTTOM_VIEW_HEIGHT);
         
         self.upButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.downButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.commentButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.reportButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        
-//        self.bottomLeftView.layer.borderColor = [UIColor redColor].CGColor;
-//        self.bottomLeftView.layer.borderWidth = 1.0f;
-//        self.upButton.layer.borderColor = [UIColor redColor].CGColor;
-//        self.upButton.layer.borderWidth = 1.0f;
-//        self.downButton.layer.borderColor = [UIColor greenColor].CGColor;
-//        self.downButton.layer.borderWidth = 1.0f;
-        
+                
         self.upButton.frame = CGRectMake(0, 0, CELL_BUTTON_WIDTH, CELL_BUTTON_WIDTH);
         self.downButton.frame = CGRectMake(CELL_BUTTON_WIDTH, 0, CELL_BUTTON_WIDTH, CELL_BUTTON_WIDTH);
         self.commentButton.frame = CGRectMake(CELL_BUTTON_WIDTH * 2, 0, CELL_BUTTON_WIDTH, CELL_BUTTON_WIDTH);
-        self.reportButton.frame = CGRectMake(286, 8, 12, CELL_BUTTON_WIDTH);
+        self.reportButton.frame = CGRectMake(260, 8, 12, CELL_BUTTON_WIDTH);
         
         UIImageView *_upButtonIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 16, 16)];
         _upButtonIcon.image = [UIImage imageNamed:@"up.png"];
@@ -99,12 +104,18 @@
         [self.reportButton addSubview:_reportButtonIcon];
         [self.reportButton addTarget:self action:@selector(performReportButtonPressed:) forControlEvents:UIControlEventTouchDown];
 
-        [self.bottomLeftView addSubview:self.upButton];
-        [self.bottomLeftView addSubview:self.downButton];
-        [self.bottomLeftView addSubview:self.commentButton];
-        [self.bottomLeftView addSubview:self.reportButton];
+        [self.bottomView addSubview:self.upButton];
+        [self.bottomView addSubview:self.downButton];
+        [self.bottomView addSubview:self.commentButton];
+        [self.bottomView addSubview:self.reportButton];
         
-        [self addSubview:self.bottomLeftView];
+        [self.cellMainView addSubview:self.bottomView];
+        
+//        self.cellMainView.layer.borderColor = [UIColor blueColor].CGColor;
+//        self.cellMainView.layer.borderWidth = 1.0f;
+        
+        [self addSubview:self.cellMainView];
+//        [self addSubview:self.bottomLeftView];
     }
     
     return self;
@@ -114,6 +125,7 @@
 {
     NSMutableAttributedString *attributedContentText = [joke setContentTextLineHeight:4];
     
+    self.cellMainView.frame = joke.mainFrame;
     self.contentLabel.attributedText = attributedContentText;
     self.contentLabel.textColor = [UIColor colorWithRed:0.27 green:0.26 blue:0.26 alpha:1];
     self.contentLabel.frame = joke.textFrame;
@@ -125,7 +137,7 @@
         self.jokePicture.image = nil ;
     }
 
-    self.bottomLeftView.frame = [joke bottomFrame];
+    self.bottomView.frame = [joke bottomFrame];
     self.upButtonLabel.text = joke.up_votes_count;
     self.downButtonLabel.text = joke.down_votes_count;
     self.commentButtonLabel.text = joke.comments_count;

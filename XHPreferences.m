@@ -34,7 +34,15 @@
 
 + (NSString *)name
 {
-    return [[self userDefatuls] stringForKey:@"name"];
+    NSString *name;
+    
+    if ([self userDidLogin]) {
+        name = [[self userDefatuls] stringForKey:@"name"];
+    } else {
+        name = @"看官登录";
+    }
+    
+    return name;
 }
 
 + (void)setName:(NSString *)value
