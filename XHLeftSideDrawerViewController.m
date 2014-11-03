@@ -35,6 +35,8 @@
     _navTableView.dataSource = self;
     _navTableView.delegate = self;
     
+    _versionLabel.text = [NSString stringWithFormat:@"v%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString*)kCFBundleVersionKey]];
+    
     [self.mm_drawerController setMaximumLeftDrawerWidth:240.f];
     
 }

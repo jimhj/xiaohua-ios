@@ -14,6 +14,7 @@
     
     __weak IBOutlet UITableView *_navTableView;
     __weak IBOutlet UIButton *_logoutButton;
+    __weak IBOutlet UILabel *_versionLabel;
 }
 
 - (IBAction)logoutButtonPressed:(id)sender;

@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="_logoutButton" destination="01f-Th-mnE" id="B0C-sw-Utl"/>
                 <outlet property="_navTableView" destination="zPA-T5-afl" id="OvH-Fp-ee0"/>
+                <outlet property="_versionLabel" destination="h00-nR-iGK" id="rFa-hE-tiK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
