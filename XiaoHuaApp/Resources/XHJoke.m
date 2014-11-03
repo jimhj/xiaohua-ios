@@ -54,7 +54,7 @@
 
 - (CGSize)calcContentTextSize
 {
-    CGSize constraint = CGSizeMake(CELL_WIDTH - (CELL_MARGIN * 2), 20000.0f);
+    CGSize constraint = CGSizeMake(CELL_WIDTH - (CELL_MARGIN * 4), 20000.0f);
     
     NSMutableAttributedString *attributedContentText = [self setContentTextLineHeight:4];
     
@@ -109,22 +109,12 @@
     return frame;
 }
 
-//- (CGRect)textFrame
-//{
-//    CGSize size = [self calcContentTextSize];
-//    float frameHeight = size.height + CELL_MARGIN;
-//    
-//    CGRect frame = CGRectMake(CELL_MARGIN, CELL_MARGIN, CELL_WIDTH - (CELL_MARGIN * 2), frameHeight);
-//    return frame;
-//}
-
-
 - (CGRect)pictureFrame
 {
     CGRect frame;
     CGSize textFrameSize = [self textFrame].size;
     
-    float offsetY = CELL_MARGIN + textFrameSize.height;
+    float offsetY = CELL_MARGIN + textFrameSize.height + 1;
     float picHeight = textFrameSize.width * [self.picture_height floatValue] / [self.picture_width floatValue];
     float frameHeight = picHeight;
         

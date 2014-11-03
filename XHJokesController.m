@@ -40,6 +40,9 @@
     [self presentViewController:navController animated:YES completion:^{}];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle NS_AVAILABLE_IOS(7_0){
+    return UIStatusBarStyleLightContent;
+}
 
 - (void)fetchJokesWithPage:(NSNumber *)page
 {
