@@ -28,9 +28,6 @@
     _navTableView.backgroundColor = [UIColor clearColor];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"drawer.png"]];
     
-    if ([XHPreferences userDidLogin]) {
-        _logoutButton.hidden = NO;
-    }
     
     _navTableView.dataSource = self;
     _navTableView.delegate = self;
@@ -44,6 +41,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    if ([XHPreferences userDidLogin]) {
+        _logoutButton.hidden = NO;
+    }
+    [_navTableView reloadData];
+    
 }
 
 /*

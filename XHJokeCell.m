@@ -100,7 +100,7 @@
         [self.commentButton addSubview:self.commentButtonLabel];
 
         UIImageView *_reportButtonIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0, 12, 3)];
-        _reportButtonIcon.image = [UIImage imageNamed:@"more"];
+        _reportButtonIcon.image = [UIImage imageNamed:@"more.png"];
         [self.reportButton addSubview:_reportButtonIcon];
         [self.reportButton addTarget:self action:@selector(performReportButtonPressed:) forControlEvents:UIControlEventTouchDown];
 
