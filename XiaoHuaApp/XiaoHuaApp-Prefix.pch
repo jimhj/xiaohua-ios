@@ -15,9 +15,6 @@
     #import <Foundation/Foundation.h>
 #endif
 
-#import "CoreData+MagicalRecord.h"
-#import <MagicalRecord/MagicalRecord.h>
-
 #ifdef DEBUG
     #define kAppDomain @"192.168.0.104:8000"
 #else
@@ -35,3 +32,11 @@
 #define PRIMARY_BG_COLOR [UIColor colorWithRed:0.94 green:0.94 blue:0.96 alpha:1]
 #define PRIMARY_BUTTON_COLOR [UIColor colorWithRed:0.16 green:0.66 blue:0.46 alpha:1]
 #define SECONDADY_BUTTON_COLOR [UIColor colorWithRed:0.78 green:0.78 blue:0.8 alpha:1]
+
+#define SHARE_SDK_KEY @"4b51a7ec6a11"
+#define SHARE_SDK_SECRET @"a03f9f1edf2670ee5dc366b500f07908"
+
+#define SINA_KEY @"4096377453"
+#define SINA_SECRET @"0831ecb9d18a1d83220a5c0532a90869"
+#define QQ_KEY @"101148852"
+#define QQ_SECRET @"8b48c290e7c037f3a593de01f3d45083"

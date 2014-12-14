@@ -14,6 +14,7 @@
 #import "NSString+IsEmpty.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "AFNetworking.h"
+#import <ShareSDK/ShareSDK.h>
 
 #define CELL_BUTTON_WIDTH 60.f
 
@@ -59,6 +60,41 @@
     }];
 }
 
+- (void) performShareButtonPressed:(id)sender
+{
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"logo-57" ofType:@"png"];
+    
+    //构造分享内容
+    id<ISSContent> publishContent = [ShareSDK content:self.joke.contentText
+                                       defaultContent:self.joke.contentText
+                                                image:[ShareSDK imageWithPath:imagePath]
+                                                title:@"笑话博览"
+                                                  url:[NSString stringWithFormat:@"http://www.xiaohuabolan.com/jokes/%@", self.joke._id]
+                                          description:self.joke.contentText
+                                            mediaType:SSPublishContentMediaTypeNews];
+    //创建弹出菜单容器
+    id<ISSContainer> container = [ShareSDK container];
+    
+    //弹出分享菜单
+    [ShareSDK showShareActionSheet:container
+                         shareList:nil
+                           content:publishContent
+                     statusBarTips:YES
+                       authOptions:nil
+                      shareOptions:nil
+                            result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                                
+                                if (state == SSResponseStateSuccess)
+                                {
+                                    NSLog(NSLocalizedString(@"TEXT_ShARE_SUC", @"分享成功"));
+                                }
+                                else if (state == SSResponseStateFail)
+                                {
+                                    NSLog(NSLocalizedString(@"TEXT_ShARE_FAI", @"分享失败,错误码:%d,错误描述:%@"), [error errorCode], [error errorDescription]);
+                                }
+                            }];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -83,9 +119,9 @@
     [label sizeToFit];
     self.navigationItem.titleView = label;
     UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-//    [self.navigationItem setBackBarButtonItem:back];
     self.navigationController.navigationBar.topItem.backBarButtonItem = back;
-    
+    UIBarButtonItem *rightBar = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"share.png"] style:UIBarButtonItemStylePlain target:self action:@selector(performShareButtonPressed:)];
+    self.navigationItem.rightBarButtonItem = rightBar;
 }
 
 - (void)viewWillAppear:(BOOL)animated

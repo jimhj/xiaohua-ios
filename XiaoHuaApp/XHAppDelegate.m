@@ -13,6 +13,9 @@
 #import "XHSettingController.h"
 #import "MMDrawerController.h"
 #import "XHLeftSideDrawerViewController.h"
+#import <ShareSDK/ShareSDK.h>
+#import <TencentOpenAPI/QQApiInterface.h>
+#import <TencentOpenAPI/TencentOAuth.h>
 
 @interface XHAppDelegate ()
 @property (nonatomic,strong) MMDrawerController *drawerController;
@@ -39,9 +42,39 @@
     [self.drawerController setShowsShadow:YES];
     self.window.rootViewController = self.drawerController;
     
-//    [MagicalRecord setupCoreDataStack];
+    [ShareSDK registerApp:SHARE_SDK_KEY];
+    [ShareSDK connectSinaWeiboWithAppKey:SINA_KEY
+                               appSecret:SINA_SECRET
+                             redirectUri:@"http://www.xiaohuabolan.com/auth/weibo/callback"];
+    
+    [ShareSDK connectQQWithQZoneAppKey:QQ_KEY
+                     qqApiInterfaceCls:[QQApiInterface class]
+                       tencentOAuthCls:[TencentOAuth class]];
+    [ShareSDK connectSMS];
+    //连接邮件
+    [ShareSDK connectMail];
+    //连接拷贝
+    [ShareSDK connectCopy];
     
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application
+      handleOpenURL:(NSURL *)url
+{
+    return [ShareSDK handleOpenURL:url
+                        wxDelegate:self];
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return [ShareSDK handleOpenURL:url
+                 sourceApplication:sourceApplication
+                        annotation:annotation
+                        wxDelegate:self];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
