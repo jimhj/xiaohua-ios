@@ -32,27 +32,14 @@
         
     XHJokesController *jokesController = [[XHJokesController alloc] initWithNibName:nil bundle:nil];
     jokesController.channel = @"";
-//    jokesController.tabBarItem.image = [UIImage imageNamed:@"refresh.png"];
-//    jokesController.tabBarItem.title = @"笑话";
+    
     UINavigationController *jokesNav = [[UINavigationController alloc] initWithRootViewController:jokesController];
 
     self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:jokesNav leftDrawerViewController:leftSideDrawerViewController];
     [self.drawerController setShowsShadow:YES];
     self.window.rootViewController = self.drawerController;
     
-//    XHMessagesController *msgController = [[XHMessagesController alloc] initWithNibName:@"XHMessagesController" bundle:nil];
-//    msgController.tabBarItem.image = [UIImage imageNamed:@"message.png"];
-//    msgController.tabBarItem.title = @"消息";
-//    UINavigationController *msgNav = [[UINavigationController alloc] initWithRootViewController:msgController];
-//
-//    XHSettingController *settingController = [[XHSettingController alloc] initWithNibName:@"XHSettingController" bundle:nil];
-//    settingController.tabBarItem.image = [UIImage imageNamed:@"user.png"];
-//    settingController.tabBarItem.title = @"我";
-//    UINavigationController *settingNav = [[UINavigationController alloc] initWithRootViewController:settingController];
-//    
-//    self.tabBarController = [[UITabBarController alloc] init];
-//    self.tabBarController.viewControllers = @[jokesNav, msgNav, settingNav];
-//    self.window.rootViewController = self.tabBarController;
+//    [MagicalRecord setupCoreDataStack];
     
     return YES;
 }

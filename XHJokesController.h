@@ -17,4 +17,5 @@
 @property (nonatomic, copy) NSNumber *currentPage;
 @property (nonatomic, copy) NSString *channel;
 
+
 @end

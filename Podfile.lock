@@ -20,6 +20,9 @@ PODS:
   - AFNetworking/UIKit (2.3.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - MagicalRecord (2.2):
+    - MagicalRecord/Core
+  - MagicalRecord/Core (2.2)
   - MBProgressHUD (0.9)
   - MMDrawerController (0.5.7):
     - MMDrawerController/Core
@@ -33,7 +36,6 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.5.7):
     - MMDrawerController/Core
-  - MSCellAccessory (1.1.2)
   - SDWebImage (3.7.1):
     - SDWebImage/Core
   - SDWebImage/Core (3.7.1)
@@ -41,17 +43,17 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - MagicalRecord
   - MBProgressHUD
   - MMDrawerController (~> 0.5.7)
-  - MSCellAccessory
   - SDWebImage
   - TPKeyboardAvoiding (~> 1.2.4)
 
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
+  MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
   MMDrawerController: c3ab7a318ddc7e2bcd133139c3161af08c6e1197
-  MSCellAccessory: 5f5b839e14bbd5de6c3dacb4b0d3ae5a63741778
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
   TPKeyboardAvoiding: 925e1e1912597d1a4956697eec3bd9656552153c
 

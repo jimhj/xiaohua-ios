@@ -15,8 +15,11 @@
     #import <Foundation/Foundation.h>
 #endif
 
+#import "CoreData+MagicalRecord.h"
+#import <MagicalRecord/MagicalRecord.h>
+
 #ifdef DEBUG
-    #define kAppDomain @"192.168.0.100:8000"
+    #define kAppDomain @"192.168.0.104:8000"
 #else
     #define kAppDomain @"www.xiaohuabolan.com"
 #endif

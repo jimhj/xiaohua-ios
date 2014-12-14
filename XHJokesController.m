@@ -17,6 +17,7 @@
 #import "UIViewController+MMDrawerController.h"
 #import "MMDrawerBarButtonItem.h"
 #import "NSString+IsEmpty.h"
+#import "XHJokeDetailViewController.h"
 
 @interface XHJokesController ()
 
@@ -125,7 +126,7 @@
         label.backgroundColor = [UIColor clearColor];
         label.font = [UIFont boldSystemFontOfSize:16.0];
         label.textAlignment = NSTextAlignmentCenter;
-        label.textColor = [UIColor whiteColor]; // change this color
+        label.textColor = [UIColor whiteColor];
         self.navigationItem.titleView = label;
         
         NSDictionary *titles = @{@"meinvmeitu":@"美女美图", @"xieemanhua":@"邪恶漫画", @"youmoqiushi":@"幽默糗事", @"neihanduanzi":@"内涵段子"};
@@ -253,61 +254,15 @@
     return 0;
 }
 
-- (void)viewDidLayoutSubviews
-{
-//    if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
-//        [self.tableView setLayoutMargins:UIEdgeInsetsZero];
-//    }
-}
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    XHJoke *joke = [self.jokes objectAtIndex:indexPath.row];
+    XHJokeDetailViewController *detail = [[XHJokeDetailViewController alloc] init];
+    detail.joke = joke;
+    
+    [self.navigationController pushViewController:detail animated:YES];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 -(void)setupLeftMenuButton{
     MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress:)];

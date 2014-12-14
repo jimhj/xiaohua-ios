@@ -10,6 +10,7 @@
 
 @interface XHJoke : NSObject
 
+@property (nonatomic,copy) NSNumber *_id;
 @property (nonatomic,copy) NSString *title;
 @property (nonatomic,copy) NSString *content;
 @property (nonatomic,copy) NSString *picture_url;

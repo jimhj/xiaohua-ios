@@ -16,5 +16,6 @@
 @property (nonatomic, strong) NSString *avatarUrl;
 
 + (XHUser *) currentUser;
++ (XHUser *) initWithDictionary:(NSDictionary *)dict;
 
 @end

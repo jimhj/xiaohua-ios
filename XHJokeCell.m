@@ -143,11 +143,11 @@
     self.commentButtonLabel.text = joke.comments_count;
 }
 
-
 - (void)awakeFromNib
 {
     // Initialization code
 }
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {

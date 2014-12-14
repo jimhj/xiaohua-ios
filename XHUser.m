@@ -20,5 +20,16 @@ static XHUser *_currentUser;
     return _currentUser;
 }
 
++ (XHUser *)initWithDictionary:(NSDictionary *)dict
+{
+    XHUser *user = [[XHUser alloc] init];
+    
+    user.name = [dict objectForKey:@"name"];
+    user.email = [dict objectForKey:@"email"];
+    user.avatarUrl = [dict objectForKey:@"avatar_url"];
+    
+    return user;
+}
+
 
 @end

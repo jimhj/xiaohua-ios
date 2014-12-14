@@ -16,6 +16,7 @@
     XHJoke *joke = [[XHJoke alloc] init];
     NSMutableString *contentText = [[NSMutableString alloc] init];
     
+    joke._id = [dict objectForKey:@"id"];
     joke.title = [dict objectForKey:@"title"];
     joke.content = [dict objectForKey:@"content"];
     
