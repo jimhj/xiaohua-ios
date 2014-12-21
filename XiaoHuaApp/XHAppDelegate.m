@@ -16,6 +16,7 @@
 #import <ShareSDK/ShareSDK.h>
 #import <TencentOpenAPI/QQApiInterface.h>
 #import <TencentOpenAPI/TencentOAuth.h>
+#import "WXApi.h"
 
 @interface XHAppDelegate ()
 @property (nonatomic,strong) MMDrawerController *drawerController;
@@ -50,6 +51,10 @@
     [ShareSDK connectQQWithQZoneAppKey:QQ_KEY
                      qqApiInterfaceCls:[QQApiInterface class]
                        tencentOAuthCls:[TencentOAuth class]];
+
+    [ShareSDK connectWeChatWithAppId:WX_KEY   //微信APPID
+                           appSecret:WX_SECRET  //微信APPSecret
+                           wechatCls:[WXApi class]];
     [ShareSDK connectSMS];
     //连接邮件
     [ShareSDK connectMail];
