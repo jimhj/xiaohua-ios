@@ -70,7 +70,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
+    return 5;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -123,9 +123,9 @@
         cell.textLabel.text = @"新鲜出炉";
     } else if (indexPath.row == 2) {
         cell.textLabel.text = @"美女美图";
+//    } else if (indexPath.row == 3) {
+//        cell.textLabel.text = @"邪恶漫画";
     } else if (indexPath.row == 3) {
-        cell.textLabel.text = @"邪恶漫画";
-    } else if (indexPath.row == 4) {
         cell.textLabel.text = @"糗事幽默";
     } else {
         cell.textLabel.text = @"内涵段子";
@@ -158,13 +158,13 @@
             case 2:
                 center.channel = @"meinvmeitu";
                 break;
+//            case 3:
+//                center.channel = @"xieemanhua";
+//                break;
             case 3:
-                center.channel = @"xieemanhua";
-                break;
-            case 4:
                 center.channel = @"youmoqiushi";
                 break;
-            case 5:
+            case 4:
                 center.channel = @"neihanduanzi";
                 break;
             default:
